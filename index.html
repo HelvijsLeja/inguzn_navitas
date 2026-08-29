@@ -311,6 +311,9 @@
   .equation .op{color:var(--ink-faint)}
   .equation .t-teal{color:var(--teal)}
   .equation .t-ember{color:var(--ember)}
+  /* font-independent "hat" for predicted variables (x-hat, y-hat) - avoids combining-mark tofu */
+  .hat{position:relative;display:inline-block}
+  .hat::after{content:"\02C6";position:absolute;left:0;right:0;top:-.52em;text-align:center;font-size:.95em;line-height:1;font-weight:600;pointer-events:none}
   .frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;margin:0 .1em}
   .frac .n{border-bottom:1.5px solid currentColor;padding:0 .35em .05em}
   .frac .d{padding:.05em .35em 0}
@@ -674,7 +677,7 @@
         </svg>
         <div class="loop-core">
           <span class="k" data-i18n="loop.core">PINN core</span>
-          <span class="eq">ŷ = <i>f</i><sub>θ</sub>(x,t,p)</span>
+          <span class="eq"><span class="hat">y</span> = <i>f</i><sub>θ</sub>(x,t,p)</span>
           <span class="sub" data-i18n="loop.twin">digital twin</span>
         </div>
         <div class="node hot" style="left:50%;top:10%"><div class="dot"></div><div class="nl"><span class="nx">01</span><span data-i18n="loop.n1">Physical system</span></div></div>
@@ -713,7 +716,7 @@
             <div class="connector"></div>
             <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p2">State estimation</span></div>
             <div class="connector"></div>
-            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p3">Process prediction</span><span class="sc">x̂(t+τ)</span></div>
+            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p3">Process prediction</span><span class="sc"><span class="hat">x</span>(t+τ)</span></div>
             <div class="connector"></div>
             <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p4">Optimization</span><span class="sc">min J</span></div>
             <div class="connector"></div>
@@ -767,13 +770,13 @@
               <div class="hnum">03 / 06</div>
               <h3 data-i18n="loop.n3">PINN digital twin</h3>
               <p data-i18n="how.d3">The physics-informed twin estimates the full state — including variables the sensors can't measure.</p>
-              <div class="hdet mono">ŷ = f<sub>θ</sub>(x, t, p)</div>
+              <div class="hdet mono"><span class="hat">y</span> = f<sub>θ</sub>(x, t, p)</div>
             </div>
             <div class="hw-step" data-step="3">
               <div class="hnum">04 / 06</div>
               <h3 data-i18n="loop.n4">State prediction</h3>
               <p data-i18n="how.d4">The twin projects the process forward in time for each candidate control action.</p>
-              <div class="hdet mono">x̂(t + τ)</div>
+              <div class="hdet mono"><span class="hat">x</span>(t + τ)</div>
             </div>
             <div class="hw-step" data-step="4">
               <div class="hnum">05 / 06</div>
@@ -785,7 +788,7 @@
               <div class="hnum">06 / 06</div>
               <h3 data-i18n="loop.n6">Predictive control</h3>
               <p data-i18n="how.d6">The chosen action is applied — before a deviation occurs. Then the loop repeats.</p>
-              <div class="hdet mono">apply u* → process ↻</div>
+              <div class="hdet mono">apply u* → process → repeat</div>
             </div>
           </div>
           <div class="hw-controls">
@@ -857,9 +860,9 @@
           <span class="num">Eq. 6</span>
           <div class="cap" data-i18n="tech.pred.cap">Prediction operator</div>
           <div class="equation">
-            <span class="t-teal">x̂</span>(t+τ)<span class="op">=</span>𝒟<span class="op">[</span>x(t), u(t:t+τ), p<span class="op">]</span>
+            <span class="t-teal"><span class="hat">x</span></span>(t+τ)<span class="op">=</span><i>D</i><span class="op">[</span>x(t), u(t:t+τ), p<span class="op">]</span>
           </div>
-          <p class="eqnote" data-i18n-html="tech.pred.note">After training, the PINN acts as a high-speed surrogate <b>𝒟</b> — repeatedly computing the future state for any candidate control trajectory, enabling virtual experiments before touching the plant.</p>
+          <p class="eqnote" data-i18n-html="tech.pred.note">After training, the PINN acts as a high-speed surrogate <b><i>D</i></b> — repeatedly computing the future state for any candidate control trajectory, enabling virtual experiments before touching the plant.</p>
         </div>
       </div>
     </div>
@@ -897,10 +900,10 @@
           <div class="mchip" data-i18n-html="mpc.current">Current<br>state x(t)</div>
           <div class="mpc-arrow">→</div>
           <div class="scen">
-            <div class="srow"><span class="u">u₁</span><span class="arr">→</span><span class="mchip core" style="padding:6px 10px">PINN</span><span class="arr">→</span><span class="pred">x̂₁</span></div>
-            <div class="srow"><span class="u">u₂</span><span class="arr">→</span><span class="mchip core" style="padding:6px 10px">PINN</span><span class="arr">→</span><span class="pred">x̂₂</span></div>
-            <div class="srow"><span class="u">u₃</span><span class="arr">→</span><span class="mchip core" style="padding:6px 10px">PINN</span><span class="arr">→</span><span class="pred">x̂₃</span></div>
-            <div class="srow" style="color:var(--ink-faint)"><span class="u" style="color:var(--ink-faint)">u<sub>M</sub></span><span class="arr">→</span><span class="mchip" style="padding:6px 10px">PINN</span><span class="arr">→</span><span>x̂<sub>M</sub></span></div>
+            <div class="srow"><span class="u">u₁</span><span class="arr">→</span><span class="mchip core" style="padding:6px 10px">PINN</span><span class="arr">→</span><span class="pred"><span class="hat">x</span>₁</span></div>
+            <div class="srow"><span class="u">u₂</span><span class="arr">→</span><span class="mchip core" style="padding:6px 10px">PINN</span><span class="arr">→</span><span class="pred"><span class="hat">x</span>₂</span></div>
+            <div class="srow"><span class="u">u₃</span><span class="arr">→</span><span class="mchip core" style="padding:6px 10px">PINN</span><span class="arr">→</span><span class="pred"><span class="hat">x</span>₃</span></div>
+            <div class="srow" style="color:var(--ink-faint)"><span class="u" style="color:var(--ink-faint)">u<sub>M</sub></span><span class="arr">→</span><span class="mchip" style="padding:6px 10px">PINN</span><span class="arr">→</span><span><span class="hat">x</span><sub>M</sub></span></div>
           </div>
           <div class="mpc-arrow">→</div>
           <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
@@ -997,7 +1000,7 @@
         </div>
         <div class="card">
           <span class="ci" data-i18n="pyro.c2.k">Before changing heating power</span>
-          <div class="equation mono" style="font-size:1rem;margin-bottom:14px">u₁→x̂₁, u₂→x̂₂, … , u<sub>M</sub>→x̂<sub>M</sub></div>
+          <div class="equation mono" style="font-size:1rem;margin-bottom:14px">u₁→<span class="hat">x</span>₁, u₂→<span class="hat">x</span>₂, … , u<sub>M</sub>→<span class="hat">x</span><sub>M</sub></div>
           <p data-i18n="pyro.c2.d">Each alternative is scored on production rate, energy consumption, product quality and compliance with process constraints — then the preferred control action is selected, ahead of the deviation.</p>
         </div>
       </div>
@@ -1442,7 +1445,7 @@ Object.assign(window.I18N.de, {
   "tech.heat.cap":"Geltende Physik · Wärmeübertragung",
   "tech.heat.note":"Automatische Differentiation liefert die benötigten Ableitungen direkt aus dem Netz — Gleichungen wie die Energiebilanz werden ins Modell eingebettet, statt umgangen zu werden.",
   "tech.pred.cap":"Vorhersageoperator",
-  "tech.pred.note":"Nach dem Training wirkt das PINN als schnelles Surrogat <b>𝒟</b> — es berechnet den künftigen Zustand für jede Kandidaten-Stelltrajektorie wiederholt und ermöglicht virtuelle Experimente, bevor die Anlage berührt wird.",
+  "tech.pred.note":"Nach dem Training wirkt das PINN als schnelles Surrogat <b><i>D</i></b> — es berechnet den künftigen Zustand für jede Kandidaten-Stelltrajektorie wiederholt und ermöglicht virtuelle Experimente, bevor die Anlage berührt wird.",
   "twin.eyebrow":"Digitaler Zwilling","twin.h2":"Ein lebendes Modell, synchron mit der Anlage.",
   "twin.intro":"Das PINN wird zum Rechenkern eines digitalen Zwillings — einer dynamischen Repräsentation, die über den gesamten Lebenszyklus durch Datenaustausch kontinuierlich mit dem physischen System synchronisiert wird.",
   "twin.c1.k":"Schätzen","twin.c1.t":"Zustandsschätzung","twin.c1.d":"Echtzeit-Schätzung des aktuellen Prozesszustands, einschließlich nicht direkt messbarer Größen.",
@@ -1578,7 +1581,7 @@ Object.assign(window.I18N.lv, {
   "tech.heat.cap":"Fizika · siltuma pārnese",
   "tech.heat.note":"Automātiskā diferencēšana iegūst nepieciešamos atvasinājumus tieši no tīkla — vienādojumi, piemēram, enerģijas bilance, tiek iekļauti modelī, nevis apieti.",
   "tech.pred.cap":"Prognozes operators",
-  "tech.pred.note":"Pēc apmācības PINN darbojas kā ātrs surogāts <b>𝒟</b> — atkārtoti aprēķinot nākotnes stāvokli jebkurai kandidāta vadības trajektorijai un ļaujot veikt virtuālus eksperimentus pirms iejaukšanās iekārtā.",
+  "tech.pred.note":"Pēc apmācības PINN darbojas kā ātrs surogāts <b><i>D</i></b> — atkārtoti aprēķinot nākotnes stāvokli jebkurai kandidāta vadības trajektorijai un ļaujot veikt virtuālus eksperimentus pirms iejaukšanās iekārtā.",
   "twin.eyebrow":"Digitālais dvīnis","twin.h2":"Dzīvs modelis, sinhronizēts ar iekārtu.",
   "twin.intro":"PINN kļūst par digitālā dvīņa skaitļošanas kodolu — dinamisku attēlojumu, kas caur datu apmaiņu tiek nepārtraukti sinhronizēts ar fizisko sistēmu visā tās dzīves ciklā.",
   "twin.c1.k":"Novērtēt","twin.c1.t":"Stāvokļa novērtējums","twin.c1.d":"Reāllaika procesa pašreizējā stāvokļa novērtējums, tostarp lielumi, ko nevar izmērīt tieši.",
@@ -1714,7 +1717,7 @@ Object.assign(window.I18N.ru, {
   "tech.heat.cap":"Физика · теплоперенос",
   "tech.heat.note":"Автоматическое дифференцирование извлекает нужные производные прямо из сети — уравнения, такие как энергетический баланс, встраиваются в модель, а не обходятся.",
   "tech.pred.cap":"Оператор прогноза",
-  "tech.pred.note":"После обучения PINN работает как быстрый суррогат <b>𝒟</b> — многократно вычисляя будущее состояние для любой траектории управления и позволяя проводить виртуальные эксперименты до вмешательства в установку.",
+  "tech.pred.note":"После обучения PINN работает как быстрый суррогат <b><i>D</i></b> — многократно вычисляя будущее состояние для любой траектории управления и позволяя проводить виртуальные эксперименты до вмешательства в установку.",
   "twin.eyebrow":"Цифровой двойник","twin.h2":"Живая модель, синхронная с установкой.",
   "twin.intro":"PINN становится вычислительным ядром цифрового двойника — динамического представления, непрерывно синхронизируемого с физической системой через обмен данными на протяжении всего жизненного цикла.",
   "twin.c1.k":"Оценивать","twin.c1.t":"Оценка состояния","twin.c1.d":"Оценка текущего состояния процесса в реальном времени, включая величины, которые нельзя измерить напрямую.",
