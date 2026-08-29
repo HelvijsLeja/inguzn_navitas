@@ -248,10 +248,10 @@
   .loop .flow{fill:none;stroke:var(--teal);stroke-width:.8;stroke-dasharray:2.4 3.4;stroke-linecap:round;opacity:.85;animation:dash 3.4s linear infinite}
   @keyframes dash{to{stroke-dashoffset:-58}}
   .loop .pulse{fill:var(--teal-bright);filter:drop-shadow(0 0 4px var(--teal-bright))}
-  .node{position:absolute;transform:translate(-50%,-50%);width:104px;text-align:center}
-  .node .dot{width:13px;height:13px;border-radius:50%;background:var(--teal);margin:0 auto 7px;box-shadow:0 0 0 4px var(--teal-wash);position:relative}
+  .node{position:absolute;transform:translate(-50%,-50%)}
+  .node .dot{width:13px;height:13px;border-radius:50%;background:var(--teal);margin:0;box-shadow:0 0 0 4px var(--teal-wash);position:relative}
   .node.hot .dot{background:var(--ember);box-shadow:0 0 0 4px var(--ember-wash)}
-  .node .nl{font-family:"IBM Plex Mono",monospace;font-size:.66rem;line-height:1.25;letter-spacing:.02em;color:var(--ink-soft)}
+  .node .nl{position:absolute;top:calc(100% + 7px);left:50%;transform:translateX(-50%);width:104px;text-align:center;font-family:"IBM Plex Mono",monospace;font-size:.66rem;line-height:1.25;letter-spacing:.02em;color:var(--ink-soft)}
   .node.hot .nl{color:var(--ember)}
   .node .nx{display:block;font-size:.56rem;color:var(--ink-faint);letter-spacing:.12em}
   .loop-core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 50% 40%,var(--surface),var(--surface-2));border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:var(--shadow)}
@@ -461,9 +461,9 @@
   .hw-loop svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
   .hw-ring{fill:none;stroke:var(--line-strong);stroke-width:.5}
   .hw-flow{fill:none;stroke:var(--teal);stroke-width:.7;stroke-dasharray:2 4;stroke-linecap:round;opacity:.5;animation:dash 4s linear infinite}
-  .hw-node{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:7px;width:96px;text-align:center;cursor:pointer;z-index:2}
+  .hw-node{position:absolute;transform:translate(-50%,-50%);cursor:pointer;z-index:2}
   .hw-node .hd{width:15px;height:15px;border-radius:50%;background:var(--surface);border:2px solid var(--line-strong);transition:background .3s,border-color .3s,box-shadow .3s,transform .3s}
-  .hw-node .hl{font-family:"IBM Plex Mono",monospace;font-size:.63rem;line-height:1.2;color:var(--ink-faint);transition:color .3s}
+  .hw-node .hl{position:absolute;top:calc(100% + 7px);left:50%;transform:translateX(-50%);width:96px;text-align:center;font-family:"IBM Plex Mono",monospace;font-size:.63rem;line-height:1.2;color:var(--ink-faint);transition:color .3s}
   .hw-node.active .hd{background:var(--teal);border-color:var(--teal);box-shadow:0 0 0 6px var(--teal-wash),0 0 16px var(--teal-bright);transform:scale(1.25)}
   .hw-node.active .hl{color:var(--teal)}
   .hw-node.hot.active .hd{background:var(--ember);border-color:var(--ember);box-shadow:0 0 0 6px var(--ember-wash),0 0 16px var(--ember-bright)}
@@ -507,12 +507,10 @@
     .foot{gap:28px}
   }
   @media(max-width:520px){
-    .node{width:82px}
-    .node .nl{font-size:.6rem}
+    .node .nl{width:82px;font-size:.6rem}
     .loop-core{width:124px;height:124px}
     .loop-core .eq{font-size:.84rem}
-    .hw-node{width:78px}
-    .hw-node .hl{font-size:.58rem}
+    .hw-node .hl{width:78px;font-size:.58rem}
     .hw-center{width:100px;height:100px;font-size:.52rem}
     .hw-step h3{font-size:1.45rem}
     .m-stats{gap:16px}
@@ -642,8 +640,8 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div class="wrap hero-grid">
-      <div>
+    <div class="wrap">
+      <div style="max-width:60rem">
         <span class="eyebrow" data-i18n="hero.eyebrow">PINN · Digital Twins · Predictive Control</span>
         <h1 data-i18n-html="hero.h1">Physics where data ends. <span class="a">Prediction</span> before the <span class="b">deviation</span>.</h1>
         <p class="lede" data-i18n="hero.lede">We build Physics-Informed Neural Networks that fuse governing physical laws with process data — fast, predictive models of complex industrial systems.</p>
@@ -664,68 +662,8 @@
           <span class="tag">Edge AI</span>
         </div>
       </div>
-
-      <div class="loop" aria-label="Closed predictive control loop with a PINN digital twin at its core">
-        <svg viewBox="0 0 100 100" aria-hidden="true">
-          <polygon class="ring" points="50,10 84.6,30 84.6,70 50,90 15.4,70 15.4,30"/>
-          <path id="loopPath" class="flow" d="M50 10 L84.6 30 L84.6 70 L50 90 L15.4 70 L15.4 30 Z"/>
-          <circle class="pulse" r="1.7">
-            <animateMotion dur="6s" repeatCount="indefinite" rotate="auto">
-              <mpath href="#loopPath"/>
-            </animateMotion>
-          </circle>
-        </svg>
-        <div class="loop-core">
-          <span class="k" data-i18n="loop.core">PINN core</span>
-          <span class="eq"><span class="hat">y</span> = <i>f</i><sub>θ</sub>(x,t,p)</span>
-          <span class="sub" data-i18n="loop.twin">digital twin</span>
-        </div>
-        <div class="node hot" style="left:50%;top:10%"><div class="dot"></div><div class="nl"><span class="nx">01</span><span data-i18n="loop.n1">Physical system</span></div></div>
-        <div class="node hot" style="left:84.6%;top:30%"><div class="dot"></div><div class="nl"><span class="nx">02</span><span data-i18n="loop.n2">Sensors &amp; data</span></div></div>
-        <div class="node" style="left:84.6%;top:70%"><div class="dot"></div><div class="nl"><span class="nx">03</span><span data-i18n="loop.n3">PINN twin</span></div></div>
-        <div class="node" style="left:50%;top:90%"><div class="dot"></div><div class="nl"><span class="nx">04</span><span data-i18n="loop.n4">State prediction</span></div></div>
-        <div class="node" style="left:15.4%;top:70%"><div class="dot"></div><div class="nl"><span class="nx">05</span><span data-i18n="loop.n5">Optimization</span></div></div>
-        <div class="node" style="left:15.4%;top:30%"><div class="dot"></div><div class="nl"><span class="nx">06</span><span data-i18n="loop.n6">Predictive control</span></div></div>
-      </div>
     </div>
   </div>
-
-  <!-- REACTIVE VS PREDICTIVE -->
-  <section id="shift">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow" data-i18n="shift.eyebrow">The shift</span>
-        <h2 data-i18n-html="shift.h2">From reacting to a deviation<br>to predicting the process.</h2>
-        <p class="intro" data-i18n="shift.intro">Traditional control responds to a deviation that has already occurred. Predictive control evaluates the expected future behaviour of the process and acts before an undesirable state is reached.</p>
-      </div>
-      <div class="compare reveal">
-        <div class="chain react">
-          <div class="ch-label"><span>◦</span> <span data-i18n="shift.reactive">Reactive control</span></div>
-          <div class="steps">
-            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.r1">Measurement</span></div>
-            <div class="connector"></div>
-            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.r2">Deviation estimation</span></div>
-            <div class="connector"></div>
-            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.r3">Control action</span></div>
-          </div>
-        </div>
-        <div class="chain pred">
-          <div class="ch-label"><span>●</span> <span data-i18n="shift.predictive">Predictive control</span></div>
-          <div class="steps">
-            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p1">Measurement</span><span class="sc">x(t)</span></div>
-            <div class="connector"></div>
-            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p2">State estimation</span></div>
-            <div class="connector"></div>
-            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p3">Process prediction</span><span class="sc"><span class="hat">x</span>(t+τ)</span></div>
-            <div class="connector"></div>
-            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p4">Optimization</span><span class="sc">min J</span></div>
-            <div class="connector"></div>
-            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p5">Control action</span><span class="sc">u*</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- HOW IT WORKS -->
   <section id="how">
@@ -805,6 +743,43 @@
               <button class="hw-dot" type="button" data-step="5" aria-label="Step 6"></button>
             </div>
             <span class="hw-count" id="hwCount">01 / 06</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REACTIVE VS PREDICTIVE -->
+  <section id="shift">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow" data-i18n="shift.eyebrow">The shift</span>
+        <h2 data-i18n-html="shift.h2">From reacting to a deviation<br>to predicting the process.</h2>
+        <p class="intro" data-i18n="shift.intro">Traditional control responds to a deviation that has already occurred. Predictive control evaluates the expected future behaviour of the process and acts before an undesirable state is reached.</p>
+      </div>
+      <div class="compare reveal">
+        <div class="chain react">
+          <div class="ch-label"><span>◦</span> <span data-i18n="shift.reactive">Reactive control</span></div>
+          <div class="steps">
+            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.r1">Measurement</span></div>
+            <div class="connector"></div>
+            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.r2">Deviation estimation</span></div>
+            <div class="connector"></div>
+            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.r3">Control action</span></div>
+          </div>
+        </div>
+        <div class="chain pred">
+          <div class="ch-label"><span>●</span> <span data-i18n="shift.predictive">Predictive control</span></div>
+          <div class="steps">
+            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p1">Measurement</span><span class="sc">x(t)</span></div>
+            <div class="connector"></div>
+            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p2">State estimation</span></div>
+            <div class="connector"></div>
+            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p3">Process prediction</span><span class="sc"><span class="hat">x</span>(t+τ)</span></div>
+            <div class="connector"></div>
+            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p4">Optimization</span><span class="sc">min J</span></div>
+            <div class="connector"></div>
+            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p5">Control action</span><span class="sc">u*</span></div>
           </div>
         </div>
       </div>
@@ -1428,7 +1403,6 @@ Object.assign(window.I18N.de, {
   "seq.measure":"Messung","seq.state":"Zustandsschätzung","seq.predict":"Vorhersage","seq.optim":"Optimierung","seq.control":"Regelung",
   "hero.cta1":"Technologie entdecken","hero.cta2":"Forschung lesen",
   "tag.twins":"Digitale Zwillinge","tag.state":"Zustandsschätzung","tag.anomaly":"Anomalieerkennung",
-  "loop.core":"PINN-Kern","loop.twin":"digitaler Zwilling",
   "loop.n1":"Physisches System","loop.n2":"Sensoren &amp; Daten","loop.n3":"PINN-Zwilling","loop.n4":"Zustandsvorhersage","loop.n5":"Optimierung","loop.n6":"Prädiktive Regelung",
   "shift.eyebrow":"Der Wandel",
   "shift.h2":"Von der Reaktion auf eine Abweichung<br>zur Vorhersage des Prozesses.",
@@ -1564,7 +1538,6 @@ Object.assign(window.I18N.lv, {
   "seq.measure":"mērījums","seq.state":"stāvokļa novērtējums","seq.predict":"prognoze","seq.optim":"optimizācija","seq.control":"vadība",
   "hero.cta1":"Iepazīt tehnoloģiju","hero.cta2":"Lasīt pētījumu",
   "tag.twins":"Digitālie dvīņi","tag.state":"Stāvokļa novērtējums","tag.anomaly":"Anomāliju atklāšana",
-  "loop.core":"PINN kodols","loop.twin":"digitālais dvīnis",
   "loop.n1":"Fiziskā sistēma","loop.n2":"Sensori un dati","loop.n3":"PINN dvīnis","loop.n4":"Stāvokļa prognoze","loop.n5":"Optimizācija","loop.n6":"Prognozējošā vadība",
   "shift.eyebrow":"Pārmaiņa",
   "shift.h2":"No reaģēšanas uz novirzi<br>uz procesa prognozēšanu.",
@@ -1700,7 +1673,6 @@ Object.assign(window.I18N.ru, {
   "seq.measure":"измерение","seq.state":"оценка состояния","seq.predict":"прогноз","seq.optim":"оптимизация","seq.control":"управление",
   "hero.cta1":"Изучить технологию","hero.cta2":"Читать исследование",
   "tag.twins":"Цифровые двойники","tag.state":"Оценка состояния","tag.anomaly":"Обнаружение аномалий",
-  "loop.core":"Ядро PINN","loop.twin":"цифровой двойник",
   "loop.n1":"Физическая система","loop.n2":"Датчики и данные","loop.n3":"Двойник PINN","loop.n4":"Прогноз состояния","loop.n5":"Оптимизация","loop.n6":"Предиктивное управление",
   "shift.eyebrow":"Переход",
   "shift.h2":"От реакции на отклонение<br>к прогнозированию процесса.",
