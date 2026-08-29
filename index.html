@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>Inguz Navitas — Physics-Informed AI</title>
 <meta name="description" content="Inguz Navitas builds Physics-Informed Neural Networks (PINNs), digital twins and predictive control for complex industrial processes — pyrolysis, gasification, chemical reactors and thermal systems.">
 <meta name="keywords" content="physics-informed neural networks, PINN, digital twin, model predictive control, surrogate model, state estimation, pyrolysis reactor, process optimization, industrial AI, physics-informed machine learning">
@@ -432,6 +433,49 @@
   .faq-a p{padding:0 24px 22px;color:var(--ink-soft);font-size:.98rem;max-width:76ch}
   .faq-a p b{color:var(--ink);font-weight:600}
 
+  /* ---------- HOW IT WORKS ---------- */
+  .hw{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:14px}
+  @media(max-width:860px){.hw{grid-template-columns:1fr;gap:28px}}
+  .hw-loop{position:relative;aspect-ratio:1;width:100%;max-width:440px;margin-inline:auto}
+  .hw-loop svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+  .hw-ring{fill:none;stroke:var(--line-strong);stroke-width:.5}
+  .hw-flow{fill:none;stroke:var(--teal);stroke-width:.7;stroke-dasharray:2 4;stroke-linecap:round;opacity:.5;animation:dash 4s linear infinite}
+  .hw-node{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:7px;width:96px;text-align:center;cursor:pointer;z-index:2}
+  .hw-node .hd{width:15px;height:15px;border-radius:50%;background:var(--surface);border:2px solid var(--line-strong);transition:background .3s,border-color .3s,box-shadow .3s,transform .3s}
+  .hw-node .hl{font-family:"IBM Plex Mono",monospace;font-size:.63rem;line-height:1.2;color:var(--ink-faint);transition:color .3s}
+  .hw-node.active .hd{background:var(--teal);border-color:var(--teal);box-shadow:0 0 0 6px var(--teal-wash),0 0 16px var(--teal-bright);transform:scale(1.25)}
+  .hw-node.active .hl{color:var(--teal)}
+  .hw-node.hot.active .hd{background:var(--ember);border-color:var(--ember);box-shadow:0 0 0 6px var(--ember-wash),0 0 16px var(--ember-bright)}
+  .hw-node.hot.active .hl{color:var(--ember)}
+  .hw-pulse{position:absolute;width:13px;height:13px;border-radius:50%;background:var(--teal-bright);box-shadow:0 0 12px var(--teal-bright);transform:translate(-50%,-50%);transition:left 1s cubic-bezier(.4,0,.2,1),top 1s cubic-bezier(.4,0,.2,1),background .3s,box-shadow .3s;z-index:3;pointer-events:none}
+  .hw-pulse.hot{background:var(--ember-bright);box-shadow:0 0 12px var(--ember-bright)}
+  .hw-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:118px;height:118px;border-radius:50%;border:1px dashed var(--line-strong);display:flex;align-items:center;justify-content:center;text-align:center;font-family:"IBM Plex Mono",monospace;font-size:.58rem;color:var(--ink-faint);letter-spacing:.12em;text-transform:uppercase;padding:0 14px}
+  .hw-panel{min-height:230px;display:flex;flex-direction:column}
+  .hw-steps{position:relative;flex:1}
+  .hw-step{display:none}
+  .hw-step.active{display:block}
+  .hw-step.anim{animation:hwFade .45s cubic-bezier(.2,.7,.2,1)}
+  @keyframes hwFade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .hw-step .hnum{font-family:"IBM Plex Mono",monospace;font-size:.78rem;letter-spacing:.14em;color:var(--teal)}
+  .hw-step.hot .hnum{color:var(--ember)}
+  .hw-step h3{font-size:1.7rem;margin:10px 0 12px;font-family:"Saira SemiCondensed";font-weight:600}
+  .hw-step p{color:var(--ink-soft);font-size:1.02rem;max-width:42ch}
+  .hw-step .hdet{margin-top:16px;font-family:"IBM Plex Mono",monospace;font-size:.86rem;color:var(--ink);padding:9px 14px;border:1px solid var(--line);border-radius:9px;background:var(--surface-2);display:inline-block}
+  .hw-step.hot .hdet{color:var(--ember)}
+  .hw-controls{display:flex;align-items:center;gap:16px;margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
+  .hw-play{width:40px;height:40px;border-radius:50%;border:1px solid var(--line-strong);background:var(--surface);color:var(--teal);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;flex:none;transition:.16s}
+  .hw-play:hover{border-color:var(--teal);background:var(--teal-wash)}
+  .hw-dots{display:flex;gap:9px}
+  .hw-dot{width:9px;height:9px;border-radius:50%;background:var(--line-strong);border:none;cursor:pointer;padding:0;transition:transform .2s,background .2s}
+  .hw-dot:hover{background:var(--ink-faint)}
+  .hw-dot.active{background:var(--teal);transform:scale(1.35)}
+  .hw-count{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:.78rem;color:var(--ink-faint);font-variant-numeric:tabular-nums}
+  @media (prefers-reduced-motion:reduce){
+    .hw-flow{animation:none}
+    .hw-pulse{transition:none}
+    .hw-step.anim{animation:none}
+  }
+
   /* ---------- TEAM ---------- */
   .team-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:18px;align-items:stretch}
   @media(max-width:820px){.team-grid{grid-template-columns:1fr}}
@@ -523,6 +567,7 @@
       <span>INGUZ NAVITAS<small data-i18n="brand.tag">Physics-Informed AI</small></span>
     </a>
     <nav class="nav-links">
+      <a href="#how" data-i18n="nav.how">How it works</a>
       <a href="#technology" data-i18n="nav.technology">Technology</a>
       <a href="#twin" data-i18n="nav.twin">Digital Twin</a>
       <a href="#applications" data-i18n="nav.applications">Applications</a>
@@ -632,6 +677,90 @@
             <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p4">Optimization</span><span class="sc">min J</span></div>
             <div class="connector"></div>
             <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p5">Control action</span><span class="sc">u*</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow" data-i18n="how.eyebrow">How it works</span>
+        <h2 data-i18n="how.h2">One closed loop, six steps.</h2>
+        <p class="intro" data-i18n="how.intro">Watch a measurement travel the predictive control loop — from the physical plant, through the PINN digital twin, to the action applied back on the process.</p>
+      </div>
+
+      <div class="hw reveal">
+        <div class="hw-loop" aria-hidden="true">
+          <svg viewBox="0 0 100 100">
+            <polygon class="hw-ring" points="50,8 86,29 86,71 50,92 14,71 14,29"/>
+            <path class="hw-flow" d="M50 8 L86 29 L86 71 L50 92 L14 71 L14 29 Z"/>
+          </svg>
+          <div class="hw-center" data-i18n="how.center">Closed predictive loop</div>
+          <div class="hw-pulse" id="hwPulse"></div>
+          <div class="hw-node hot" data-step="0" style="left:50%;top:8%"><div class="hd"></div><div class="hl" data-i18n="loop.n1">Physical system</div></div>
+          <div class="hw-node hot" data-step="1" style="left:86%;top:29%"><div class="hd"></div><div class="hl" data-i18n="loop.n2">Sensors &amp; data</div></div>
+          <div class="hw-node" data-step="2" style="left:86%;top:71%"><div class="hd"></div><div class="hl" data-i18n="loop.n3">PINN twin</div></div>
+          <div class="hw-node" data-step="3" style="left:50%;top:92%"><div class="hd"></div><div class="hl" data-i18n="loop.n4">State prediction</div></div>
+          <div class="hw-node" data-step="4" style="left:14%;top:71%"><div class="hd"></div><div class="hl" data-i18n="loop.n5">Optimization</div></div>
+          <div class="hw-node" data-step="5" style="left:14%;top:29%"><div class="hd"></div><div class="hl" data-i18n="loop.n6">Predictive control</div></div>
+        </div>
+
+        <div class="hw-panel">
+          <div class="hw-steps" id="hwSteps">
+            <div class="hw-step hot active" data-step="0">
+              <div class="hnum">01 / 06</div>
+              <h3 data-i18n="loop.n1">Physical system</h3>
+              <p data-i18n="how.d1">The real plant runs — temperatures, pressures and flows evolve continuously in real time.</p>
+              <div class="hdet mono">T · P · ṁ · Y · X · Q</div>
+            </div>
+            <div class="hw-step hot" data-step="1">
+              <div class="hnum">02 / 06</div>
+              <h3 data-i18n="loop.n2">Sensors &amp; data</h3>
+              <p data-i18n="how.d2">Sensors sample the process; the raw data is acquired, cleaned and normalized.</p>
+              <div class="hdet mono">→ data → x(t)</div>
+            </div>
+            <div class="hw-step" data-step="2">
+              <div class="hnum">03 / 06</div>
+              <h3 data-i18n="loop.n3">PINN digital twin</h3>
+              <p data-i18n="how.d3">The physics-informed twin estimates the full state — including variables the sensors can't measure.</p>
+              <div class="hdet mono">ŷ = f<sub>θ</sub>(x, t, p)</div>
+            </div>
+            <div class="hw-step" data-step="3">
+              <div class="hnum">04 / 06</div>
+              <h3 data-i18n="loop.n4">State prediction</h3>
+              <p data-i18n="how.d4">The twin projects the process forward in time for each candidate control action.</p>
+              <div class="hdet mono">x̂(t + τ)</div>
+            </div>
+            <div class="hw-step" data-step="4">
+              <div class="hnum">05 / 06</div>
+              <h3 data-i18n="loop.n5">Optimization</h3>
+              <p data-i18n="how.d5">Each scenario is scored against the objective; the best action is selected.</p>
+              <div class="hdet mono">u* = arg min J(u)</div>
+            </div>
+            <div class="hw-step" data-step="5">
+              <div class="hnum">06 / 06</div>
+              <h3 data-i18n="loop.n6">Predictive control</h3>
+              <p data-i18n="how.d6">The chosen action is applied — before a deviation occurs. Then the loop repeats.</p>
+              <div class="hdet mono">apply u* → process ↻</div>
+            </div>
+          </div>
+          <div class="hw-controls">
+            <button class="hw-play" id="hwPlay" type="button" aria-label="Play or pause">
+              <svg id="hwPlayIcon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M8 5v14l11-7z"/></svg>
+              <svg id="hwPauseIcon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+            </button>
+            <div class="hw-dots" id="hwDots">
+              <button class="hw-dot active" type="button" data-step="0" aria-label="Step 1"></button>
+              <button class="hw-dot" type="button" data-step="1" aria-label="Step 2"></button>
+              <button class="hw-dot" type="button" data-step="2" aria-label="Step 3"></button>
+              <button class="hw-dot" type="button" data-step="3" aria-label="Step 4"></button>
+              <button class="hw-dot" type="button" data-step="4" aria-label="Step 5"></button>
+              <button class="hw-dot" type="button" data-step="5" aria-label="Step 6"></button>
+            </div>
+            <span class="hw-count" id="hwCount">01 / 06</span>
           </div>
         </div>
       </div>
@@ -1246,7 +1375,14 @@ window.I18N = {
 };
 Object.assign(window.I18N.de, {
   "brand.tag":"Physik-informierte KI",
-  "nav.technology":"Technologie","nav.twin":"Digitaler Zwilling","nav.applications":"Anwendungen","nav.approach":"Vorgehen","nav.faq":"FAQ","nav.team":"Team","nav.cta":"Prozess besprechen",
+  "nav.how":"Funktionsweise","nav.technology":"Technologie","nav.twin":"Digitaler Zwilling","nav.applications":"Anwendungen","nav.approach":"Vorgehen","nav.faq":"FAQ","nav.team":"Team","nav.cta":"Prozess besprechen",
+  "how.eyebrow":"Funktionsweise","how.h2":"Ein geschlossener Kreis, sechs Schritte.","how.intro":"Verfolgen Sie, wie eine Messung den prädiktiven Regelkreis durchläuft — von der physischen Anlage über den PINN-Zwilling bis zur Aktion, die auf den Prozess zurückwirkt.","how.center":"Geschlossener prädiktiver Kreis",
+  "how.d1":"Die reale Anlage läuft — Temperaturen, Drücke und Durchflüsse entwickeln sich kontinuierlich in Echtzeit.",
+  "how.d2":"Sensoren tasten den Prozess ab; die Rohdaten werden erfasst, bereinigt und normalisiert.",
+  "how.d3":"Der physik-informierte Zwilling schätzt den vollständigen Zustand — auch Größen, die Sensoren nicht messen können.",
+  "how.d4":"Der Zwilling projiziert den Prozess zeitlich voraus — für jede Kandidaten-Stellaktion.",
+  "how.d5":"Jedes Szenario wird gegen das Ziel bewertet; die beste Aktion wird ausgewählt.",
+  "how.d6":"Die gewählte Aktion wird angewendet — bevor eine Abweichung eintritt. Dann wiederholt sich der Kreis.",
   "hero.eyebrow":"PINN · Digitale Zwillinge · Prädiktive Regelung",
   "hero.h1":"Physik, wo Daten enden. <span class=\"a\">Vorhersage</span> vor der <span class=\"b\">Abweichung</span>.",
   "hero.lede":"Wir entwickeln physik-informierte neuronale Netze, die physikalische Gesetze mit Prozessdaten verbinden — schnelle, prädiktive Modelle komplexer industrieller Systeme.",
@@ -1376,7 +1512,14 @@ Object.assign(window.I18N.de, {
 });
 Object.assign(window.I18N.lv, {
   "brand.tag":"Fizikā balstīts MI",
-  "nav.technology":"Tehnoloģija","nav.twin":"Digitālais dvīnis","nav.applications":"Pielietojumi","nav.approach":"Pieeja","nav.faq":"BUJ","nav.team":"Komanda","nav.cta":"Pārrunāt procesu",
+  "nav.how":"Kā tas darbojas","nav.technology":"Tehnoloģija","nav.twin":"Digitālais dvīnis","nav.applications":"Pielietojumi","nav.approach":"Pieeja","nav.faq":"BUJ","nav.team":"Komanda","nav.cta":"Pārrunāt procesu",
+  "how.eyebrow":"Kā tas darbojas","how.h2":"Viena slēgta cilpa, seši soļi.","how.intro":"Vēro, kā mērījums ceļo pa prognozējošās vadības cilpu — no fiziskās iekārtas, caur PINN dvīni, līdz darbībai, kas tiek pielietota atpakaļ procesā.","how.center":"Slēgta prognozējošā cilpa",
+  "how.d1":"Reālā iekārta darbojas — temperatūras, spiedieni un plūsmas nepārtraukti mainās reāllaikā.",
+  "how.d2":"Sensori nolasa procesu; neapstrādātie dati tiek iegūti, attīrīti un normalizēti.",
+  "how.d3":"Fizikā balstītais dvīnis novērtē pilnu stāvokli — arī lielumus, ko sensori nevar izmērīt.",
+  "how.d4":"Dvīnis prognozē procesu laikā uz priekšu — katrai kandidāta vadības darbībai.",
+  "how.d5":"Katrs scenārijs tiek vērtēts pret mērķi; tiek izvēlēta labākā darbība.",
+  "how.d6":"Izvēlētā darbība tiek pielietota — pirms rodas novirze. Tad cilpa atkārtojas.",
   "hero.eyebrow":"PINN · Digitālie dvīņi · Prognozējošā vadība",
   "hero.h1":"Fizika, kur beidzas dati. <span class=\"a\">Prognoze</span> pirms <span class=\"b\">novirzes</span>.",
   "hero.lede":"Mēs veidojam fizikā balstītus neironu tīklus, kas apvieno fizikas likumus ar procesa datiem — ātrus, prognozējošus sarežģītu rūpniecisku sistēmu modeļus.",
@@ -1506,7 +1649,14 @@ Object.assign(window.I18N.lv, {
 });
 Object.assign(window.I18N.ru, {
   "brand.tag":"Физически-информированный ИИ",
-  "nav.technology":"Технология","nav.twin":"Цифровой двойник","nav.applications":"Применения","nav.approach":"Подход","nav.faq":"Вопросы","nav.team":"Команда","nav.cta":"Обсудить процесс",
+  "nav.how":"Как это работает","nav.technology":"Технология","nav.twin":"Цифровой двойник","nav.applications":"Применения","nav.approach":"Подход","nav.faq":"Вопросы","nav.team":"Команда","nav.cta":"Обсудить процесс",
+  "how.eyebrow":"Как это работает","how.h2":"Один замкнутый контур, шесть шагов.","how.intro":"Проследите, как измерение проходит контур предиктивного управления — от физической установки через двойник PINN к действию, применяемому обратно к процессу.","how.center":"Замкнутый предиктивный контур",
+  "how.d1":"Реальная установка работает — температуры, давления и расходы непрерывно меняются в реальном времени.",
+  "how.d2":"Датчики опрашивают процесс; сырые данные собираются, очищаются и нормализуются.",
+  "how.d3":"Физически-информированный двойник оценивает полное состояние — в том числе величины, которые датчики не могут измерить.",
+  "how.d4":"Двойник прогнозирует процесс во времени — для каждого варианта управляющего действия.",
+  "how.d5":"Каждый сценарий оценивается по цели; выбирается лучшее действие.",
+  "how.d6":"Выбранное действие применяется — до возникновения отклонения. Затем контур повторяется.",
   "hero.eyebrow":"PINN · Цифровые двойники · Предиктивное управление",
   "hero.h1":"Физика там, где кончаются данные. <span class=\"a\">Прогноз</span> прежде <span class=\"b\">отклонения</span>.",
   "hero.lede":"Мы создаём физически-информированные нейронные сети, объединяющие законы физики с данными процесса — быстрые предиктивные модели сложных промышленных систем.",
@@ -1747,6 +1897,67 @@ Object.assign(window.I18N.ru, {
         a.style.maxHeight=open?(a.scrollHeight+'px'):null;
       });
     });
+
+    /* ---------- HOW IT WORKS ANIMATION ---------- */
+    (function(){
+      var stepsWrap=document.getElementById('hwSteps');
+      if(!stepsWrap) return;
+      var POS=[[50,8],[86,29],[86,71],[50,92],[14,71],[14,29]];
+      var HOT=[true,true,false,false,false,false];
+      var steps=[].slice.call(document.querySelectorAll('.hw-step'));
+      var nodes=[].slice.call(document.querySelectorAll('.hw-node'));
+      var dots=[].slice.call(document.querySelectorAll('.hw-dot'));
+      var pulse=document.getElementById('hwPulse');
+      var count=document.getElementById('hwCount');
+      var playBtn=document.getElementById('hwPlay');
+      var playIcon=document.getElementById('hwPlayIcon');
+      var pauseIcon=document.getElementById('hwPauseIcon');
+      var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+      var cur=0, timer=null, playing=false;
+      function pad(n){return (n<10?'0':'')+n;}
+      function setStep(i){
+        cur=i;
+        steps.forEach(function(s,k){s.classList.toggle('active',k===i);});
+        var act=steps[i];
+        act.classList.remove('anim'); void act.offsetWidth; act.classList.add('anim');
+        nodes.forEach(function(n,k){n.classList.toggle('active',k===i);});
+        dots.forEach(function(d,k){d.classList.toggle('active',k===i);});
+        pulse.style.left=POS[i][0]+'%';
+        pulse.style.top=POS[i][1]+'%';
+        pulse.classList.toggle('hot',!!HOT[i]);
+        if(count) count.textContent=pad(i+1)+' / 06';
+      }
+      function next(){setStep((cur+1)%steps.length);}
+      function play(){
+        if(reduce) return;
+        playing=true;
+        if(playIcon) playIcon.style.display='none';
+        if(pauseIcon) pauseIcon.style.display='';
+        clearInterval(timer); timer=setInterval(next,2800);
+      }
+      function pause(){
+        playing=false;
+        if(playIcon) playIcon.style.display='';
+        if(pauseIcon) pauseIcon.style.display='none';
+        clearInterval(timer);
+      }
+      if(playBtn) playBtn.addEventListener('click',function(){playing?pause():play();});
+      function jump(i){setStep(i); if(playing) play();}
+      dots.forEach(function(d){d.addEventListener('click',function(){jump(+d.getAttribute('data-step'));});});
+      nodes.forEach(function(n){n.addEventListener('click',function(){jump(+n.getAttribute('data-step'));});});
+      // init
+      pulse.style.transition='none';
+      setStep(0);
+      void pulse.offsetWidth; pulse.style.transition='';
+      if(reduce){pause();}else{
+        // start when scrolled into view
+        if('IntersectionObserver' in window){
+          var seen=false;
+          var vo=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!seen){seen=true;play();vo.disconnect();}});},{threshold:.35});
+          vo.observe(stepsWrap);
+        }else{play();}
+      }
+    })();
 
     /* ---------- I18N ---------- */
     var LANGS={en:1,de:1,lv:1,ru:1};
