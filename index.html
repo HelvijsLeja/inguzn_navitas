@@ -1,4 +1,5 @@
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Inguz Navitas — Physics-Informed AI</title>
 <meta name="description" content="Inguz Navitas builds Physics-Informed Neural Networks (PINNs), digital twins and predictive control for complex industrial processes — pyrolysis, gasification, chemical reactors and thermal systems.">
 <meta name="keywords" content="physics-informed neural networks, PINN, digital twin, model predictive control, surrogate model, state estimation, pyrolysis reactor, process optimization, industrial AI, physics-informed machine learning">
@@ -55,7 +56,7 @@
       "@type": "Person",
       "@id": "https://inguznavitas.com/#helvijs",
       "name": "Helvijs Leja",
-      "jobTitle": "CEO & Founder",
+      "jobTitle": "Founder & CEO",
       "email": "hello@inguznavitas.com",
       "telephone": "+37129185303",
       "worksFor": {"@id": "https://inguznavitas.com/#org"},
@@ -188,7 +189,7 @@
     background:color-mix(in srgb,var(--bg) 82%,transparent);
     border-bottom:1px solid var(--line);
   }
-  .nav-in{max-width:var(--maxw);margin:0 auto;padding:14px 28px;display:flex;align-items:center;gap:24px}
+  .nav-in{max-width:var(--maxw);margin:0 auto;padding:14px 28px;display:flex;align-items:center;gap:24px;position:relative}
   @media(max-width:640px){.nav-in{padding:12px 20px}}
   .brand{display:flex;align-items:center;gap:11px;font-family:"Saira SemiCondensed",sans-serif;font-weight:700;font-size:1.16rem;letter-spacing:.01em;white-space:nowrap}
   .brand .glyph{width:26px;height:26px;flex:none}
@@ -196,9 +197,26 @@
   .nav-links{margin-left:auto;display:flex;gap:26px;align-items:center}
   .nav-links a{font-size:.85rem;text-decoration:none;color:var(--ink-soft);font-weight:500;transition:color .18s}
   .nav-links a:hover{color:var(--teal)}
-  @media(max-width:860px){.nav-links{display:none}}
   .nav-cta{font-family:"IBM Plex Mono",monospace;font-size:.76rem;letter-spacing:.04em;padding:8px 15px;border:1px solid var(--line-strong);border-radius:8px;text-decoration:none;color:var(--ink);transition:.18s;white-space:nowrap}
   .nav-cta:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-wash)}
+  .nav-burger{display:none;background:none;border:1px solid var(--line-strong);border-radius:8px;width:34px;height:34px;cursor:pointer;color:var(--ink-soft);align-items:center;justify-content:center;flex:none}
+  .nav-burger:hover{border-color:var(--teal);color:var(--teal)}
+  .nav-burger .bl{display:block;width:16px;height:2px;background:currentColor;border-radius:2px;position:relative;transition:background .2s}
+  .nav-burger .bl::before,.nav-burger .bl::after{content:"";position:absolute;left:0;width:16px;height:2px;background:currentColor;border-radius:2px;transition:transform .2s,top .2s}
+  .nav-burger .bl::before{top:-5px}
+  .nav-burger .bl::after{top:5px}
+  .nav-burger.open .bl{background:transparent}
+  .nav-burger.open .bl::before{top:0;transform:rotate(45deg)}
+  .nav-burger.open .bl::after{top:0;transform:rotate(-45deg)}
+  @media(max-width:860px){
+    .nav-burger{display:inline-flex;margin-left:auto}
+    .nav-links{display:flex;position:absolute;top:calc(100% + 1px);left:0;right:0;margin:0;flex-direction:column;gap:0;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:var(--shadow-lift);padding:8px 14px 14px;opacity:0;transform:translateY(-10px);pointer-events:none;transition:opacity .2s,transform .2s}
+    .nav-links.open{opacity:1;transform:none;pointer-events:auto}
+    .nav-links a{padding:13px 10px;border-radius:8px;font-size:1rem;border-bottom:1px solid var(--line)}
+    .nav-links a:last-child{border-bottom:none}
+    .nav-links a:hover{background:var(--surface-2)}
+    .nav-cta{display:none}
+  }
 
   /* ---------- HERO ---------- */
   .hero{position:relative;padding:74px 0 30px;overflow:hidden}
@@ -476,6 +494,28 @@
     .hw-step.anim{animation:none}
   }
 
+  /* ---------- SMALL-SCREEN REFINEMENTS ---------- */
+  @media(max-width:600px){
+    section{padding:48px 0}
+    .hero{padding:48px 0 24px}
+    .cta{padding:40px 22px}
+    .pub-body{padding:24px}
+    .member{padding:24px}
+    .foot{gap:28px}
+  }
+  @media(max-width:520px){
+    .node{width:82px}
+    .node .nl{font-size:.6rem}
+    .loop-core{width:124px;height:124px}
+    .loop-core .eq{font-size:.84rem}
+    .hw-node{width:78px}
+    .hw-node .hl{font-size:.58rem}
+    .hw-center{width:100px;height:100px;font-size:.52rem}
+    .hw-step h3{font-size:1.45rem}
+    .m-stats{gap:16px}
+    .hw-panel{min-height:0}
+  }
+
   /* ---------- TEAM ---------- */
   .team-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:18px;align-items:stretch}
   @media(max-width:820px){.team-grid{grid-template-columns:1fr}}
@@ -566,7 +606,7 @@
       </svg>
       <span>INGUZ NAVITAS<small data-i18n="brand.tag">Physics-Informed AI</small></span>
     </a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="navLinks">
       <a href="#how" data-i18n="nav.how">How it works</a>
       <a href="#technology" data-i18n="nav.technology">Technology</a>
       <a href="#twin" data-i18n="nav.twin">Digital Twin</a>
@@ -576,6 +616,7 @@
       <a href="#team" data-i18n="nav.team">Team</a>
     </nav>
     <a href="#contact" class="nav-cta" data-i18n="nav.cta">Discuss your process</a>
+    <button class="nav-burger" id="navBurger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span class="bl"></span></button>
     <div class="lang">
       <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Select language">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M3 12h18M12 2.5c2.5 2.5 3.8 6 3.8 9.5S14.5 19 12 21.5C9.5 19 8.2 15.5 8.2 12S9.5 5 12 2.5z"/></svg>
@@ -1158,13 +1199,13 @@
         </div>
       </div>
 
-      <div class="team-grid reveal" style="margin-top:18px">
+      <div class="team-grid reveal" style="margin-top:18px;grid-template-columns:1fr">
         <div class="member">
           <div class="m-top">
             <div class="avatar" style="color:var(--ember)">HL</div>
             <div>
               <div class="m-name">Helvijs Leja</div>
-              <div class="m-role" data-i18n="team.h.role">CEO &amp; Founder</div>
+              <div class="m-role" data-i18n="team.h.role">Founder &amp; CEO</div>
               <div class="m-loc">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 Latvia · Inguz Navitas SIA
@@ -1192,11 +1233,6 @@
               +371 29185303
             </a>
           </div>
-        </div>
-        <div class="member join">
-          <div class="plus">+</div>
-          <h3 data-i18n="team.join.t">Building the team</h3>
-          <p data-i18n="team.join.d">We're expanding across ML engineering, process modelling and industrial integration. Team profiles are being added — the next members will appear here soon.</p>
         </div>
       </div>
     </div>
@@ -1488,8 +1524,7 @@ Object.assign(window.I18N.de, {
   "team.cr2":"<b>Kandidat der technischen Wissenschaften (PhD)</b>100-kW-Mikroturbinengenerator — Berechnungs- und Versuchsmethoden.",
   "team.cr3":"<b>Elektronikingenieur — LETI, Leningrad</b>Diplom mit Auszeichnung (Note 5,0 / 5,0).",
   "team.cr4":"<b>Professor für maritime Energietechnik</b>Staatl. Marinetechnische Universität St. Petersburg · CFD, Fluid- &amp; Gasmechanik.",
-  "team.join.t":"Wir bauen das Team auf","team.join.d":"Wir wachsen in ML-Engineering, Prozessmodellierung und industrieller Integration. Weitere Teamprofile folgen hier in Kürze.",
-  "team.h.role":"CEO &amp; Gründer","team.h.bio":"Ein erfahrener CEO und Gründer, der investierbare Projekte in Immobilien, Energie und Produktentwicklung aufbaut und umsetzt. Bei Inguz Navitas verantwortet er Strategie, Partnerschaften und Kommerzialisierung. Mehr in seinem LinkedIn-Profil.","team.h.li":"LinkedIn-Profil","team.h.ch1":"Immobilien","team.h.ch2":"Energie","team.h.ch3":"Produktentwicklung","team.h.ch4":"Investierbare Projekte",
+  "team.h.role":"Gründer &amp; CEO","team.h.bio":"Ein erfahrener CEO und Gründer, der investierbare Projekte in Immobilien, Energie und Produktentwicklung aufbaut und umsetzt. Bei Inguz Navitas verantwortet er Strategie, Partnerschaften und Kommerzialisierung. Mehr in seinem LinkedIn-Profil.","team.h.li":"LinkedIn-Profil","team.h.ch1":"Immobilien","team.h.ch2":"Energie","team.h.ch3":"Produktentwicklung","team.h.ch4":"Investierbare Projekte",
   "ct.eyebrow":"Kontakt","ct.h2":"Bauen wir ein intelligentes Modell Ihres Prozesses.",
   "ct.p":"Haben Sie einen komplexen industriellen Prozess, der schwer zu modellieren, vorherzusagen oder zu optimieren ist? Wir entwickeln daraus ein physik-informiertes intelligentes System aus Ihren Prozessdaten und Ihrem Ingenieurwissen.",
   "ct.s1":"Prozessmodellierung","ct.s2":"Digitaler-Zwilling-Entwicklung","ct.s3":"PINN-Entwicklung",
@@ -1625,8 +1660,7 @@ Object.assign(window.I18N.lv, {
   "team.cr2":"<b>Tehnisko zinātņu kandidāts (PhD)</b>100 kW mikroturbīnu ģenerators — aprēķinu un eksperimentālās metodes.",
   "team.cr3":"<b>Elektronikas inženieris — LETI, Ļeņingrada</b>Diploms ar izcilību (vērtējums 5,0 / 5,0).",
   "team.cr4":"<b>Jūras enerģētikas profesors</b>Sanktpēterburgas Valsts jūras tehniskā universitāte · CFD, šķidrumu un gāzu mehānika.",
-  "team.join.t":"Veidojam komandu","team.join.d":"Mēs paplašināmies ML inženierijā, procesu modelēšanā un rūpnieciskajā integrācijā. Komandas profili tiek pievienoti — nākamie dalībnieki drīzumā parādīsies šeit.",
-  "team.h.role":"CEO un dibinātājs","team.h.bio":"Pieredzējis CEO un dibinātājs, kas veido un realizē investīcijām gatavus projektus nekustamajā īpašumā, enerģētikā un produktu izstrādē. Inguz Navitas viņš vada stratēģiju, partnerības un komercializāciju. Vairāk viņa LinkedIn profilā.","team.h.li":"LinkedIn profils","team.h.ch1":"Nekustamais īpašums","team.h.ch2":"Enerģētika","team.h.ch3":"Produktu izstrāde","team.h.ch4":"Investīciju projekti",
+  "team.h.role":"Dibinātājs un CEO","team.h.bio":"Pieredzējis CEO un dibinātājs, kas veido un realizē investīcijām gatavus projektus nekustamajā īpašumā, enerģētikā un produktu izstrādē. Inguz Navitas viņš vada stratēģiju, partnerības un komercializāciju. Vairāk viņa LinkedIn profilā.","team.h.li":"LinkedIn profils","team.h.ch1":"Nekustamais īpašums","team.h.ch2":"Enerģētika","team.h.ch3":"Produktu izstrāde","team.h.ch4":"Investīciju projekti",
   "ct.eyebrow":"Kontakti","ct.h2":"Izveidosim jūsu procesa inteliģentu modeli.",
   "ct.p":"Vai jums ir sarežģīts rūpniecisks process, ko grūti modelēt, prognozēt vai optimizēt? Mēs varam izstrādāt fizikā balstītu inteliģentu sistēmu no jūsu procesa datiem un inženierzināšanām.",
   "ct.s1":"Procesa modelēšana","ct.s2":"Digitālā dvīņa izstrāde","ct.s3":"PINN izstrāde",
@@ -1762,8 +1796,7 @@ Object.assign(window.I18N.ru, {
   "team.cr2":"<b>Кандидат технических наук (PhD)</b>Микротурбинный генератор 100 кВт — расчётные и экспериментальные методы.",
   "team.cr3":"<b>Инженер-электроник — ЛЭТИ, Ленинград</b>Диплом с отличием (средний балл 5,0 / 5,0).",
   "team.cr4":"<b>Профессор морской энергетики</b>СПбГМТУ · CFD, механика жидкости и газа.",
-  "team.join.t":"Собираем команду","team.join.d":"Мы расширяемся в ML-инженерии, моделировании процессов и промышленной интеграции. Профили команды добавляются — следующие участники скоро появятся здесь.",
-  "team.h.role":"CEO и основатель","team.h.bio":"Опытный CEO и основатель, который создаёт и реализует инвестиционно привлекательные проекты в недвижимости, энергетике и разработке продуктов. В Inguz Navitas отвечает за стратегию, партнёрства и коммерциализацию. Подробнее — в его профиле LinkedIn.","team.h.li":"Профиль LinkedIn","team.h.ch1":"Недвижимость","team.h.ch2":"Энергетика","team.h.ch3":"Разработка продуктов","team.h.ch4":"Инвестпроекты",
+  "team.h.role":"Основатель и CEO","team.h.bio":"Опытный CEO и основатель, который создаёт и реализует инвестиционно привлекательные проекты в недвижимости, энергетике и разработке продуктов. В Inguz Navitas отвечает за стратегию, партнёрства и коммерциализацию. Подробнее — в его профиле LinkedIn.","team.h.li":"Профиль LinkedIn","team.h.ch1":"Недвижимость","team.h.ch2":"Энергетика","team.h.ch3":"Разработка продуктов","team.h.ch4":"Инвестпроекты",
   "ct.eyebrow":"Контакты","ct.h2":"Построим интеллектуальную модель вашего процесса.",
   "ct.p":"У вас есть сложный промышленный процесс, который трудно моделировать, прогнозировать или оптимизировать? Мы поможем создать физически-информированную интеллектуальную систему из ваших данных процесса и инженерных знаний.",
   "ct.s1":"Моделирование процесса","ct.s2":"Разработка цифрового двойника","ct.s3":"Разработка PINN",
@@ -1801,6 +1834,23 @@ Object.assign(window.I18N.ru, {
       root.setAttribute('data-theme',next);
       try{localStorage.setItem('in-theme',next);}catch(e){}
     });
+
+    // mobile nav (hamburger)
+    var burger=document.getElementById('navBurger');
+    var navLinks=document.getElementById('navLinks');
+    if(burger&&navLinks){
+      var closeNav=function(){navLinks.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');};
+      burger.addEventListener('click',function(e){
+        e.stopPropagation();
+        var open=navLinks.classList.toggle('open');
+        burger.classList.toggle('open',open);
+        burger.setAttribute('aria-expanded',open?'true':'false');
+      });
+      navLinks.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeNav);});
+      document.addEventListener('click',function(e){
+        if(!navLinks.contains(e.target)&&!burger.contains(e.target)) closeNav();
+      });
+    }
 
     // reveal on scroll
     var els=document.querySelectorAll('.reveal');
