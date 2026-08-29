@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://inguznavitas.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://inguznavitas.com/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://inguznavitas.com/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://inguznavitas.com/?lang=lv"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://inguznavitas.com/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://inguznavitas.com/"/>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

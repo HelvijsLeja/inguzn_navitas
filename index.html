@@ -1,7 +1,76 @@
-<title>Inguz Navitas</title>
+<title>Inguz Navitas — Physics-Informed AI</title>
+<meta name="description" content="Inguz Navitas builds Physics-Informed Neural Networks (PINNs), digital twins and predictive control for complex industrial processes — pyrolysis, gasification, chemical reactors and thermal systems.">
+<meta name="keywords" content="physics-informed neural networks, PINN, digital twin, model predictive control, surrogate model, state estimation, pyrolysis reactor, process optimization, industrial AI, physics-informed machine learning">
+<meta name="author" content="Inguz Navitas SIA">
+<link rel="canonical" href="https://inguznavitas.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Inguz Navitas">
+<meta property="og:title" content="Inguz Navitas — Physics-Informed AI for industrial processes">
+<meta property="og:description" content="Physics-Informed Neural Networks, digital twins and predictive control for complex industrial processes.">
+<meta property="og:url" content="https://inguznavitas.com/">
+<meta property="og:locale" content="en">
+<meta property="og:locale:alternate" content="de">
+<meta property="og:locale:alternate" content="lv">
+<meta property="og:locale:alternate" content="ru">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Inguz Navitas — Physics-Informed AI">
+<meta name="twitter:description" content="PINNs, digital twins and predictive control for complex industrial processes.">
+<link rel="alternate" hreflang="en" href="https://inguznavitas.com/">
+<link rel="alternate" hreflang="de" href="https://inguznavitas.com/?lang=de">
+<link rel="alternate" hreflang="lv" href="https://inguznavitas.com/?lang=lv">
+<link rel="alternate" hreflang="ru" href="https://inguznavitas.com/?lang=ru">
+<link rel="alternate" hreflang="x-default" href="https://inguznavitas.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+SemiCondensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://inguznavitas.com/#org",
+      "name": "Inguz Navitas SIA",
+      "url": "https://inguznavitas.com/",
+      "email": "hello@inguznavitas.com",
+      "description": "Physics-Informed Neural Networks, digital twins and predictive control for complex industrial processes.",
+      "address": {"@type": "PostalAddress", "addressLocality": "Riga", "addressCountry": "LV"},
+      "areaServed": ["Germany","United Kingdom","Netherlands","France","Sweden","European Union"],
+      "knowsAbout": ["Physics-Informed Neural Networks","Digital Twin","Model Predictive Control","Process Optimization","Pyrolysis","Gasification","State Estimation","Surrogate Model"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://inguznavitas.com/#besedin",
+      "name": "Sergey Besedin",
+      "honorificPrefix": "D.Sc., Prof.",
+      "jobTitle": "Founder & Chief Scientist",
+      "worksFor": {"@id": "https://inguznavitas.com/#org"},
+      "knowsAbout": ["Computational Fluid Dynamics","Thermal Physics","Microkinetics","Turbomachinery","Physics-Informed Neural Networks","Digital Twins"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://inguznavitas.com/#website",
+      "url": "https://inguznavitas.com/",
+      "name": "Inguz Navitas",
+      "publisher": {"@id": "https://inguznavitas.com/#org"},
+      "inLanguage": ["en","de","lv","ru"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://inguznavitas.com/#faq",
+      "mainEntity": [
+        {"@type":"Question","name":"What is a physics-informed neural network (PINN)?","acceptedAnswer":{"@type":"Answer","text":"A physics-informed neural network is a machine-learning model that embeds governing physical laws — differential equations, balances and boundary conditions — directly into training. It fits experimental data while satisfying the physics, producing a model that is both data-driven and physically consistent."}},
+        {"@type":"Question","name":"How is a PINN used for model predictive control?","acceptedAnswer":{"@type":"Answer","text":"A trained PINN acts as a fast surrogate model inside a model predictive control loop. For each candidate control trajectory it predicts the resulting future state, and an optimizer selects the action that best satisfies the process objectives before it is applied to the plant."}},
+        {"@type":"Question","name":"What is a digital twin of an industrial process?","acceptedAnswer":{"@type":"Answer","text":"A digital twin is a dynamic digital model continuously synchronized with a physical system through sensor data. With a PINN at its core it estimates the current state, predicts process evolution, detects anomalies and supports predictive control throughout the asset life cycle."}},
+        {"@type":"Question","name":"Can a PINN model a pyrolysis reactor?","acceptedAnswer":{"@type":"Answer","text":"Yes. A PINN combines reactor measurements with energy and mass balances and reaction kinetics to predict temperature distribution, conversion and gas composition — building a predictive digital twin of the pyrolysis reactor for optimization and control."}},
+        {"@type":"Question","name":"How does physics-informed AI differ from a standard neural network?","acceptedAnswer":{"@type":"Answer","text":"A standard neural network learns only from data. A physics-informed neural network additionally enforces the residual of the governing physical equations, so it needs less data, generalizes better and stays physically consistent outside the training range."}},
+        {"@type":"Question","name":"Which industrial processes can Inguz Navitas model?","acceptedAnswer":{"@type":"Answer","text":"Nonlinear, strongly coupled thermochemical and thermal systems: pyrolysis and gasification reactors, chemical reactors, industrial furnaces, heat-transfer and energy systems, and other processes where behaviour is set by interacting physical and chemical phenomena."}}
+      ]
+    }
+  ]
+}
+</script>
 
 <style>
   :root{
@@ -325,6 +394,32 @@
   .theme-toggle:hover{border-color:var(--teal);color:var(--teal)}
   :focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:4px}
 
+  /* ---------- LANGUAGE SWITCHER ---------- */
+  .lang{position:relative;flex:none}
+  .lang-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid var(--line-strong);border-radius:8px;height:34px;padding:0 10px;cursor:pointer;color:var(--ink-soft);font-family:"IBM Plex Mono",monospace;font-size:.74rem;letter-spacing:.06em;transition:.18s}
+  .lang-btn:hover{border-color:var(--teal);color:var(--teal)}
+  .lang-btn .cur{font-weight:500;text-transform:uppercase}
+  .lang-menu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1px solid var(--line-strong);border-radius:10px;box-shadow:var(--shadow-lift);padding:6px;min-width:150px;display:none;z-index:60}
+  .lang-menu.open{display:block}
+  .lang-menu button{display:flex;width:100%;align-items:center;gap:10px;background:none;border:none;border-radius:7px;padding:9px 11px;cursor:pointer;color:var(--ink);font-family:"IBM Plex Sans";font-size:.88rem;text-align:left;transition:.14s}
+  .lang-menu button:hover{background:var(--surface-2);color:var(--teal)}
+  .lang-menu button .code{font-family:"IBM Plex Mono",monospace;font-size:.68rem;color:var(--ink-faint);letter-spacing:.1em;text-transform:uppercase;margin-left:auto}
+  .lang-menu button[aria-current="true"]{color:var(--teal);background:var(--teal-wash)}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+  .faq-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+  .faq-q{width:100%;display:flex;align-items:center;gap:16px;padding:20px 24px;background:none;border:none;cursor:pointer;text-align:left;color:var(--ink);font-family:"Saira SemiCondensed";font-weight:600;font-size:1.12rem;transition:color .16s}
+  .faq-q:hover{color:var(--teal)}
+  .faq-q .qi{margin-left:auto;flex:none;width:22px;height:22px;position:relative;transition:transform .25s}
+  .faq-q .qi::before,.faq-q .qi::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--teal);border-radius:2px}
+  .faq-q .qi::before{width:14px;height:2px}
+  .faq-q .qi::after{width:2px;height:14px;transition:transform .25s}
+  .faq-item.open .faq-q .qi::after{transform:translate(-50%,-50%) scaleY(0)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .faq-a p{padding:0 24px 22px;color:var(--ink-soft);font-size:.98rem;max-width:76ch}
+  .faq-a p b{color:var(--ink);font-weight:600}
+
   /* ---------- TEAM ---------- */
   .team-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:18px;align-items:stretch}
   @media(max-width:820px){.team-grid{grid-template-columns:1fr}}
@@ -413,17 +508,29 @@
         <path d="M6 20 Q11 6 16 16 T26 12" stroke="var(--ember)" stroke-width="2" fill="none" stroke-linecap="round"/>
         <circle cx="16" cy="16" r="3.1" fill="var(--teal)"/>
       </svg>
-      <span>INGUZ NAVITAS<small>Physics-Informed AI</small></span>
+      <span>INGUZ NAVITAS<small data-i18n="brand.tag">Physics-Informed AI</small></span>
     </a>
     <nav class="nav-links">
-      <a href="#technology">Technology</a>
-      <a href="#twin">Digital Twin</a>
-      <a href="#applications">Applications</a>
-      <a href="#approach">Approach</a>
-      <a href="#research">Research</a>
-      <a href="#team">Team</a>
+      <a href="#technology" data-i18n="nav.technology">Technology</a>
+      <a href="#twin" data-i18n="nav.twin">Digital Twin</a>
+      <a href="#applications" data-i18n="nav.applications">Applications</a>
+      <a href="#approach" data-i18n="nav.approach">Approach</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#team" data-i18n="nav.team">Team</a>
     </nav>
-    <a href="#contact" class="nav-cta">Discuss your process</a>
+    <a href="#contact" class="nav-cta" data-i18n="nav.cta">Discuss your process</a>
+    <div class="lang">
+      <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Select language">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M3 12h18M12 2.5c2.5 2.5 3.8 6 3.8 9.5S14.5 19 12 21.5C9.5 19 8.2 15.5 8.2 12S9.5 5 12 2.5z"/></svg>
+        <span class="cur" id="langCur">EN</span>
+      </button>
+      <div class="lang-menu" id="langMenu" role="menu">
+        <button type="button" data-setlang="en" role="menuitem">English<span class="code">EN</span></button>
+        <button type="button" data-setlang="de" role="menuitem">Deutsch<span class="code">DE</span></button>
+        <button type="button" data-setlang="lv" role="menuitem">Latviešu<span class="code">LV</span></button>
+        <button type="button" data-setlang="ru" role="menuitem">Русский<span class="code">RU</span></button>
+      </div>
+    </div>
     <button class="theme-toggle" id="tt" aria-label="Toggle theme" title="Toggle theme">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
     </button>
@@ -436,23 +543,23 @@
   <div class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow">PINN · Digital Twins · Predictive Control</span>
-        <h1>Physics where data ends. <span class="a">Prediction</span> before the <span class="b">deviation</span>.</h1>
-        <p class="lede">We build Physics-Informed Neural Networks that fuse governing physical laws with process data — fast, predictive models of complex industrial systems.</p>
+        <span class="eyebrow" data-i18n="hero.eyebrow">PINN · Digital Twins · Predictive Control</span>
+        <h1 data-i18n-html="hero.h1">Physics where data ends. <span class="a">Prediction</span> before the <span class="b">deviation</span>.</h1>
+        <p class="lede" data-i18n="hero.lede">We build Physics-Informed Neural Networks that fuse governing physical laws with process data — fast, predictive models of complex industrial systems.</p>
         <div class="seq">
-          <b>measurement</b><span class="ar">→</span><b>state estimation</b><span class="ar">→</span><b>prediction</b><span class="ar">→</span><b>optimization</b><span class="ar">→</span><b>control</b>
+          <b data-i18n="seq.measure">measurement</b><span class="ar">→</span><b data-i18n="seq.state">state estimation</b><span class="ar">→</span><b data-i18n="seq.predict">prediction</b><span class="ar">→</span><b data-i18n="seq.optim">optimization</b><span class="ar">→</span><b data-i18n="seq.control">control</b>
         </div>
         <div class="hero-cta">
-          <a href="#technology" class="btn btn-primary">Explore the technology
+          <a href="#technology" class="btn btn-primary"><span data-i18n="hero.cta1">Explore the technology</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="#research" class="btn btn-ghost">Read the research</a>
+          <a href="#research" class="btn btn-ghost" data-i18n="hero.cta2">Read the research</a>
         </div>
         <div class="tags">
-          <span class="tag">Digital Twins</span>
+          <span class="tag" data-i18n="tag.twins">Digital Twins</span>
           <span class="tag">Model Predictive Control</span>
-          <span class="tag">State Estimation</span>
-          <span class="tag">Anomaly Detection</span>
+          <span class="tag" data-i18n="tag.state">State Estimation</span>
+          <span class="tag" data-i18n="tag.anomaly">Anomaly Detection</span>
           <span class="tag">Edge AI</span>
         </div>
       </div>
@@ -468,16 +575,16 @@
           </circle>
         </svg>
         <div class="loop-core">
-          <span class="k">PINN core</span>
+          <span class="k" data-i18n="loop.core">PINN core</span>
           <span class="eq">ŷ = <i>f</i><sub>θ</sub>(x,t,p)</span>
-          <span class="sub">digital twin</span>
+          <span class="sub" data-i18n="loop.twin">digital twin</span>
         </div>
-        <div class="node hot" style="left:50%;top:10%"><div class="dot"></div><div class="nl"><span class="nx">01</span>Physical system</div></div>
-        <div class="node hot" style="left:84.6%;top:30%"><div class="dot"></div><div class="nl"><span class="nx">02</span>Sensors &amp; data</div></div>
-        <div class="node" style="left:84.6%;top:70%"><div class="dot"></div><div class="nl"><span class="nx">03</span>PINN twin</div></div>
-        <div class="node" style="left:50%;top:90%"><div class="dot"></div><div class="nl"><span class="nx">04</span>State prediction</div></div>
-        <div class="node" style="left:15.4%;top:70%"><div class="dot"></div><div class="nl"><span class="nx">05</span>Optimization</div></div>
-        <div class="node" style="left:15.4%;top:30%"><div class="dot"></div><div class="nl"><span class="nx">06</span>Predictive control</div></div>
+        <div class="node hot" style="left:50%;top:10%"><div class="dot"></div><div class="nl"><span class="nx">01</span><span data-i18n="loop.n1">Physical system</span></div></div>
+        <div class="node hot" style="left:84.6%;top:30%"><div class="dot"></div><div class="nl"><span class="nx">02</span><span data-i18n="loop.n2">Sensors &amp; data</span></div></div>
+        <div class="node" style="left:84.6%;top:70%"><div class="dot"></div><div class="nl"><span class="nx">03</span><span data-i18n="loop.n3">PINN twin</span></div></div>
+        <div class="node" style="left:50%;top:90%"><div class="dot"></div><div class="nl"><span class="nx">04</span><span data-i18n="loop.n4">State prediction</span></div></div>
+        <div class="node" style="left:15.4%;top:70%"><div class="dot"></div><div class="nl"><span class="nx">05</span><span data-i18n="loop.n5">Optimization</span></div></div>
+        <div class="node" style="left:15.4%;top:30%"><div class="dot"></div><div class="nl"><span class="nx">06</span><span data-i18n="loop.n6">Predictive control</span></div></div>
       </div>
     </div>
   </div>
@@ -486,33 +593,33 @@
   <section id="shift">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">The shift</span>
-        <h2>From reacting to a deviation<br>to predicting the process.</h2>
-        <p class="intro">Traditional control responds to a deviation that has already occurred. Predictive control evaluates the expected future behaviour of the process and acts before an undesirable state is reached.</p>
+        <span class="eyebrow" data-i18n="shift.eyebrow">The shift</span>
+        <h2 data-i18n-html="shift.h2">From reacting to a deviation<br>to predicting the process.</h2>
+        <p class="intro" data-i18n="shift.intro">Traditional control responds to a deviation that has already occurred. Predictive control evaluates the expected future behaviour of the process and acts before an undesirable state is reached.</p>
       </div>
       <div class="compare reveal">
         <div class="chain react">
-          <div class="ch-label"><span>◦</span> Reactive control</div>
+          <div class="ch-label"><span>◦</span> <span data-i18n="shift.reactive">Reactive control</span></div>
           <div class="steps">
-            <div class="step"><span class="sd"></span><span class="st">Measurement</span></div>
+            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.r1">Measurement</span></div>
             <div class="connector"></div>
-            <div class="step"><span class="sd"></span><span class="st">Deviation estimation</span></div>
+            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.r2">Deviation estimation</span></div>
             <div class="connector"></div>
-            <div class="step"><span class="sd"></span><span class="st">Control action</span></div>
+            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.r3">Control action</span></div>
           </div>
         </div>
         <div class="chain pred">
-          <div class="ch-label"><span>●</span> Predictive control</div>
+          <div class="ch-label"><span>●</span> <span data-i18n="shift.predictive">Predictive control</span></div>
           <div class="steps">
-            <div class="step"><span class="sd"></span><span class="st">Measurement</span><span class="sc">x(t)</span></div>
+            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p1">Measurement</span><span class="sc">x(t)</span></div>
             <div class="connector"></div>
-            <div class="step"><span class="sd"></span><span class="st">State estimation</span></div>
+            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p2">State estimation</span></div>
             <div class="connector"></div>
-            <div class="step"><span class="sd"></span><span class="st">Process prediction</span><span class="sc">x̂(t+τ)</span></div>
+            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p3">Process prediction</span><span class="sc">x̂(t+τ)</span></div>
             <div class="connector"></div>
-            <div class="step"><span class="sd"></span><span class="st">Optimization</span><span class="sc">min J</span></div>
+            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p4">Optimization</span><span class="sc">min J</span></div>
             <div class="connector"></div>
-            <div class="step"><span class="sd"></span><span class="st">Control action</span><span class="sc">u*</span></div>
+            <div class="step"><span class="sd"></span><span class="st" data-i18n="shift.p5">Control action</span><span class="sc">u*</span></div>
           </div>
         </div>
       </div>
@@ -523,15 +630,15 @@
   <section id="technology">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">Technology</span>
-        <h2>A neural network that obeys physics.</h2>
-        <p class="intro">A Physics-Informed Neural Network incorporates the governing physical laws directly into the learning process. It is trained not only to fit data, but to satisfy the differential equations, initial conditions and boundary conditions that describe the process.</p>
+        <span class="eyebrow" data-i18n="tech.eyebrow">Technology</span>
+        <h2 data-i18n="tech.h2">A neural network that obeys physics.</h2>
+        <p class="intro" data-i18n="tech.intro">A Physics-Informed Neural Network incorporates the governing physical laws directly into the learning process. It is trained not only to fit data, but to satisfy the differential equations, initial conditions and boundary conditions that describe the process.</p>
       </div>
 
       <div class="eqrow reveal">
         <div class="eqcard">
           <span class="num">Eq. 4</span>
-          <div class="cap">Physics-informed loss</div>
+          <div class="cap" data-i18n="tech.loss.cap">Physics-informed loss</div>
           <div class="equation">
             <span class="t-teal">ℒ</span><span class="op">=</span>
             λ<sub>d</sub><span class="t-teal">ℒ<sub>data</sub></span><span class="op">+</span>
@@ -539,19 +646,19 @@
             λ<sub>bc</sub>ℒ<sub>BC</sub><span class="op">+</span>
             λ<sub>ic</sub>ℒ<sub>IC</sub>
           </div>
-          <p class="eqnote">Training minimizes the error against known <b>data</b> and the residual of the governing <b>physical equations</b> at once — so the model is both data-driven and physically consistent.</p>
+          <p class="eqnote" data-i18n-html="tech.loss.note">Training minimizes the error against known <b>data</b> and the residual of the governing <b>physical equations</b> at once — so the model is both data-driven and physically consistent.</p>
         </div>
         <div class="loss-legend">
-          <div class="ll"><span class="lk">ℒ<sub>data</sub></span><span class="lt"><b>Data.</b> Fit to experimental measurements and sensor histories.</span></div>
-          <div class="ll ember"><span class="lk">ℒ<sub>physics</sub></span><span class="lt"><b>Physics.</b> Residual of balances, kinetics and transport equations.</span></div>
-          <div class="ll"><span class="lk">ℒ<sub>BC/IC</sub></span><span class="lt"><b>Conditions.</b> Boundary and initial conditions of the domain.</span></div>
+          <div class="ll"><span class="lk">ℒ<sub>data</sub></span><span class="lt" data-i18n-html="tech.leg.data"><b>Data.</b> Fit to experimental measurements and sensor histories.</span></div>
+          <div class="ll ember"><span class="lk">ℒ<sub>physics</sub></span><span class="lt" data-i18n-html="tech.leg.phys"><b>Physics.</b> Residual of balances, kinetics and transport equations.</span></div>
+          <div class="ll"><span class="lk">ℒ<sub>BC/IC</sub></span><span class="lt" data-i18n-html="tech.leg.cond"><b>Conditions.</b> Boundary and initial conditions of the domain.</span></div>
         </div>
       </div>
 
       <div class="eqrow reveal" style="margin-top:18px">
         <div class="eqcard">
           <span class="num">Eq. 5</span>
-          <div class="cap">Governing physics · heat transfer</div>
+          <div class="cap" data-i18n="tech.heat.cap">Governing physics · heat transfer</div>
           <div class="equation">
             <span class="t-ember">ρc<sub>p</sub></span>
             <span class="frac"><span class="n">∂T</span><span class="d">∂t</span></span>
@@ -562,15 +669,15 @@
             <span class="op">+</span>
             <span class="t-ember">Q</span>
           </div>
-          <p class="eqnote">Automatic differentiation extracts the required derivatives directly from the network — embedding equations like the energy balance into the model rather than fitting around them.</p>
+          <p class="eqnote" data-i18n="tech.heat.note">Automatic differentiation extracts the required derivatives directly from the network — embedding equations like the energy balance into the model rather than fitting around them.</p>
         </div>
         <div class="eqcard">
           <span class="num">Eq. 6</span>
-          <div class="cap">Prediction operator</div>
+          <div class="cap" data-i18n="tech.pred.cap">Prediction operator</div>
           <div class="equation">
             <span class="t-teal">x̂</span>(t+τ)<span class="op">=</span>𝒟<span class="op">[</span>x(t), u(t:t+τ), p<span class="op">]</span>
           </div>
-          <p class="eqnote">After training, the PINN acts as a high-speed surrogate <b>𝒟</b> — repeatedly computing the future state for any candidate control trajectory, enabling virtual experiments before touching the plant.</p>
+          <p class="eqnote" data-i18n-html="tech.pred.note">After training, the PINN acts as a high-speed surrogate <b>𝒟</b> — repeatedly computing the future state for any candidate control trajectory, enabling virtual experiments before touching the plant.</p>
         </div>
       </div>
     </div>
@@ -580,17 +687,17 @@
   <section id="twin">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">Digital twin</span>
-        <h2>A living model, synchronized with the plant.</h2>
-        <p class="intro">The PINN becomes the computational core of a digital twin — a dynamic representation continuously synchronized with the physical system through data exchange, throughout its life cycle.</p>
+        <span class="eyebrow" data-i18n="twin.eyebrow">Digital twin</span>
+        <h2 data-i18n="twin.h2">A living model, synchronized with the plant.</h2>
+        <p class="intro" data-i18n="twin.intro">The PINN becomes the computational core of a digital twin — a dynamic representation continuously synchronized with the physical system through data exchange, throughout its life cycle.</p>
       </div>
       <div class="grid g3 reveal">
-        <div class="card"><span class="ci">Estimate</span><h3>State estimation</h3><p>Real-time estimation of the current process state, including variables that cannot be measured directly.</p></div>
-        <div class="card"><span class="ci">Predict</span><h3>Process evolution</h3><p>Prediction of how the process will develop under different candidate control actions.</p></div>
-        <div class="card"><span class="ci">Experiment</span><h3>Virtual experimentation</h3><p>Evaluate several scenarios and their consequences before applying any action to the physical system.</p></div>
-        <div class="card"><span class="ci">Identify</span><h3>Parameter estimation</h3><p>Recover process and equipment parameters that drift as conditions and feedstock change.</p></div>
-        <div class="card hot"><span class="ci">Detect</span><h3>Anomaly detection</h3><p>Compare predicted and measured behaviour; residuals flag sensor faults, degradation or abnormal regimes.</p></div>
-        <div class="card"><span class="ci">Optimize</span><h3>Control &amp; optimization</h3><p>Feed prediction into an optimizer to select the action that best satisfies the process objectives.</p></div>
+        <div class="card"><span class="ci" data-i18n="twin.c1.k">Estimate</span><h3 data-i18n="twin.c1.t">State estimation</h3><p data-i18n="twin.c1.d">Real-time estimation of the current process state, including variables that cannot be measured directly.</p></div>
+        <div class="card"><span class="ci" data-i18n="twin.c2.k">Predict</span><h3 data-i18n="twin.c2.t">Process evolution</h3><p data-i18n="twin.c2.d">Prediction of how the process will develop under different candidate control actions.</p></div>
+        <div class="card"><span class="ci" data-i18n="twin.c3.k">Experiment</span><h3 data-i18n="twin.c3.t">Virtual experimentation</h3><p data-i18n="twin.c3.d">Evaluate several scenarios and their consequences before applying any action to the physical system.</p></div>
+        <div class="card"><span class="ci" data-i18n="twin.c4.k">Identify</span><h3 data-i18n="twin.c4.t">Parameter estimation</h3><p data-i18n="twin.c4.d">Recover process and equipment parameters that drift as conditions and feedstock change.</p></div>
+        <div class="card hot"><span class="ci" data-i18n="twin.c5.k">Detect</span><h3 data-i18n="twin.c5.t">Anomaly detection</h3><p data-i18n="twin.c5.d">Compare predicted and measured behaviour; residuals flag sensor faults, degradation or abnormal regimes.</p></div>
+        <div class="card"><span class="ci" data-i18n="twin.c6.k">Optimize</span><h3 data-i18n="twin.c6.t">Control &amp; optimization</h3><p data-i18n="twin.c6.d">Feed prediction into an optimizer to select the action that best satisfies the process objectives.</p></div>
       </div>
     </div>
   </section>
@@ -600,12 +707,12 @@
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="eyebrow">Model Predictive Control</span>
-        <h2>Evaluate every option before choosing one.</h2>
-        <p class="intro">A trained PINN is fast enough to serve as the surrogate model inside a Model Predictive Control loop. For each candidate control trajectory it predicts the resulting future state — and the optimizer picks the best.</p>
+        <h2 data-i18n="mpc.h2">Evaluate every option before choosing one.</h2>
+        <p class="intro" data-i18n="mpc.intro">A trained PINN is fast enough to serve as the surrogate model inside a Model Predictive Control loop. For each candidate control trajectory it predicts the resulting future state — and the optimizer picks the best.</p>
       </div>
       <div class="mpc reveal">
         <div class="mpc-flow">
-          <div class="mchip">Current<br>state x(t)</div>
+          <div class="mchip" data-i18n-html="mpc.current">Current<br>state x(t)</div>
           <div class="mpc-arrow">→</div>
           <div class="scen">
             <div class="srow"><span class="u">u₁</span><span class="arr">→</span><span class="mchip core" style="padding:6px 10px">PINN</span><span class="arr">→</span><span class="pred">x̂₁</span></div>
@@ -615,9 +722,9 @@
           </div>
           <div class="mpc-arrow">→</div>
           <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
-            <div class="mchip">Optimize J</div>
+            <div class="mchip" data-i18n="mpc.optimize">Optimize J</div>
             <div class="mpc-arrow" style="transform:rotate(90deg)">→</div>
-            <div class="mchip out">Optimal u*</div>
+            <div class="mchip out" data-i18n="mpc.optimal">Optimal u*</div>
           </div>
         </div>
       </div>
@@ -628,35 +735,35 @@
   <section id="optimization">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">Process optimization</span>
-        <h2>One objective, many criteria.</h2>
-        <p class="intro">Industrial processes rarely have a single optimization criterion. The objective function balances competing goals simultaneously — optimizing overall process efficiency rather than any one parameter.</p>
+        <span class="eyebrow" data-i18n="opt.eyebrow">Process optimization</span>
+        <h2 data-i18n="opt.h2">One objective, many criteria.</h2>
+        <p class="intro" data-i18n="opt.intro">Industrial processes rarely have a single optimization criterion. The objective function balances competing goals simultaneously — optimizing overall process efficiency rather than any one parameter.</p>
       </div>
       <div class="eqrow reveal" style="align-items:start">
         <div class="table-scroll">
           <table class="otable">
-            <thead><tr><th>Criterion</th><th>Objective</th></tr></thead>
+            <thead><tr><th data-i18n="opt.th1">Criterion</th><th data-i18n="opt.th2">Objective</th></tr></thead>
             <tbody>
-              <tr><td>J_quality</td><td>Maximize product quality</td></tr>
-              <tr><td>J_energy</td><td>Minimize energy consumption</td></tr>
-              <tr><td>J_production</td><td>Maximize productivity</td></tr>
-              <tr><td>J_stability</td><td>Maintain stable operation</td></tr>
-              <tr><td>J_safety</td><td>Keep safe operating conditions</td></tr>
-              <tr><td>J_control</td><td>Minimize unnecessary control effort</td></tr>
+              <tr><td>J_quality</td><td data-i18n="opt.o1">Maximize product quality</td></tr>
+              <tr><td>J_energy</td><td data-i18n="opt.o2">Minimize energy consumption</td></tr>
+              <tr><td>J_production</td><td data-i18n="opt.o3">Maximize productivity</td></tr>
+              <tr><td>J_stability</td><td data-i18n="opt.o4">Maintain stable operation</td></tr>
+              <tr><td>J_safety</td><td data-i18n="opt.o5">Keep safe operating conditions</td></tr>
+              <tr><td>J_control</td><td data-i18n="opt.o6">Minimize unnecessary control effort</td></tr>
             </tbody>
           </table>
         </div>
         <div style="display:flex;flex-direction:column;gap:18px">
           <div class="eqcard">
             <span class="num">Eq. 9</span>
-            <div class="cap">Optimal control action</div>
+            <div class="cap" data-i18n="opt.cap1">Optimal control action</div>
             <div class="equation"><span class="t-ember">u*</span><span class="op">=</span> arg min<sub>u</sub> J(u)</div>
           </div>
           <div class="eqcard">
             <span class="num">Eq. 10</span>
-            <div class="cap">Weighted objective</div>
+            <div class="cap" data-i18n="opt.cap2">Weighted objective</div>
             <div class="equation" style="font-size:1rem">J<span class="op">=</span>w₁J<sub>q</sub><span class="op">+</span>w₂J<sub>e</sub><span class="op">+</span>w₃J<sub>s</sub><span class="op">+</span>w₄J<sub>saf</sub><span class="op">+</span>w₅J<sub>c</sub></div>
-            <p class="eqnote">Weights <b>w<sub>i</sub></b> encode the operator's priorities — the intelligent layer optimizes the process as a whole.</p>
+            <p class="eqnote" data-i18n-html="opt.note">Weights <b>w<sub>i</sub></b> encode the operator's priorities — the intelligent layer optimizes the process as a whole.</p>
           </div>
         </div>
       </div>
@@ -667,26 +774,26 @@
   <section id="applications">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow ember">Applications</span>
-        <h2>Built for nonlinear, coupled, thermochemical systems.</h2>
-        <p class="intro">The approach is not tied to one type of equipment. It targets strongly coupled, dynamic industrial processes where behaviour is set by many interacting physical and chemical phenomena.</p>
+        <span class="eyebrow ember" data-i18n="app.eyebrow">Applications</span>
+        <h2 data-i18n="app.h2">Built for nonlinear, coupled, thermochemical systems.</h2>
+        <p class="intro" data-i18n="app.intro">The approach is not tied to one type of equipment. It targets strongly coupled, dynamic industrial processes where behaviour is set by many interacting physical and chemical phenomena.</p>
       </div>
       <div class="grid g4 reveal">
         <div class="card hot">
-          <span class="ci">Thermochemical</span><h3>Pyrolysis</h3>
-          <ul><li>Temperature distribution</li><li>Heat transfer</li><li>Feedstock conversion</li><li>Reaction kinetics</li><li>Gas composition</li></ul>
+          <span class="ci" data-i18n="app.c1.k">Thermochemical</span><h3 data-i18n="app.c1.t">Pyrolysis</h3>
+          <ul><li data-i18n="app.c1.l1">Temperature distribution</li><li data-i18n="app.c1.l2">Heat transfer</li><li data-i18n="app.c1.l3">Feedstock conversion</li><li data-i18n="app.c1.l4">Reaction kinetics</li><li data-i18n="app.c1.l5">Gas composition</li></ul>
         </div>
         <div class="card">
-          <span class="ci">Gas processing</span><h3>Gasification</h3>
-          <ul><li>Reactor modelling</li><li>Gas composition</li><li>Thermal-state estimation</li><li>Process optimization</li><li>Predictive control</li></ul>
+          <span class="ci" data-i18n="app.c2.k">Gas processing</span><h3 data-i18n="app.c2.t">Gasification</h3>
+          <ul><li data-i18n="app.c2.l1">Reactor modelling</li><li data-i18n="app.c1.l5">Gas composition</li><li data-i18n="app.c2.l3">Thermal-state estimation</li><li data-i18n="opt.eyebrow">Process optimization</li><li data-i18n="loop.n6">Predictive control</li></ul>
         </div>
         <div class="card">
-          <span class="ci">Kinetics</span><h3>Chemical reactors</h3>
-          <ul><li>Reaction kinetics</li><li>Transport equations</li><li>Process measurements</li><li>Predictive reactor models</li></ul>
+          <span class="ci" data-i18n="app.c3.k">Kinetics</span><h3 data-i18n="app.c3.t">Chemical reactors</h3>
+          <ul><li data-i18n="app.c1.l4">Reaction kinetics</li><li data-i18n="app.c3.l2">Transport equations</li><li data-i18n="app.c3.l3">Process measurements</li><li data-i18n="app.c3.l4">Predictive reactor models</li></ul>
         </div>
         <div class="card hot">
-          <span class="ci">High temperature</span><h3>Thermal systems</h3>
-          <ul><li>Industrial furnaces</li><li>Heat-transfer systems</li><li>Thermal treatment</li><li>Energy systems</li></ul>
+          <span class="ci" data-i18n="app.c4.k">High temperature</span><h3 data-i18n="app.c4.t">Thermal systems</h3>
+          <ul><li data-i18n="app.c4.l1">Industrial furnaces</li><li data-i18n="app.c4.l2">Heat-transfer systems</li><li data-i18n="app.c4.l3">Thermal treatment</li><li data-i18n="app.c4.l4">Energy systems</li></ul>
         </div>
       </div>
     </div>
@@ -696,20 +803,20 @@
   <section id="pyrolysis">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow ember">Worked example</span>
-        <h2>A pyrolysis reactor, made predictable.</h2>
-        <p class="intro">Pyrolysis is a complex thermochemical process — heating, moisture removal, decomposition, phase formation and secondary reactions. Many states can only be observed indirectly. A PINN combines those measurements with energy balances and kinetics to build a predictive digital twin of the reactor.</p>
+        <span class="eyebrow ember" data-i18n="pyro.eyebrow">Worked example</span>
+        <h2 data-i18n="pyro.h2">A pyrolysis reactor, made predictable.</h2>
+        <p class="intro" data-i18n="pyro.intro">Pyrolysis is a complex thermochemical process — heating, moisture removal, decomposition, phase formation and secondary reactions. Many states can only be observed indirectly. A PINN combines those measurements with energy balances and kinetics to build a predictive digital twin of the reactor.</p>
       </div>
       <div class="grid g2 reveal">
         <div class="card">
-          <span class="ci">Reactor state vector</span>
+          <span class="ci" data-i18n="pyro.c1.k">Reactor state vector</span>
           <div class="equation mono" style="font-size:1.05rem;margin-bottom:14px">x = [ <span class="t-ember">T</span>, P, ṁ, <span class="t-teal">Y</span>, X, Q, … ]</div>
-          <p>Temperature, pressure, mass flow, product composition, conversion and thermal power — combined with energy and mass balances, heat-transfer and reaction-kinetics equations.</p>
+          <p data-i18n="pyro.c1.d">Temperature, pressure, mass flow, product composition, conversion and thermal power — combined with energy and mass balances, heat-transfer and reaction-kinetics equations.</p>
         </div>
         <div class="card">
-          <span class="ci">Before changing heating power</span>
+          <span class="ci" data-i18n="pyro.c2.k">Before changing heating power</span>
           <div class="equation mono" style="font-size:1rem;margin-bottom:14px">u₁→x̂₁, u₂→x̂₂, … , u<sub>M</sub>→x̂<sub>M</sub></div>
-          <p>Each alternative is scored on production rate, energy consumption, product quality and compliance with process constraints — then the preferred control action is selected, ahead of the deviation.</p>
+          <p data-i18n="pyro.c2.d">Each alternative is scored on production rate, energy consumption, product quality and compliance with process constraints — then the preferred control action is selected, ahead of the deviation.</p>
         </div>
       </div>
     </div>
@@ -719,28 +826,28 @@
   <section id="architecture">
     <div class="wrap">
       <div class="sec-head reveal" style="text-align:center;margin-inline:auto">
-        <span class="eyebrow" style="justify-content:center">Architecture</span>
-        <h2>An AI layer that complements automation — not replaces it.</h2>
-        <p class="intro" style="margin-inline:auto">A modular cyber-physical stack. AI generates predictions and recommended actions; conventional control and protection systems keep operation within safe limits.</p>
+        <span class="eyebrow" style="justify-content:center" data-i18n="arch.eyebrow">Architecture</span>
+        <h2 data-i18n="arch.h2">An AI layer that complements automation — not replaces it.</h2>
+        <p class="intro" style="margin-inline:auto" data-i18n="arch.intro">A modular cyber-physical stack. AI generates predictions and recommended actions; conventional control and protection systems keep operation within safe limits.</p>
       </div>
       <div class="stack reveal">
-        <div class="layer phys"><span class="li">01</span><span class="lname">Physical process</span><span class="ld">Sensors &amp; actuators</span></div>
+        <div class="layer phys"><span class="li">01</span><span class="lname" data-i18n="arch.l1">Physical process</span><span class="ld" data-i18n="arch.l1d">Sensors &amp; actuators</span></div>
         <div class="arrow-down"></div>
-        <div class="layer"><span class="li">02</span><span class="lname">Data acquisition</span><span class="ld">Processing &amp; normalization</span></div>
+        <div class="layer"><span class="li">02</span><span class="lname" data-i18n="arch.l2">Data acquisition</span><span class="ld" data-i18n="arch.l2d">Processing &amp; normalization</span></div>
         <div class="arrow-down"></div>
-        <div class="layer core"><span class="li">03</span><span class="lname">Physics-Informed AI · PINN digital twin</span><span class="ld">Prediction &amp; estimation</span></div>
+        <div class="layer core"><span class="li">03</span><span class="lname" data-i18n="arch.l3">Physics-Informed AI · PINN digital twin</span><span class="ld" data-i18n="arch.l3d">Prediction &amp; estimation</span></div>
         <div class="arrow-down"></div>
-        <div class="layer"><span class="li">04</span><span class="lname">Optimization</span><span class="ld">Multi-objective J(u)</span></div>
+        <div class="layer"><span class="li">04</span><span class="lname" data-i18n="opt.eyebrow2">Optimization</span><span class="ld">Multi-objective J(u)</span></div>
         <div class="arrow-down"></div>
-        <div class="layer"><span class="li">05</span><span class="lname">Predictive control</span><span class="ld">Recommended actions</span></div>
+        <div class="layer"><span class="li">05</span><span class="lname" data-i18n="loop.n6">Predictive control</span><span class="ld" data-i18n="arch.l5d">Recommended actions</span></div>
         <div class="arrow-down"></div>
-        <div class="layer"><span class="li">06</span><span class="lname">PLC / SCADA</span><span class="ld">Safety &amp; protection loops</span></div>
+        <div class="layer"><span class="li">06</span><span class="lname">PLC / SCADA</span><span class="ld" data-i18n="arch.l6d">Safety &amp; protection loops</span></div>
       </div>
-      <p class="return-note">└── control returns to the physical process · loop repeats on every measurement ──┘</p>
+      <p class="return-note" data-i18n="arch.return">└── control returns to the physical process · loop repeats on every measurement ──┘</p>
       <div class="grid g3 reveal" style="margin-top:34px">
-        <div class="card"><span class="ci">Integration</span><h3>Industrial protocols</h3><p>PLC · SCADA · MQTT · OPC UA · Modbus · CAN/CANopen · Ethernet industrial networks.</p></div>
-        <div class="card"><span class="ci">Deployment</span><h3>Edge AI</h3><p>Train on high-resource compute; deploy the trained PINN on an edge module close to the process for low-latency, real-time prediction.</p></div>
-        <div class="card"><span class="ci">Adaptation</span><h3>Adaptive twins</h3><p>New measurements refine model parameters over time as equipment ages and feedstock varies.</p></div>
+        <div class="card"><span class="ci" data-i18n="arch.i1.k">Integration</span><h3 data-i18n="arch.i1.t">Industrial protocols</h3><p>PLC · SCADA · MQTT · OPC UA · Modbus · CAN/CANopen · Ethernet.</p></div>
+        <div class="card"><span class="ci" data-i18n="arch.i2.k">Deployment</span><h3>Edge AI</h3><p data-i18n="arch.i2.d">Train on high-resource compute; deploy the trained PINN on an edge module close to the process for low-latency, real-time prediction.</p></div>
+        <div class="card"><span class="ci" data-i18n="arch.i3.k">Adaptation</span><h3 data-i18n="arch.i3.t">Adaptive twins</h3><p data-i18n="arch.i3.d">New measurements refine model parameters over time as equipment ages and feedstock varies.</p></div>
       </div>
     </div>
   </section>
@@ -749,16 +856,16 @@
   <section id="benefits">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">Why physics-informed AI</span>
-        <h2>Engineering knowledge and AI — combined, not swapped.</h2>
+        <span class="eyebrow" data-i18n="ben.eyebrow">Why physics-informed AI</span>
+        <h2 data-i18n="ben.h2">Engineering knowledge and AI — combined, not swapped.</h2>
       </div>
       <div class="grid g3 reveal" style="gap:26px 32px">
-        <div class="ben"><span class="bi">→</span><div><h3>Physics + data</h3><p>Physical knowledge reduces dependence on purely empirical relationships and improves consistency.</p></div></div>
-        <div class="ben"><span class="bi">→</span><div><h3>Works with less data</h3><p>Governing laws let the model operate with limited experimental data.</p></div></div>
-        <div class="ben"><span class="bi">→</span><div><h3>Fast surrogate</h3><p>A trained PINN replaces computationally expensive physical models for repeated simulation.</p></div></div>
-        <div class="ben"><span class="bi">→</span><div><h3>Predicts the future</h3><p>Evaluates future process behaviour instead of reacting only to current deviations.</p></div></div>
-        <div class="ben"><span class="bi">→</span><div><h3>Sees the unmeasured</h3><p>Estimates hidden states — internal temperature, conversion, composition — from available data.</p></div></div>
-        <div class="ben"><span class="bi">→</span><div><h3>Optimizes many goals</h3><p>Multiple technological criteria optimized simultaneously within one objective.</p></div></div>
+        <div class="ben"><span class="bi">→</span><div><h3 data-i18n="ben.b1.t">Physics + data</h3><p data-i18n="ben.b1.d">Physical knowledge reduces dependence on purely empirical relationships and improves consistency.</p></div></div>
+        <div class="ben"><span class="bi">→</span><div><h3 data-i18n="ben.b2.t">Works with less data</h3><p data-i18n="ben.b2.d">Governing laws let the model operate with limited experimental data.</p></div></div>
+        <div class="ben"><span class="bi">→</span><div><h3 data-i18n="ben.b3.t">Fast surrogate</h3><p data-i18n="ben.b3.d">A trained PINN replaces computationally expensive physical models for repeated simulation.</p></div></div>
+        <div class="ben"><span class="bi">→</span><div><h3 data-i18n="ben.b4.t">Predicts the future</h3><p data-i18n="ben.b4.d">Evaluates future process behaviour instead of reacting only to current deviations.</p></div></div>
+        <div class="ben"><span class="bi">→</span><div><h3 data-i18n="ben.b5.t">Sees the unmeasured</h3><p data-i18n="ben.b5.d">Estimates hidden states — internal temperature, conversion, composition — from available data.</p></div></div>
+        <div class="ben"><span class="bi">→</span><div><h3 data-i18n="ben.b6.t">Optimizes many goals</h3><p data-i18n="ben.b6.d">Multiple technological criteria optimized simultaneously within one objective.</p></div></div>
       </div>
     </div>
   </section>
@@ -767,20 +874,20 @@
   <section id="approach">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">Engineering approach</span>
-        <h2>From process understanding to intelligent control.</h2>
-        <p class="intro">An engineering-oriented development sequence — each stage building on real process knowledge, not data alone.</p>
+        <span class="eyebrow" data-i18n="apr.eyebrow">Engineering approach</span>
+        <h2 data-i18n="apr.h2">From process understanding to intelligent control.</h2>
+        <p class="intro" data-i18n="apr.intro">An engineering-oriented development sequence — each stage building on real process knowledge, not data alone.</p>
       </div>
       <div class="steps-grid reveal">
-        <div class="astep"><div class="an">01</div><h3>Process analysis</h3><p>Understanding the physical, chemical and technological structure of the process.</p></div>
-        <div class="astep"><div class="an">02</div><h3>Data analysis</h3><p>Evaluating available measurements, sensors, historical data and operating regimes.</p></div>
-        <div class="astep"><div class="an">03</div><h3>Physical model</h3><p>Identifying governing equations, constraints and process parameters.</p></div>
-        <div class="astep"><div class="an">04</div><h3>PINN development</h3><p>Constructing and training the Physics-Informed Neural Network.</p></div>
-        <div class="astep"><div class="an">05</div><h3>Digital twin</h3><p>Integrating the trained model into a dynamic digital representation.</p></div>
-        <div class="astep"><div class="an">06</div><h3>Prediction</h3><p>Validating future-state prediction across operating conditions.</p></div>
-        <div class="astep"><div class="an">07</div><h3>Optimization</h3><p>Developing multi-objective optimization algorithms.</p></div>
-        <div class="astep"><div class="an">08</div><h3>Control</h3><p>Integrating with predictive control and industrial automation.</p></div>
-        <div class="astep"><div class="an">09</div><h3>Deployment</h3><p>Deploying on industrial computing or edge platforms.</p></div>
+        <div class="astep"><div class="an">01</div><h3 data-i18n="apr.s1.t">Process analysis</h3><p data-i18n="apr.s1.d">Understanding the physical, chemical and technological structure of the process.</p></div>
+        <div class="astep"><div class="an">02</div><h3 data-i18n="apr.s2.t">Data analysis</h3><p data-i18n="apr.s2.d">Evaluating available measurements, sensors, historical data and operating regimes.</p></div>
+        <div class="astep"><div class="an">03</div><h3 data-i18n="apr.s3.t">Physical model</h3><p data-i18n="apr.s3.d">Identifying governing equations, constraints and process parameters.</p></div>
+        <div class="astep"><div class="an">04</div><h3 data-i18n="apr.s4.t">PINN development</h3><p data-i18n="apr.s4.d">Constructing and training the Physics-Informed Neural Network.</p></div>
+        <div class="astep"><div class="an">05</div><h3 data-i18n="apr.s5.t">Digital twin</h3><p data-i18n="apr.s5.d">Integrating the trained model into a dynamic digital representation.</p></div>
+        <div class="astep"><div class="an">06</div><h3 data-i18n="apr.s6.t">Prediction</h3><p data-i18n="apr.s6.d">Validating future-state prediction across operating conditions.</p></div>
+        <div class="astep"><div class="an">07</div><h3 data-i18n="opt.eyebrow2">Optimization</h3><p data-i18n="apr.s7.d">Developing multi-objective optimization algorithms.</p></div>
+        <div class="astep"><div class="an">08</div><h3 data-i18n="apr.s8.t">Control</h3><p data-i18n="apr.s8.d">Integrating with predictive control and industrial automation.</p></div>
+        <div class="astep"><div class="an">09</div><h3 data-i18n="apr.s9.t">Deployment</h3><p data-i18n="apr.s9.d">Deploying on industrial computing or edge platforms.</p></div>
       </div>
     </div>
   </section>
@@ -789,30 +896,67 @@
   <section id="research">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">Research &amp; publications</span>
-        <h2>Grounded in peer-referenced science.</h2>
+        <span class="eyebrow" data-i18n="res.eyebrow">Research &amp; publications</span>
+        <h2 data-i18n="res.h2">Grounded in peer-referenced science.</h2>
       </div>
       <div class="pub reveal">
         <div class="pub-body">
-          <span class="ptag">Featured research</span>
+          <span class="ptag" data-i18n="res.tag">Featured research</span>
           <h3>Perspectives on the Application of Physics-Informed Neural Networks in Predictive Control Systems for Complex Technological Processes</h3>
-          <p class="meta"><b>D.Sc., Prof. Sergey Besedin</b> · Inguz Navitas SIA, Riga · August 2026</p>
-          <p class="abs">The paper examines the prospects of applying PINNs to the modelling and predictive control of complex technological processes — combining machine learning with physical laws, experimental data and optimization. Using a pyrolysis reactor as an example, it demonstrates how a physics-informed model integrates into a closed-loop control system, and discusses advantages, application areas, limitations and directions for further development.</p>
+          <p class="meta"><b>D.Sc., Prof. Sergey Besedin</b> · Inguz Navitas SIA, Riga · <span data-i18n="res.date">August 2026</span></p>
+          <p class="abs" data-i18n="res.abs">The paper examines the prospects of applying PINNs to the modelling and predictive control of complex technological processes — combining machine learning with physical laws, experimental data and optimization. Using a pyrolysis reactor as an example, it demonstrates how a physics-informed model integrates into a closed-loop control system, and discusses advantages, application areas, limitations and directions for further development.</p>
           <div class="kw">
-            <span class="tag">PINN</span><span class="tag">Predictive control</span><span class="tag">Digital twin</span><span class="tag">Machine learning</span><span class="tag">Pyrolysis</span><span class="tag">Optimization</span><span class="tag">Intelligent control</span>
+            <span class="tag">PINN</span><span class="tag" data-i18n="loop.n6">Predictive control</span><span class="tag" data-i18n="tag.twins2">Digital twin</span><span class="tag" data-i18n="res.kw.ml">Machine learning</span><span class="tag" data-i18n="app.c1.t">Pyrolysis</span><span class="tag" data-i18n="opt.eyebrow2">Optimization</span><span class="tag" data-i18n="res.kw.ic">Intelligent control</span>
           </div>
           <div class="refbar">
-            <div><span class="rn">13</span><br><span class="rl">Sections</span></div>
-            <div><span class="rn">7</span><br><span class="rl">References</span></div>
-            <div><span class="rn">10</span><br><span class="rl">Governing equations</span></div>
+            <div><span class="rn">13</span><br><span class="rl" data-i18n="res.r1">Sections</span></div>
+            <div><span class="rn">7</span><br><span class="rl" data-i18n="res.r2">References</span></div>
+            <div><span class="rn">10</span><br><span class="rl" data-i18n="res.r3">Governing equations</span></div>
           </div>
         </div>
       </div>
       <div class="grid g4 reveal" style="margin-top:22px">
-        <div class="card"><span class="ci">R&amp;D area</span><h3 style="font-size:1rem">Hybrid physics-AI models</h3></div>
-        <div class="card"><span class="ci">R&amp;D area</span><h3 style="font-size:1rem">Deep learning for physical systems</h3></div>
-        <div class="card"><span class="ci">R&amp;D area</span><h3 style="font-size:1rem">Thermochemical modelling</h3></div>
-        <div class="card"><span class="ci">R&amp;D area</span><h3 style="font-size:1rem">Model Predictive Control</h3></div>
+        <div class="card"><span class="ci" data-i18n="res.rd">R&amp;D area</span><h3 style="font-size:1rem" data-i18n="res.rd1">Hybrid physics-AI models</h3></div>
+        <div class="card"><span class="ci" data-i18n="res.rd">R&amp;D area</span><h3 style="font-size:1rem" data-i18n="res.rd2">Deep learning for physical systems</h3></div>
+        <div class="card"><span class="ci" data-i18n="res.rd">R&amp;D area</span><h3 style="font-size:1rem" data-i18n="res.rd3">Thermochemical modelling</h3></div>
+        <div class="card"><span class="ci" data-i18n="res.rd">R&amp;D area</span><h3 style="font-size:1rem">Model Predictive Control</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow" data-i18n="faq.eyebrow">FAQ</span>
+        <h2 data-i18n="faq.h2">Physics-informed AI, explained.</h2>
+        <p class="intro" data-i18n="faq.intro">Common questions about physics-informed neural networks, digital twins and predictive control for industrial processes.</p>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-q" type="button"><span data-i18n="faq.q1">What is a physics-informed neural network (PINN)?</span><span class="qi"></span></button>
+          <div class="faq-a"><p data-i18n="faq.a1">A physics-informed neural network is a machine-learning model that embeds governing physical laws — differential equations, balances and boundary conditions — directly into training. It fits experimental data while satisfying the physics, producing a model that is both data-driven and physically consistent.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button"><span data-i18n="faq.q2">How is a PINN used for model predictive control?</span><span class="qi"></span></button>
+          <div class="faq-a"><p data-i18n="faq.a2">A trained PINN acts as a fast surrogate model inside a model predictive control loop. For each candidate control trajectory it predicts the resulting future state, and an optimizer selects the action that best satisfies the process objectives before it is applied to the plant.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button"><span data-i18n="faq.q3">What is a digital twin of an industrial process?</span><span class="qi"></span></button>
+          <div class="faq-a"><p data-i18n="faq.a3">A digital twin is a dynamic digital model continuously synchronized with a physical system through sensor data. With a PINN at its core it estimates the current state, predicts process evolution, detects anomalies and supports predictive control throughout the asset life cycle.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button"><span data-i18n="faq.q4">Can a PINN model a pyrolysis reactor?</span><span class="qi"></span></button>
+          <div class="faq-a"><p data-i18n="faq.a4">Yes. A PINN combines reactor measurements with energy and mass balances and reaction kinetics to predict temperature distribution, conversion and gas composition — building a predictive digital twin of the pyrolysis reactor for optimization and control.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button"><span data-i18n="faq.q5">How does physics-informed AI differ from a standard neural network?</span><span class="qi"></span></button>
+          <div class="faq-a"><p data-i18n="faq.a5">A standard neural network learns only from data. A physics-informed neural network additionally enforces the residual of the governing physical equations, so it needs less data, generalizes better and stays physically consistent outside the training range.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button"><span data-i18n="faq.q6">Which industrial processes can Inguz Navitas model?</span><span class="qi"></span></button>
+          <div class="faq-a"><p data-i18n="faq.a6">Nonlinear, strongly coupled thermochemical and thermal systems: pyrolysis and gasification reactors, chemical reactors, industrial furnaces, heat-transfer and energy systems, and other processes where behaviour is set by interacting physical and chemical phenomena.</p></div>
+        </div>
       </div>
     </div>
   </section>
@@ -821,9 +965,9 @@
   <section id="team">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">Team</span>
-        <h2>Decades of thermophysics, behind the model.</h2>
-        <p class="intro">Physics-informed AI is only as good as the physics behind it. Our work is grounded in a career of power-engineering research, computational fluid dynamics and thermochemical systems.</p>
+        <span class="eyebrow" data-i18n="team.eyebrow">Team</span>
+        <h2 data-i18n="team.h2">Decades of thermophysics, behind the model.</h2>
+        <p class="intro" data-i18n="team.intro">Physics-informed AI is only as good as the physics behind it. Our work is grounded in a career of power-engineering research, computational fluid dynamics and thermochemical systems.</p>
       </div>
       <div class="team-grid reveal">
         <div class="member lead">
@@ -831,19 +975,19 @@
             <div class="avatar">SB</div>
             <div>
               <div class="m-name">Sergey Besedin</div>
-              <div class="m-role">D.Sc., Prof. · Founder &amp; Chief Scientist</div>
+              <div class="m-role" data-i18n="team.role">D.Sc., Prof. · Founder &amp; Chief Scientist</div>
               <div class="m-loc">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 Pescara, Italy · Inguz Navitas SIA, Riga
               </div>
             </div>
           </div>
-          <p class="m-bio">Scientist and research specialist in power engineering. In 2010 he created the first serial microturbine unit in Russia — a 20&nbsp;kW microturbo-expander generator for gas distribution stations — and has since led the design of microturbines, ORC waste-heat recovery, cryogenic and supercritical-CO₂ power systems.</p>
+          <p class="m-bio" data-i18n="team.bio">Scientist and research specialist in power engineering. In 2010 he created the first serial microturbine unit in Russia — a 20&nbsp;kW microturbo-expander generator for gas distribution stations — and has since led the design of microturbines, ORC waste-heat recovery, cryogenic and supercritical-CO₂ power systems.</p>
           <div class="m-stats">
-            <div class="ms"><div class="mn">58</div><div class="ml">Publications</div></div>
-            <div class="ms"><div class="mn">12</div><div class="ml">Patents</div></div>
-            <div class="ms"><div class="mn">2</div><div class="ml">Monographs</div></div>
-            <div class="ms"><div class="mn">35<span style="font-size:1rem">+</span></div><div class="ml">Years R&amp;D</div></div>
+            <div class="ms"><div class="mn">58</div><div class="ml" data-i18n="team.st1">Publications</div></div>
+            <div class="ms"><div class="mn">12</div><div class="ml" data-i18n="team.st2">Patents</div></div>
+            <div class="ms"><div class="mn">2</div><div class="ml" data-i18n="team.st3">Monographs</div></div>
+            <div class="ms"><div class="mn">35<span style="font-size:1rem">+</span></div><div class="ml" data-i18n="team.st4">Years R&amp;D</div></div>
           </div>
           <div class="m-chips">
             <span>Computational Fluid Dynamics</span>
@@ -864,16 +1008,16 @@
         <div style="display:flex;flex-direction:column;gap:18px">
           <div class="member" style="padding:24px 26px">
             <div class="m-cred">
-              <div class="cred"><span class="cy">2021</span><span class="ct"><b>Doctor of Technical Sciences (D.Sc.)</b>SPb State Polytechnical University — methodology of microturbine installations.</span></div>
-              <div class="cred"><span class="cy">2011</span><span class="ct"><b>Candidate of Technical Sciences (PhD)</b>100 kW microturbine generator — calculation &amp; experimental methods.</span></div>
-              <div class="cred"><span class="cy">1988</span><span class="ct"><b>Electronics Engineer — LETI, Leningrad</b>Diploma with honours (GPA 5.0 / 5.0).</span></div>
-              <div class="cred"><span class="cy">Prof.</span><span class="ct"><b>Professor of Marine Power Engineering</b>SPb State Marine Technical University · CFD, fluid &amp; gas mechanics.</span></div>
+              <div class="cred"><span class="cy">2021</span><span class="ct" data-i18n-html="team.cr1"><b>Doctor of Technical Sciences (D.Sc.)</b>SPb State Polytechnical University — methodology of microturbine installations.</span></div>
+              <div class="cred"><span class="cy">2011</span><span class="ct" data-i18n-html="team.cr2"><b>Candidate of Technical Sciences (PhD)</b>100 kW microturbine generator — calculation &amp; experimental methods.</span></div>
+              <div class="cred"><span class="cy">1988</span><span class="ct" data-i18n-html="team.cr3"><b>Electronics Engineer — LETI, Leningrad</b>Diploma with honours (GPA 5.0 / 5.0).</span></div>
+              <div class="cred"><span class="cy">Prof.</span><span class="ct" data-i18n-html="team.cr4"><b>Professor of Marine Power Engineering</b>SPb State Marine Technical University · CFD, fluid &amp; gas mechanics.</span></div>
             </div>
           </div>
           <div class="member join">
             <div class="plus">+</div>
-            <h3>Building the team</h3>
-            <p>We're expanding across ML engineering, process modelling and industrial integration. Team profiles are being added — the next members will appear here soon.</p>
+            <h3 data-i18n="team.join.t">Building the team</h3>
+            <p data-i18n="team.join.d">We're expanding across ML engineering, process modelling and industrial integration. Team profiles are being added — the next members will appear here soon.</p>
           </div>
         </div>
       </div>
@@ -884,17 +1028,17 @@
   <section id="contact">
     <div class="wrap">
       <div class="cta reveal">
-        <span class="eyebrow" style="justify-content:center">Contact</span>
-        <h2 style="margin-top:14px">Let's build an intelligent model of your process.</h2>
-        <p>Do you have a complex industrial process that is difficult to model, predict or optimize? We can help develop a physics-informed intelligent system from your process data and engineering knowledge.</p>
+        <span class="eyebrow" style="justify-content:center" data-i18n="ct.eyebrow">Contact</span>
+        <h2 style="margin-top:14px" data-i18n="ct.h2">Let's build an intelligent model of your process.</h2>
+        <p data-i18n="ct.p">Do you have a complex industrial process that is difficult to model, predict or optimize? We can help develop a physics-informed intelligent system from your process data and engineering knowledge.</p>
         <div class="svc">
-          <span>Process modelling</span>
-          <span>Digital twin development</span>
-          <span>PINN development</span>
-          <span>Predictive control</span>
-          <span>Process optimization</span>
+          <span data-i18n="ct.s1">Process modelling</span>
+          <span data-i18n="ct.s2">Digital twin development</span>
+          <span data-i18n="ct.s3">PINN development</span>
+          <span data-i18n="loop.n6">Predictive control</span>
+          <span data-i18n="opt.eyebrow">Process optimization</span>
         </div>
-        <a href="mailto:hello@inguznavitas.com?subject=Process%20enquiry%20%E2%80%94%20Inguz%20Navitas" class="btn btn-primary">Discuss your process
+        <a href="mailto:hello@inguznavitas.com?subject=Process%20enquiry%20%E2%80%94%20Inguz%20Navitas" class="btn btn-primary"><span data-i18n="nav.cta">Discuss your process</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
         <p style="position:relative;margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--ink-faint)">hello@inguznavitas.com · Riga, Latvia</p>
@@ -906,55 +1050,55 @@
   <section id="privacy">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">Privacy</span>
-        <h2>Your data, handled with the same rigor as our models.</h2>
-        <p class="intro">Inguz Navitas SIA (Riga, Latvia) is the data controller for this website. We process personal data lawfully, transparently and only for the purposes described below, in line with the EU General Data Protection Regulation (GDPR).</p>
+        <span class="eyebrow" data-i18n="pr.eyebrow">Privacy</span>
+        <h2 data-i18n="pr.h2">Your data, handled with the same rigor as our models.</h2>
+        <p class="intro" data-i18n="pr.intro">Inguz Navitas SIA (Riga, Latvia) is the data controller for this website. We process personal data lawfully, transparently and only for the purposes described below, in line with the EU General Data Protection Regulation (GDPR).</p>
       </div>
       <div class="privacy-grid reveal">
         <div class="pv">
-          <h3><span class="pn">01</span> What we collect</h3>
+          <h3><span class="pn">01</span> <span data-i18n="pr.t1">What we collect</span></h3>
           <ul>
-            <li>Contact details you send us — name, email and message content — when you reach out about a project.</li>
-            <li>Technical data — IP address, browser type and pages viewed — collected only through cookies you consent to.</li>
-            <li>We do not collect special-category data and we do not knowingly collect data from children.</li>
+            <li data-i18n="pr.t1a">Contact details you send us — name, email and message content — when you reach out about a project.</li>
+            <li data-i18n="pr.t1b">Technical data — IP address, browser type and pages viewed — collected only through cookies you consent to.</li>
+            <li data-i18n="pr.t1c">We do not collect special-category data and we do not knowingly collect data from children.</li>
           </ul>
         </div>
         <div class="pv">
-          <h3><span class="pn">02</span> Why we process it</h3>
+          <h3><span class="pn">02</span> <span data-i18n="pr.t2">Why we process it</span></h3>
           <ul>
-            <li>To respond to enquiries and discuss potential engineering work (legitimate interest / pre-contractual steps).</li>
-            <li>To understand and improve how the site is used — analytics only with your consent.</li>
-            <li>To meet legal and accounting obligations where applicable.</li>
+            <li data-i18n="pr.t2a">To respond to enquiries and discuss potential engineering work (legitimate interest / pre-contractual steps).</li>
+            <li data-i18n="pr.t2b">To understand and improve how the site is used — analytics only with your consent.</li>
+            <li data-i18n="pr.t2c">To meet legal and accounting obligations where applicable.</li>
           </ul>
         </div>
         <div class="pv">
-          <h3><span class="pn">03</span> Cookies &amp; analytics</h3>
-          <p>Strictly necessary cookies keep the site working and remember your cookie choice. Analytics cookies (e.g. Google Analytics) run only after you accept them, and load no tracking scripts until then. You can change your choice at any time.</p>
+          <h3><span class="pn">03</span> <span data-i18n="pr.t3">Cookies &amp; analytics</span></h3>
+          <p data-i18n="pr.t3p">Strictly necessary cookies keep the site working and remember your cookie choice. Analytics cookies (e.g. Google Analytics) run only after you accept them, and load no tracking scripts until then. You can change your choice at any time.</p>
           <ul>
-            <li><a href="#" data-cookie-open>Open cookie settings →</a></li>
+            <li><a href="#" data-cookie-open data-i18n="pr.t3link">Open cookie settings →</a></li>
           </ul>
         </div>
         <div class="pv">
-          <h3><span class="pn">04</span> Sharing &amp; retention</h3>
+          <h3><span class="pn">04</span> <span data-i18n="pr.t4">Sharing &amp; retention</span></h3>
           <ul>
-            <li>We never sell your data. It is shared only with processors that operate the site and analytics under data-processing agreements.</li>
-            <li>Enquiry data is kept only as long as needed to handle your request or our business relationship, then deleted.</li>
-            <li>Some processors may operate outside the EU under appropriate safeguards.</li>
+            <li data-i18n="pr.t4a">We never sell your data. It is shared only with processors that operate the site and analytics under data-processing agreements.</li>
+            <li data-i18n="pr.t4b">Enquiry data is kept only as long as needed to handle your request or our business relationship, then deleted.</li>
+            <li data-i18n="pr.t4c">Some processors may operate outside the EU under appropriate safeguards.</li>
           </ul>
         </div>
         <div class="pv">
-          <h3><span class="pn">05</span> Your rights</h3>
-          <p>Under the GDPR you may request access to, correction or erasure of your data, restrict or object to processing, and request data portability. You may also withdraw consent and lodge a complaint with the Latvian Data State Inspectorate (Datu valsts inspekcija).</p>
+          <h3><span class="pn">05</span> <span data-i18n="pr.t5">Your rights</span></h3>
+          <p data-i18n="pr.t5p">Under the GDPR you may request access to, correction or erasure of your data, restrict or object to processing, and request data portability. You may also withdraw consent and lodge a complaint with the Latvian Data State Inspectorate (Datu valsts inspekcija).</p>
         </div>
         <div class="pv">
-          <h3><span class="pn">06</span> Contact the controller</h3>
-          <p><b style="color:var(--ink)">Inguz Navitas SIA</b><br>Riga, Latvia<br>Data requests: <a href="mailto:privacy@inguznavitas.com">privacy@inguznavitas.com</a><br>General: <a href="mailto:hello@inguznavitas.com">hello@inguznavitas.com</a></p>
+          <h3><span class="pn">06</span> <span data-i18n="pr.t6">Contact the controller</span></h3>
+          <p><b style="color:var(--ink)">Inguz Navitas SIA</b><br>Riga, Latvia<br><span data-i18n="pr.t6a">Data requests</span>: <a href="mailto:privacy@inguznavitas.com">privacy@inguznavitas.com</a><br><span data-i18n="pr.t6b">General</span>: <a href="mailto:hello@inguznavitas.com">hello@inguznavitas.com</a></p>
         </div>
       </div>
       <div class="pv-meta reveal">
-        <span>Last updated · 28 August 2026</span>
-        <span>Controller · Inguz Navitas SIA</span>
-        <span>Jurisdiction · Latvia, EU (GDPR)</span>
+        <span data-i18n="pr.m1">Last updated · 28 August 2026</span>
+        <span data-i18n="pr.m2">Controller · Inguz Navitas SIA</span>
+        <span data-i18n="pr.m3">Jurisdiction · Latvia, EU (GDPR)</span>
       </div>
     </div>
   </section>
@@ -971,34 +1115,34 @@
         </svg>
         <span>INGUZ NAVITAS</span>
       </a>
-      <p>Physics-Informed AI for complex industrial processes. We combine physics, data and artificial intelligence to predict, optimize and control.</p>
+      <p data-i18n="foot.about">Physics-Informed AI for complex industrial processes. We combine physics, data and artificial intelligence to predict, optimize and control.</p>
     </div>
     <div class="flinks">
       <div>
-        <h4>Technology</h4>
+        <h4 data-i18n="nav.technology">Technology</h4>
         <a href="#technology">PINNs</a>
-        <a href="#twin">Digital Twins</a>
-        <a href="#mpc">Predictive Control</a>
-        <a href="#optimization">Optimization</a>
+        <a href="#twin" data-i18n="tag.twins">Digital Twins</a>
+        <a href="#mpc" data-i18n="loop.n6">Predictive Control</a>
+        <a href="#optimization" data-i18n="opt.eyebrow2">Optimization</a>
       </div>
       <div>
-        <h4>Applications</h4>
-        <a href="#applications">Pyrolysis</a>
-        <a href="#applications">Gasification</a>
-        <a href="#applications">Chemical reactors</a>
-        <a href="#applications">Thermal systems</a>
+        <h4 data-i18n="nav.applications">Applications</h4>
+        <a href="#applications" data-i18n="app.c1.t">Pyrolysis</a>
+        <a href="#applications" data-i18n="app.c2.t">Gasification</a>
+        <a href="#applications" data-i18n="app.c3.t">Chemical reactors</a>
+        <a href="#applications" data-i18n="app.c4.t">Thermal systems</a>
       </div>
       <div>
-        <h4>Company</h4>
-        <a href="#approach">Approach</a>
-        <a href="#research">Research</a>
-        <a href="#team">Team</a>
-        <a href="#contact">Contact</a>
+        <h4 data-i18n="foot.company">Company</h4>
+        <a href="#approach" data-i18n="nav.approach">Approach</a>
+        <a href="#research" data-i18n="res.eyebrow2">Research</a>
+        <a href="#team" data-i18n="nav.team">Team</a>
+        <a href="#contact" data-i18n="ct.eyebrow">Contact</a>
       </div>
       <div>
-        <h4>Legal</h4>
-        <a href="#privacy">Privacy</a>
-        <a href="#" data-cookie-open>Cookie settings</a>
+        <h4 data-i18n="foot.legal">Legal</h4>
+        <a href="#privacy" data-i18n="pr.eyebrow">Privacy</a>
+        <a href="#" data-cookie-open data-i18n="foot.cookie">Cookie settings</a>
       </div>
     </div>
   </div>
@@ -1016,31 +1160,429 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5z"/><circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="14" cy="14" r="1" fill="currentColor" stroke="none"/><circle cx="16" cy="9" r="1" fill="currentColor" stroke="none"/></svg>
       </div>
       <div>
-        <h4>We value your privacy</h4>
-        <p>We use strictly necessary cookies to run this site, and — only with your consent — analytics cookies to understand how it's used. See our <a href="#privacy" data-cookie-privacy>Privacy&nbsp;policy</a>.</p>
+        <h4 data-i18n="ck.title">We value your privacy</h4>
+        <p data-i18n-html="ck.body">We use strictly necessary cookies to run this site, and — only with your consent — analytics cookies to understand how it's used. See our <a href="#privacy" data-cookie-privacy>Privacy&nbsp;policy</a>.</p>
       </div>
     </div>
 
     <div class="cookie-prefs" id="cookiePrefs">
       <div class="pref">
-        <div class="pt"><b>Strictly necessary</b><span>Required for the site to function and to remember your cookie choice. Always active.</span></div>
+        <div class="pt"><b data-i18n="ck.nec.t">Strictly necessary</b><span data-i18n="ck.nec.d">Required for the site to function and to remember your cookie choice. Always active.</span></div>
         <label class="switch"><input type="checkbox" checked disabled><span class="slider"></span></label>
       </div>
       <div class="pref">
-        <div class="pt"><b>Analytics</b><span>Google Analytics — anonymous usage statistics to help us improve the site. Loads only if enabled.</span></div>
+        <div class="pt"><b data-i18n="ck.an.t">Analytics</b><span data-i18n="ck.an.d">Google Analytics — anonymous usage statistics to help us improve the site. Loads only if enabled.</span></div>
         <label class="switch"><input type="checkbox" id="prefAnalytics"><span class="slider"></span></label>
       </div>
     </div>
 
     <div class="cookie-actions">
-      <button class="cbtn link" id="cookieToggle" type="button">Preferences</button>
-      <button class="cbtn" id="cookieNecessary" type="button">Necessary only</button>
-      <button class="cbtn" id="cookieSave" type="button" style="display:none">Save choices</button>
-      <button class="cbtn primary" id="cookieAll" type="button">Accept all</button>
+      <button class="cbtn link" id="cookieToggle" type="button" data-i18n="ck.prefs">Preferences</button>
+      <button class="cbtn" id="cookieNecessary" type="button" data-i18n="ck.nec.btn">Necessary only</button>
+      <button class="cbtn" id="cookieSave" type="button" style="display:none" data-i18n="ck.save">Save choices</button>
+      <button class="cbtn primary" id="cookieAll" type="button" data-i18n="ck.all">Accept all</button>
     </div>
   </div>
 </div>
 
+<script>
+/* ================= TRANSLATIONS (DE / LV / RU) ================= */
+window.I18N = {
+  _meta: {
+    de: { title: "Inguz Navitas — Physik-informierte KI", desc: "Inguz Navitas entwickelt physik-informierte neuronale Netze (PINNs), digitale Zwillinge und prädiktive Regelung für komplexe industrielle Prozesse." },
+    lv: { title: "Inguz Navitas — fizikā balstīts MI", desc: "Inguz Navitas izstrādā fizikā balstītus neironu tīklus (PINN), digitālos dvīņus un prognozējošo vadību sarežģītiem rūpnieciskiem procesiem." },
+    ru: { title: "Inguz Navitas — физически-информированный ИИ", desc: "Inguz Navitas разрабатывает физически-информированные нейронные сети (PINN), цифровые двойники и предиктивное управление для сложных технологических процессов." }
+  },
+  de: {}, lv: {}, ru: {}
+};
+Object.assign(window.I18N.de, {
+  "brand.tag":"Physik-informierte KI",
+  "nav.technology":"Technologie","nav.twin":"Digitaler Zwilling","nav.applications":"Anwendungen","nav.approach":"Vorgehen","nav.faq":"FAQ","nav.team":"Team","nav.cta":"Prozess besprechen",
+  "hero.eyebrow":"PINN · Digitale Zwillinge · Prädiktive Regelung",
+  "hero.h1":"Physik, wo Daten enden. <span class=\"a\">Vorhersage</span> vor der <span class=\"b\">Abweichung</span>.",
+  "hero.lede":"Wir entwickeln physik-informierte neuronale Netze, die physikalische Gesetze mit Prozessdaten verbinden — schnelle, prädiktive Modelle komplexer industrieller Systeme.",
+  "seq.measure":"Messung","seq.state":"Zustandsschätzung","seq.predict":"Vorhersage","seq.optim":"Optimierung","seq.control":"Regelung",
+  "hero.cta1":"Technologie entdecken","hero.cta2":"Forschung lesen",
+  "tag.twins":"Digitale Zwillinge","tag.state":"Zustandsschätzung","tag.anomaly":"Anomalieerkennung",
+  "loop.core":"PINN-Kern","loop.twin":"digitaler Zwilling",
+  "loop.n1":"Physisches System","loop.n2":"Sensoren &amp; Daten","loop.n3":"PINN-Zwilling","loop.n4":"Zustandsvorhersage","loop.n5":"Optimierung","loop.n6":"Prädiktive Regelung",
+  "shift.eyebrow":"Der Wandel",
+  "shift.h2":"Von der Reaktion auf eine Abweichung<br>zur Vorhersage des Prozesses.",
+  "shift.intro":"Herkömmliche Regelung reagiert auf eine bereits eingetretene Abweichung. Prädiktive Regelung bewertet das erwartete künftige Verhalten des Prozesses und handelt, bevor ein unerwünschter Zustand erreicht wird.",
+  "shift.reactive":"Reaktive Regelung","shift.r1":"Messung","shift.r2":"Abweichungsschätzung","shift.r3":"Stelleingriff",
+  "shift.predictive":"Prädiktive Regelung","shift.p1":"Messung","shift.p2":"Zustandsschätzung","shift.p3":"Prozessvorhersage","shift.p4":"Optimierung","shift.p5":"Stelleingriff",
+  "tech.eyebrow":"Technologie","tech.h2":"Ein neuronales Netz, das der Physik gehorcht.",
+  "tech.intro":"Ein physik-informiertes neuronales Netz bindet die geltenden physikalischen Gesetze direkt in den Lernprozess ein. Es wird nicht nur zur Datenanpassung trainiert, sondern erfüllt auch die Differentialgleichungen, Anfangs- und Randbedingungen, die den Prozess beschreiben.",
+  "tech.loss.cap":"Physik-informierter Verlust",
+  "tech.loss.note":"Das Training minimiert gleichzeitig den Fehler gegenüber bekannten <b>Daten</b> und das Residuum der geltenden <b>physikalischen Gleichungen</b> — das Modell ist datengetrieben und physikalisch konsistent.",
+  "tech.leg.data":"<b>Daten.</b> Anpassung an experimentelle Messungen und Sensorverläufe.",
+  "tech.leg.phys":"<b>Physik.</b> Residuum der Bilanz-, Kinetik- und Transportgleichungen.",
+  "tech.leg.cond":"<b>Bedingungen.</b> Rand- und Anfangsbedingungen des Gebiets.",
+  "tech.heat.cap":"Geltende Physik · Wärmeübertragung",
+  "tech.heat.note":"Automatische Differentiation liefert die benötigten Ableitungen direkt aus dem Netz — Gleichungen wie die Energiebilanz werden ins Modell eingebettet, statt umgangen zu werden.",
+  "tech.pred.cap":"Vorhersageoperator",
+  "tech.pred.note":"Nach dem Training wirkt das PINN als schnelles Surrogat <b>𝒟</b> — es berechnet den künftigen Zustand für jede Kandidaten-Stelltrajektorie wiederholt und ermöglicht virtuelle Experimente, bevor die Anlage berührt wird.",
+  "twin.eyebrow":"Digitaler Zwilling","twin.h2":"Ein lebendes Modell, synchron mit der Anlage.",
+  "twin.intro":"Das PINN wird zum Rechenkern eines digitalen Zwillings — einer dynamischen Repräsentation, die über den gesamten Lebenszyklus durch Datenaustausch kontinuierlich mit dem physischen System synchronisiert wird.",
+  "twin.c1.k":"Schätzen","twin.c1.t":"Zustandsschätzung","twin.c1.d":"Echtzeit-Schätzung des aktuellen Prozesszustands, einschließlich nicht direkt messbarer Größen.",
+  "twin.c2.k":"Vorhersagen","twin.c2.t":"Prozessentwicklung","twin.c2.d":"Vorhersage, wie sich der Prozess unter verschiedenen Kandidaten-Stelleingriffen entwickelt.",
+  "twin.c3.k":"Experimentieren","twin.c3.t":"Virtuelles Experimentieren","twin.c3.d":"Bewerten mehrerer Szenarien und ihrer Folgen, bevor ein Eingriff am physischen System erfolgt.",
+  "twin.c4.k":"Identifizieren","twin.c4.t":"Parameterschätzung","twin.c4.d":"Ermittlung von Prozess- und Anlagenparametern, die sich mit Bedingungen und Einsatzstoff verändern.",
+  "twin.c5.k":"Erkennen","twin.c5.t":"Anomalieerkennung","twin.c5.d":"Vergleich von vorhergesagtem und gemessenem Verhalten; Residuen zeigen Sensorfehler, Verschleiß oder anormale Regime.",
+  "twin.c6.k":"Optimieren","twin.c6.t":"Regelung &amp; Optimierung","twin.c6.d":"Die Vorhersage speist einen Optimierer, der die Aktion mit der besten Zielerfüllung wählt.",
+  "mpc.h2":"Jede Option prüfen, bevor eine gewählt wird.",
+  "mpc.intro":"Ein trainiertes PINN ist schnell genug, um als Surrogatmodell in einer modellprädiktiven Regelung zu dienen. Für jede Kandidaten-Stelltrajektorie sagt es den künftigen Zustand voraus — und der Optimierer wählt die beste.",
+  "mpc.current":"Aktueller<br>Zustand x(t)","mpc.optimize":"J optimieren","mpc.optimal":"Optimales u*",
+  "opt.eyebrow":"Prozessoptimierung","opt.eyebrow2":"Optimierung","opt.h2":"Ein Ziel, viele Kriterien.",
+  "opt.intro":"Industrielle Prozesse haben selten ein einziges Optimierungskriterium. Die Zielfunktion wägt konkurrierende Ziele gleichzeitig ab — sie optimiert die Gesamteffizienz des Prozesses statt eines einzelnen Parameters.",
+  "opt.th1":"Kriterium","opt.th2":"Ziel",
+  "opt.o1":"Produktqualität maximieren","opt.o2":"Energieverbrauch minimieren","opt.o3":"Produktivität maximieren","opt.o4":"Stabilen Betrieb halten","opt.o5":"Sichere Betriebsbedingungen wahren","opt.o6":"Unnötigen Stellaufwand minimieren",
+  "opt.cap1":"Optimaler Stelleingriff","opt.cap2":"Gewichtetes Ziel",
+  "opt.note":"Die Gewichte <b>w<sub>i</sub></b> kodieren die Prioritäten des Betreibers — die intelligente Schicht optimiert den Prozess als Ganzes.",
+  "app.eyebrow":"Anwendungen","app.h2":"Für nichtlineare, gekoppelte, thermochemische Systeme.",
+  "app.intro":"Der Ansatz ist nicht an eine Anlagenart gebunden. Er zielt auf stark gekoppelte, dynamische industrielle Prozesse, deren Verhalten von vielen wechselwirkenden physikalischen und chemischen Phänomenen bestimmt wird.",
+  "app.c1.k":"Thermochemisch","app.c1.t":"Pyrolyse","app.c1.l1":"Temperaturverteilung","app.c1.l2":"Wärmeübertragung","app.c1.l3":"Einsatzstoffumsatz","app.c1.l4":"Reaktionskinetik","app.c1.l5":"Gaszusammensetzung",
+  "app.c2.k":"Gasaufbereitung","app.c2.t":"Vergasung","app.c2.l1":"Reaktormodellierung","app.c2.l3":"Thermische Zustandsschätzung",
+  "app.c3.k":"Kinetik","app.c3.t":"Chemische Reaktoren","app.c3.l2":"Transportgleichungen","app.c3.l3":"Prozessmessungen","app.c3.l4":"Prädiktive Reaktormodelle",
+  "app.c4.k":"Hochtemperatur","app.c4.t":"Thermische Systeme","app.c4.l1":"Industrieöfen","app.c4.l2":"Wärmeübertragungssysteme","app.c4.l3":"Wärmebehandlung","app.c4.l4":"Energiesysteme",
+  "pyro.eyebrow":"Praxisbeispiel","pyro.h2":"Ein Pyrolysereaktor, vorhersagbar gemacht.",
+  "pyro.intro":"Pyrolyse ist ein komplexer thermochemischer Prozess — Aufheizen, Trocknung, Zersetzung, Phasenbildung und Sekundärreaktionen. Viele Zustände sind nur indirekt beobachtbar. Ein PINN verbindet diese Messungen mit Energiebilanzen und Kinetik zu einem prädiktiven digitalen Zwilling des Reaktors.",
+  "pyro.c1.k":"Reaktor-Zustandsvektor","pyro.c1.d":"Temperatur, Druck, Massenstrom, Produktzusammensetzung, Umsatz und thermische Leistung — verbunden mit Energie- und Massenbilanzen sowie Wärmeübertragungs- und Reaktionskinetikgleichungen.",
+  "pyro.c2.k":"Vor Änderung der Heizleistung","pyro.c2.d":"Jede Alternative wird nach Produktionsrate, Energieverbrauch, Produktqualität und Einhaltung der Prozessgrenzen bewertet — dann wird der bevorzugte Stelleingriff gewählt, noch vor der Abweichung.",
+  "arch.eyebrow":"Architektur","arch.h2":"Eine KI-Schicht, die Automatisierung ergänzt — nicht ersetzt.",
+  "arch.intro":"Ein modularer cyber-physischer Aufbau. Die KI erzeugt Vorhersagen und empfohlene Aktionen; konventionelle Regelungs- und Schutzsysteme halten den Betrieb in sicheren Grenzen.",
+  "arch.l1":"Physischer Prozess","arch.l1d":"Sensoren &amp; Aktoren","arch.l2":"Datenerfassung","arch.l2d":"Verarbeitung &amp; Normalisierung",
+  "arch.l3":"Physik-informierte KI · PINN-Zwilling","arch.l3d":"Vorhersage &amp; Schätzung","arch.l5d":"Empfohlene Aktionen","arch.l6d":"Sicherheits- &amp; Schutzkreise",
+  "arch.return":"└── die Regelung kehrt zum physischen Prozess zurück · Schleife bei jeder Messung ──┘",
+  "arch.i1.k":"Integration","arch.i1.t":"Industrieprotokolle","arch.i2.k":"Bereitstellung","arch.i2.d":"Training auf leistungsstarker Hardware; das trainierte PINN wird auf einem Edge-Modul nahe am Prozess bereitgestellt — für latenzarme Echtzeit-Vorhersage.",
+  "arch.i3.k":"Anpassung","arch.i3.t":"Adaptive Zwillinge","arch.i3.d":"Neue Messungen verfeinern die Modellparameter im Lauf der Zeit, wenn Anlagen altern und Einsatzstoffe variieren.",
+  "ben.eyebrow":"Warum physik-informierte KI","ben.h2":"Ingenieurwissen und KI — kombiniert, nicht ersetzt.",
+  "ben.b1.t":"Physik + Daten","ben.b1.d":"Physikalisches Wissen verringert die Abhängigkeit von rein empirischen Zusammenhängen und erhöht die Konsistenz.",
+  "ben.b2.t":"Kommt mit weniger Daten aus","ben.b2.d":"Physikalische Gesetze erlauben den Betrieb mit begrenzten experimentellen Daten.",
+  "ben.b3.t":"Schnelles Surrogat","ben.b3.d":"Ein trainiertes PINN ersetzt rechenintensive physikalische Modelle bei wiederholter Simulation.",
+  "ben.b4.t":"Sagt die Zukunft voraus","ben.b4.d":"Bewertet künftiges Prozessverhalten, statt nur auf aktuelle Abweichungen zu reagieren.",
+  "ben.b5.t":"Sieht das Ungemessene","ben.b5.d":"Schätzt verborgene Zustände — Innentemperatur, Umsatz, Zusammensetzung — aus verfügbaren Daten.",
+  "ben.b6.t":"Optimiert viele Ziele","ben.b6.d":"Mehrere technologische Kriterien werden gleichzeitig in einem Ziel optimiert.",
+  "apr.eyebrow":"Ingenieurmäßiges Vorgehen","apr.h2":"Vom Prozessverständnis zur intelligenten Regelung.",
+  "apr.intro":"Eine ingenieurorientierte Entwicklungsfolge — jede Stufe baut auf echtem Prozesswissen auf, nicht auf Daten allein.",
+  "apr.s1.t":"Prozessanalyse","apr.s1.d":"Verständnis der physikalischen, chemischen und technologischen Struktur des Prozesses.",
+  "apr.s2.t":"Datenanalyse","apr.s2.d":"Bewertung verfügbarer Messungen, Sensoren, historischer Daten und Betriebsregime.",
+  "apr.s3.t":"Physikalisches Modell","apr.s3.d":"Identifikation der geltenden Gleichungen, Beschränkungen und Prozessparameter.",
+  "apr.s4.t":"PINN-Entwicklung","apr.s4.d":"Aufbau und Training des physik-informierten neuronalen Netzes.",
+  "apr.s5.t":"Digitaler Zwilling","apr.s5.d":"Integration des trainierten Modells in eine dynamische digitale Repräsentation.",
+  "apr.s6.t":"Vorhersage","apr.s6.d":"Validierung der Zukunftszustands-Vorhersage über verschiedene Betriebsbedingungen.",
+  "apr.s7.d":"Entwicklung mehrkriterieller Optimierungsalgorithmen.",
+  "apr.s8.t":"Regelung","apr.s8.d":"Integration mit prädiktiver Regelung und industrieller Automatisierung.",
+  "apr.s9.t":"Bereitstellung","apr.s9.d":"Einsatz auf industrieller Rechen- oder Edge-Hardware.",
+  "res.eyebrow":"Forschung &amp; Publikationen","res.eyebrow2":"Forschung","res.h2":"Auf begutachteter Wissenschaft gegründet.",
+  "res.tag":"Ausgewählte Forschung","res.date":"August 2026",
+  "res.abs":"Der Beitrag untersucht die Perspektiven der Anwendung von PINNs auf die Modellierung und prädiktive Regelung komplexer technologischer Prozesse — durch Verbindung von maschinellem Lernen mit physikalischen Gesetzen, experimentellen Daten und Optimierung. Am Beispiel eines Pyrolysereaktors wird gezeigt, wie ein physik-informiertes Modell in einen geschlossenen Regelkreis integriert wird; Vorteile, Anwendungsfelder, Grenzen und Weiterentwicklungen werden diskutiert.",
+  "res.kw.ml":"Maschinelles Lernen","res.kw.ic":"Intelligente Regelung",
+  "res.r1":"Abschnitte","res.r2":"Referenzen","res.r3":"Gleichungen",
+  "res.rd":"F&amp;E-Bereich","res.rd1":"Hybride Physik-KI-Modelle","res.rd2":"Deep Learning für physikalische Systeme","res.rd3":"Thermochemische Modellierung",
+  "tag.twins2":"Digitaler Zwilling",
+  "faq.eyebrow":"FAQ","faq.h2":"Physik-informierte KI, erklärt.","faq.intro":"Häufige Fragen zu physik-informierten neuronalen Netzen, digitalen Zwillingen und prädiktiver Regelung industrieller Prozesse.",
+  "faq.q1":"Was ist ein physik-informiertes neuronales Netz (PINN)?",
+  "faq.a1":"Ein physik-informiertes neuronales Netz ist ein Modell des maschinellen Lernens, das geltende physikalische Gesetze — Differentialgleichungen, Bilanzen und Randbedingungen — direkt ins Training einbettet. Es passt sich experimentellen Daten an und erfüllt zugleich die Physik, sodass ein datengetriebenes und physikalisch konsistentes Modell entsteht.",
+  "faq.q2":"Wie wird ein PINN für modellprädiktive Regelung genutzt?",
+  "faq.a2":"Ein trainiertes PINN dient als schnelles Surrogatmodell in einer modellprädiktiven Regelschleife. Für jede Kandidaten-Stelltrajektorie sagt es den künftigen Zustand voraus, und ein Optimierer wählt die Aktion mit der besten Zielerfüllung, bevor sie auf die Anlage angewendet wird.",
+  "faq.q3":"Was ist ein digitaler Zwilling eines industriellen Prozesses?",
+  "faq.a3":"Ein digitaler Zwilling ist ein dynamisches digitales Modell, das über Sensordaten kontinuierlich mit einem physischen System synchronisiert wird. Mit einem PINN im Kern schätzt er den aktuellen Zustand, sagt die Prozessentwicklung voraus, erkennt Anomalien und stützt die prädiktive Regelung über den Lebenszyklus.",
+  "faq.q4":"Kann ein PINN einen Pyrolysereaktor modellieren?",
+  "faq.a4":"Ja. Ein PINN verbindet Reaktormessungen mit Energie- und Massenbilanzen sowie Reaktionskinetik, um Temperaturverteilung, Umsatz und Gaszusammensetzung vorherzusagen — und baut so einen prädiktiven digitalen Zwilling des Pyrolysereaktors für Optimierung und Regelung.",
+  "faq.q5":"Wie unterscheidet sich physik-informierte KI von einem herkömmlichen neuronalen Netz?",
+  "faq.a5":"Ein herkömmliches neuronales Netz lernt nur aus Daten. Ein physik-informiertes neuronales Netz erzwingt zusätzlich das Residuum der geltenden physikalischen Gleichungen, benötigt daher weniger Daten, generalisiert besser und bleibt außerhalb des Trainingsbereichs physikalisch konsistent.",
+  "faq.q6":"Welche industriellen Prozesse kann Inguz Navitas modellieren?",
+  "faq.a6":"Nichtlineare, stark gekoppelte thermochemische und thermische Systeme: Pyrolyse- und Vergasungsreaktoren, chemische Reaktoren, Industrieöfen, Wärmeübertragungs- und Energiesysteme sowie weitere Prozesse, deren Verhalten von wechselwirkenden physikalischen und chemischen Phänomenen bestimmt wird.",
+  "team.eyebrow":"Team","team.h2":"Jahrzehnte Thermophysik hinter dem Modell.",
+  "team.intro":"Physik-informierte KI ist nur so gut wie die Physik dahinter. Unsere Arbeit gründet auf einer Laufbahn in der Energietechnik-Forschung, der numerischen Strömungsmechanik und thermochemischen Systemen.",
+  "team.role":"D.Sc., Prof. · Gründer &amp; Chefwissenschaftler",
+  "team.bio":"Wissenschaftler und Forschungsspezialist in der Energietechnik. 2010 schuf er die erste serielle Mikroturbineneinheit Russlands — einen 20-kW-Mikroturbo-Expander-Generator für Gasverteilstationen — und leitete seither die Entwicklung von Mikroturbinen, ORC-Abwärmenutzung sowie kryogenen und überkritischen CO₂-Kraftsystemen.",
+  "team.st1":"Publikationen","team.st2":"Patente","team.st3":"Monografien","team.st4":"Jahre F&amp;E",
+  "team.cr1":"<b>Doktor der technischen Wissenschaften (D.Sc.)</b>Polytechnische Universität St. Petersburg — Methodik von Mikroturbinenanlagen.",
+  "team.cr2":"<b>Kandidat der technischen Wissenschaften (PhD)</b>100-kW-Mikroturbinengenerator — Berechnungs- und Versuchsmethoden.",
+  "team.cr3":"<b>Elektronikingenieur — LETI, Leningrad</b>Diplom mit Auszeichnung (Note 5,0 / 5,0).",
+  "team.cr4":"<b>Professor für maritime Energietechnik</b>Staatl. Marinetechnische Universität St. Petersburg · CFD, Fluid- &amp; Gasmechanik.",
+  "team.join.t":"Wir bauen das Team auf","team.join.d":"Wir wachsen in ML-Engineering, Prozessmodellierung und industrieller Integration. Weitere Teamprofile folgen hier in Kürze.",
+  "ct.eyebrow":"Kontakt","ct.h2":"Bauen wir ein intelligentes Modell Ihres Prozesses.",
+  "ct.p":"Haben Sie einen komplexen industriellen Prozess, der schwer zu modellieren, vorherzusagen oder zu optimieren ist? Wir entwickeln daraus ein physik-informiertes intelligentes System aus Ihren Prozessdaten und Ihrem Ingenieurwissen.",
+  "ct.s1":"Prozessmodellierung","ct.s2":"Digitaler-Zwilling-Entwicklung","ct.s3":"PINN-Entwicklung",
+  "pr.eyebrow":"Datenschutz","pr.h2":"Ihre Daten — mit derselben Sorgfalt behandelt wie unsere Modelle.",
+  "pr.intro":"Inguz Navitas SIA (Riga, Lettland) ist der Verantwortliche für diese Website. Wir verarbeiten personenbezogene Daten rechtmäßig, transparent und nur zu den unten genannten Zwecken, im Einklang mit der EU-Datenschutz-Grundverordnung (DSGVO).",
+  "pr.t1":"Was wir erheben","pr.t1a":"Kontaktdaten, die Sie uns senden — Name, E-Mail und Nachrichteninhalt —, wenn Sie uns zu einem Projekt kontaktieren.","pr.t1b":"Technische Daten — IP-Adresse, Browsertyp und aufgerufene Seiten — nur über Cookies erhoben, denen Sie zustimmen.","pr.t1c":"Wir erheben keine besonderen Datenkategorien und wissentlich keine Daten von Kindern.",
+  "pr.t2":"Warum wir sie verarbeiten","pr.t2a":"Um Anfragen zu beantworten und mögliche Ingenieurarbeiten zu besprechen (berechtigtes Interesse / vorvertragliche Schritte).","pr.t2b":"Um die Nutzung der Website zu verstehen und zu verbessern — Analyse nur mit Ihrer Einwilligung.","pr.t2c":"Um rechtliche und buchhalterische Pflichten zu erfüllen, soweit zutreffend.",
+  "pr.t3":"Cookies &amp; Analyse","pr.t3p":"Unbedingt erforderliche Cookies halten die Website funktionsfähig und speichern Ihre Cookie-Wahl. Analyse-Cookies (z. B. Google Analytics) laufen erst nach Ihrer Zustimmung und laden bis dahin keine Tracking-Skripte. Sie können Ihre Wahl jederzeit ändern.","pr.t3link":"Cookie-Einstellungen öffnen →",
+  "pr.t4":"Weitergabe &amp; Speicherung","pr.t4a":"Wir verkaufen Ihre Daten nie. Sie werden nur an Auftragsverarbeiter weitergegeben, die die Website und Analyse unter Auftragsverarbeitungsverträgen betreiben.","pr.t4b":"Anfragedaten werden nur so lange gespeichert, wie es für Ihre Anfrage oder unsere Geschäftsbeziehung nötig ist, und dann gelöscht.","pr.t4c":"Einige Auftragsverarbeiter können unter geeigneten Garantien außerhalb der EU tätig sein.",
+  "pr.t5":"Ihre Rechte","pr.t5p":"Nach der DSGVO können Sie Auskunft, Berichtigung oder Löschung Ihrer Daten verlangen, die Verarbeitung einschränken oder ihr widersprechen und Datenübertragbarkeit verlangen. Sie können Ihre Einwilligung widerrufen und Beschwerde bei der lettischen Datenschutzbehörde (Datu valsts inspekcija) einlegen.",
+  "pr.t6":"Verantwortlichen kontaktieren","pr.t6a":"Datenanfragen","pr.t6b":"Allgemein",
+  "pr.m1":"Zuletzt aktualisiert · 28. August 2026","pr.m2":"Verantwortlicher · Inguz Navitas SIA","pr.m3":"Zuständigkeit · Lettland, EU (DSGVO)",
+  "foot.about":"Physik-informierte KI für komplexe industrielle Prozesse. Wir verbinden Physik, Daten und künstliche Intelligenz, um vorherzusagen, zu optimieren und zu regeln.",
+  "foot.company":"Unternehmen","foot.legal":"Rechtliches","foot.cookie":"Cookie-Einstellungen",
+  "ck.title":"Ihre Privatsphäre ist uns wichtig",
+  "ck.body":"Wir verwenden unbedingt erforderliche Cookies zum Betrieb dieser Website und — nur mit Ihrer Einwilligung — Analyse-Cookies, um die Nutzung zu verstehen. Siehe unsere <a href=\"#privacy\" data-cookie-privacy>Datenschutzerklärung</a>.",
+  "ck.nec.t":"Unbedingt erforderlich","ck.nec.d":"Nötig für die Funktion der Website und zum Speichern Ihrer Cookie-Wahl. Immer aktiv.",
+  "ck.an.t":"Analyse","ck.an.d":"Google Analytics — anonyme Nutzungsstatistik zur Verbesserung der Website. Wird nur bei Aktivierung geladen.",
+  "ck.prefs":"Einstellungen","ck.nec.btn":"Nur erforderliche","ck.save":"Auswahl speichern","ck.all":"Alle akzeptieren"
+});
+Object.assign(window.I18N.lv, {
+  "brand.tag":"Fizikā balstīts MI",
+  "nav.technology":"Tehnoloģija","nav.twin":"Digitālais dvīnis","nav.applications":"Pielietojumi","nav.approach":"Pieeja","nav.faq":"BUJ","nav.team":"Komanda","nav.cta":"Pārrunāt procesu",
+  "hero.eyebrow":"PINN · Digitālie dvīņi · Prognozējošā vadība",
+  "hero.h1":"Fizika, kur beidzas dati. <span class=\"a\">Prognoze</span> pirms <span class=\"b\">novirzes</span>.",
+  "hero.lede":"Mēs veidojam fizikā balstītus neironu tīklus, kas apvieno fizikas likumus ar procesa datiem — ātrus, prognozējošus sarežģītu rūpniecisku sistēmu modeļus.",
+  "seq.measure":"mērījums","seq.state":"stāvokļa novērtējums","seq.predict":"prognoze","seq.optim":"optimizācija","seq.control":"vadība",
+  "hero.cta1":"Iepazīt tehnoloģiju","hero.cta2":"Lasīt pētījumu",
+  "tag.twins":"Digitālie dvīņi","tag.state":"Stāvokļa novērtējums","tag.anomaly":"Anomāliju atklāšana",
+  "loop.core":"PINN kodols","loop.twin":"digitālais dvīnis",
+  "loop.n1":"Fiziskā sistēma","loop.n2":"Sensori un dati","loop.n3":"PINN dvīnis","loop.n4":"Stāvokļa prognoze","loop.n5":"Optimizācija","loop.n6":"Prognozējošā vadība",
+  "shift.eyebrow":"Pārmaiņa",
+  "shift.h2":"No reaģēšanas uz novirzi<br>uz procesa prognozēšanu.",
+  "shift.intro":"Tradicionālā vadība reaģē uz jau notikušu novirzi. Prognozējošā vadība novērtē procesa gaidāmo nākotnes uzvedību un rīkojas, pirms ir sasniegts nevēlams stāvoklis.",
+  "shift.reactive":"Reaktīvā vadība","shift.r1":"Mērījums","shift.r2":"Novirzes novērtējums","shift.r3":"Vadības darbība",
+  "shift.predictive":"Prognozējošā vadība","shift.p1":"Mērījums","shift.p2":"Stāvokļa novērtējums","shift.p3":"Procesa prognoze","shift.p4":"Optimizācija","shift.p5":"Vadības darbība",
+  "tech.eyebrow":"Tehnoloģija","tech.h2":"Neironu tīkls, kas pakļaujas fizikai.",
+  "tech.intro":"Fizikā balstīts neironu tīkls iekļauj fizikas likumus tieši apmācības procesā. To apmāca ne tikai pielāgoties datiem, bet arī izpildīt diferenciālvienādojumus, sākuma un robežnosacījumus, kas apraksta procesu.",
+  "tech.loss.cap":"Fizikā balstīts zudums",
+  "tech.loss.note":"Apmācība vienlaikus minimizē kļūdu pret zināmajiem <b>datiem</b> un fizikas <b>vienādojumu</b> atlikumu — tāpēc modelis ir gan datu virzīts, gan fizikāli konsekvents.",
+  "tech.leg.data":"<b>Dati.</b> Pielāgošanās eksperimentālajiem mērījumiem un sensoru vēsturei.",
+  "tech.leg.phys":"<b>Fizika.</b> Bilances, kinētikas un pārneses vienādojumu atlikums.",
+  "tech.leg.cond":"<b>Nosacījumi.</b> Apgabala robež- un sākuma nosacījumi.",
+  "tech.heat.cap":"Fizika · siltuma pārnese",
+  "tech.heat.note":"Automātiskā diferencēšana iegūst nepieciešamos atvasinājumus tieši no tīkla — vienādojumi, piemēram, enerģijas bilance, tiek iekļauti modelī, nevis apieti.",
+  "tech.pred.cap":"Prognozes operators",
+  "tech.pred.note":"Pēc apmācības PINN darbojas kā ātrs surogāts <b>𝒟</b> — atkārtoti aprēķinot nākotnes stāvokli jebkurai kandidāta vadības trajektorijai un ļaujot veikt virtuālus eksperimentus pirms iejaukšanās iekārtā.",
+  "twin.eyebrow":"Digitālais dvīnis","twin.h2":"Dzīvs modelis, sinhronizēts ar iekārtu.",
+  "twin.intro":"PINN kļūst par digitālā dvīņa skaitļošanas kodolu — dinamisku attēlojumu, kas caur datu apmaiņu tiek nepārtraukti sinhronizēts ar fizisko sistēmu visā tās dzīves ciklā.",
+  "twin.c1.k":"Novērtēt","twin.c1.t":"Stāvokļa novērtējums","twin.c1.d":"Reāllaika procesa pašreizējā stāvokļa novērtējums, tostarp lielumi, ko nevar izmērīt tieši.",
+  "twin.c2.k":"Prognozēt","twin.c2.t":"Procesa attīstība","twin.c2.d":"Prognoze, kā process attīstīsies dažādu kandidātu vadības darbību ietekmē.",
+  "twin.c3.k":"Eksperimentēt","twin.c3.t":"Virtuālā eksperimentēšana","twin.c3.d":"Novērtēt vairākus scenārijus un to sekas, pirms fiziskajai sistēmai tiek pielietota jebkāda darbība.",
+  "twin.c4.k":"Identificēt","twin.c4.t":"Parametru novērtējums","twin.c4.d":"Atgūt procesa un iekārtas parametrus, kas mainās līdz ar apstākļiem un izejvielu.",
+  "twin.c5.k":"Atklāt","twin.c5.t":"Anomāliju atklāšana","twin.c5.d":"Salīdzināt prognozēto un izmērīto uzvedību; atlikumi norāda uz sensoru kļūdām, nolietojumu vai anomāliem režīmiem.",
+  "twin.c6.k":"Optimizēt","twin.c6.t":"Vadība un optimizācija","twin.c6.d":"Prognoze tiek padota optimizatoram, kas izvēlas darbību, kura vislabāk atbilst procesa mērķiem.",
+  "mpc.h2":"Novērtē katru iespēju, pirms izvēlies vienu.",
+  "mpc.intro":"Apmācīts PINN ir pietiekami ātrs, lai kalpotu kā surogātmodelis modeļa prognozējošās vadības cilpā. Katrai kandidāta vadības trajektorijai tas prognozē nākotnes stāvokli — un optimizators izvēlas labāko.",
+  "mpc.current":"Pašreizējais<br>stāvoklis x(t)","mpc.optimize":"Optimizēt J","mpc.optimal":"Optimālais u*",
+  "opt.eyebrow":"Procesa optimizācija","opt.eyebrow2":"Optimizācija","opt.h2":"Viens mērķis, daudz kritēriju.",
+  "opt.intro":"Rūpnieciskiem procesiem reti ir viens optimizācijas kritērijs. Mērķa funkcija vienlaikus līdzsvaro konkurējošus mērķus — optimizējot procesa kopējo efektivitāti, nevis kādu vienu parametru.",
+  "opt.th1":"Kritērijs","opt.th2":"Mērķis",
+  "opt.o1":"Maksimizēt produkta kvalitāti","opt.o2":"Minimizēt enerģijas patēriņu","opt.o3":"Maksimizēt produktivitāti","opt.o4":"Uzturēt stabilu darbību","opt.o5":"Saglabāt drošus darba apstākļus","opt.o6":"Minimizēt lieku vadības piepūli",
+  "opt.cap1":"Optimālā vadības darbība","opt.cap2":"Svērtais mērķis",
+  "opt.note":"Svari <b>w<sub>i</sub></b> kodē operatora prioritātes — inteliģentais slānis optimizē procesu kopumā.",
+  "app.eyebrow":"Pielietojumi","app.h2":"Veidots nelineārām, saistītām, termoķīmiskām sistēmām.",
+  "app.intro":"Pieeja nav piesaistīta vienam iekārtas veidam. Tā mērķē uz cieši saistītiem, dinamiskiem rūpnieciskiem procesiem, kuru uzvedību nosaka daudzas mijiedarbīgas fizikālas un ķīmiskas parādības.",
+  "app.c1.k":"Termoķīmija","app.c1.t":"Piroliize","app.c1.l1":"Temperatūras sadalījums","app.c1.l2":"Siltuma pārnese","app.c1.l3":"Izejvielas pārvēršana","app.c1.l4":"Reakciju kinētika","app.c1.l5":"Gāzes sastāvs",
+  "app.c2.k":"Gāzu apstrāde","app.c2.t":"Gazifikācija","app.c2.l1":"Reaktora modelēšana","app.c2.l3":"Termiskā stāvokļa novērtējums",
+  "app.c3.k":"Kinētika","app.c3.t":"Ķīmiskie reaktori","app.c3.l2":"Pārneses vienādojumi","app.c3.l3":"Procesa mērījumi","app.c3.l4":"Prognozējoši reaktoru modeļi",
+  "app.c4.k":"Augsta temperatūra","app.c4.t":"Termiskās sistēmas","app.c4.l1":"Rūpnieciskās krāsnis","app.c4.l2":"Siltuma pārneses sistēmas","app.c4.l3":"Termiskā apstrāde","app.c4.l4":"Enerģijas sistēmas",
+  "pyro.eyebrow":"Praktisks piemērs","pyro.h2":"Pirolīzes reaktors, padarīts prognozējams.",
+  "pyro.intro":"Piroliize ir sarežģīts termoķīmisks process — sildīšana, mitruma izvade, sadalīšanās, fāžu veidošanās un sekundārās reakcijas. Daudzi stāvokļi novērojami tikai netieši. PINN apvieno šos mērījumus ar enerģijas bilancēm un kinētiku, veidojot prognozējošu reaktora digitālo dvīni.",
+  "pyro.c1.k":"Reaktora stāvokļa vektors","pyro.c1.d":"Temperatūra, spiediens, masas plūsma, produkta sastāvs, pārvēršana un termiskā jauda — apvienojumā ar enerģijas un masas bilancēm, siltuma pārneses un reakciju kinētikas vienādojumiem.",
+  "pyro.c2.k":"Pirms sildīšanas jaudas maiņas","pyro.c2.d":"Katra alternatīva tiek vērtēta pēc ražošanas ātruma, enerģijas patēriņa, produkta kvalitātes un atbilstības procesa ierobežojumiem — pēc tam tiek izvēlēta vēlamā vadības darbība, pirms novirzes.",
+  "arch.eyebrow":"Arhitektūra","arch.h2":"MI slānis, kas papildina automatizāciju — neaizstāj to.",
+  "arch.intro":"Modulāra kiberfiziska arhitektūra. MI ģenerē prognozes un ieteiktās darbības; parastās vadības un aizsardzības sistēmas notur darbību drošās robežās.",
+  "arch.l1":"Fiziskais process","arch.l1d":"Sensori un izpildmehānismi","arch.l2":"Datu ieguve","arch.l2d":"Apstrāde un normalizēšana",
+  "arch.l3":"Fizikā balstīts MI · PINN dvīnis","arch.l3d":"Prognoze un novērtējums","arch.l5d":"Ieteiktās darbības","arch.l6d":"Drošības un aizsardzības cilpas",
+  "arch.return":"└── vadība atgriežas pie fiziskā procesa · cilpa atkārtojas ar katru mērījumu ──┘",
+  "arch.i1.k":"Integrācija","arch.i1.t":"Rūpnieciskie protokoli","arch.i2.k":"Izvietošana","arch.i2.d":"Apmāca uz jaudīgas skaitļošanas; apmācīto PINN izvieto uz malas (edge) moduļa tuvu procesam — mazai aizkavei un reāllaika prognozei.",
+  "arch.i3.k":"Adaptācija","arch.i3.t":"Adaptīvie dvīņi","arch.i3.d":"Jauni mērījumi laika gaitā precizē modeļa parametrus, iekārtai novecojot un izejvielai mainoties.",
+  "ben.eyebrow":"Kāpēc fizikā balstīts MI","ben.h2":"Inženierzināšanas un MI — apvienoti, ne apmainīti.",
+  "ben.b1.t":"Fizika + dati","ben.b1.d":"Fizikālās zināšanas mazina atkarību no tīri empīriskām sakarībām un uzlabo konsekvenci.",
+  "ben.b2.t":"Darbojas ar mazāk datiem","ben.b2.d":"Fizikas likumi ļauj modelim darboties ar ierobežotu eksperimentālo datu apjomu.",
+  "ben.b3.t":"Ātrs surogāts","ben.b3.d":"Apmācīts PINN aizstāj skaitļošanas ziņā dārgus fizikālos modeļus atkārtotai simulācijai.",
+  "ben.b4.t":"Prognozē nākotni","ben.b4.d":"Novērtē procesa nākotnes uzvedību, nevis tikai reaģē uz pašreizējām novirzēm.",
+  "ben.b5.t":"Redz neizmērīto","ben.b5.d":"Novērtē slēptos stāvokļus — iekšējo temperatūru, pārvēršanu, sastāvu — no pieejamajiem datiem.",
+  "ben.b6.t":"Optimizē daudz mērķu","ben.b6.d":"Vairāki tehnoloģiskie kritēriji tiek optimizēti vienlaikus vienā mērķī.",
+  "apr.eyebrow":"Inženiertehniskā pieeja","apr.h2":"No procesa izpratnes līdz inteliģentai vadībai.",
+  "apr.intro":"Inženierorientēta izstrādes secība — katrs posms balstās uz reālām procesa zināšanām, ne tikai uz datiem.",
+  "apr.s1.t":"Procesa analīze","apr.s1.d":"Procesa fizikālās, ķīmiskās un tehnoloģiskās struktūras izpratne.",
+  "apr.s2.t":"Datu analīze","apr.s2.d":"Pieejamo mērījumu, sensoru, vēsturisko datu un darba režīmu novērtēšana.",
+  "apr.s3.t":"Fizikālais modelis","apr.s3.d":"Vadošo vienādojumu, ierobežojumu un procesa parametru noteikšana.",
+  "apr.s4.t":"PINN izstrāde","apr.s4.d":"Fizikā balstīta neironu tīkla veidošana un apmācība.",
+  "apr.s5.t":"Digitālais dvīnis","apr.s5.d":"Apmācītā modeļa integrēšana dinamiskā digitālā attēlojumā.",
+  "apr.s6.t":"Prognoze","apr.s6.d":"Nākotnes stāvokļa prognozes validēšana dažādos darba apstākļos.",
+  "apr.s7.d":"Daudzkritēriju optimizācijas algoritmu izstrāde.",
+  "apr.s8.t":"Vadība","apr.s8.d":"Integrēšana ar prognozējošo vadību un rūpniecisko automatizāciju.",
+  "apr.s9.t":"Izvietošana","apr.s9.d":"Izvietošana uz rūpnieciskās skaitļošanas vai malas platformām.",
+  "res.eyebrow":"Pētniecība un publikācijas","res.eyebrow2":"Pētniecība","res.h2":"Balstīts recenzētā zinātnē.",
+  "res.tag":"Izceltais pētījums","res.date":"2026. gada augusts",
+  "res.abs":"Raksts pēta PINN pielietojuma perspektīvas sarežģītu tehnoloģisku procesu modelēšanā un prognozējošā vadībā — apvienojot mašīnmācīšanos ar fizikas likumiem, eksperimentālajiem datiem un optimizāciju. Izmantojot pirolīzes reaktoru kā piemēru, tas parāda, kā fizikā balstīts modelis integrējas slēgtā vadības cilpā, un apspriež priekšrocības, pielietojuma jomas, ierobežojumus un turpmākās attīstības virzienus.",
+  "res.kw.ml":"Mašīnmācīšanās","res.kw.ic":"Inteliģenta vadība",
+  "res.r1":"Sadaļas","res.r2":"Atsauces","res.r3":"Vienādojumi",
+  "res.rd":"P&amp;A joma","res.rd1":"Hibrīdie fizikas-MI modeļi","res.rd2":"Dziļā mācīšanās fizikālām sistēmām","res.rd3":"Termoķīmiskā modelēšana",
+  "tag.twins2":"Digitālais dvīnis",
+  "faq.eyebrow":"BUJ","faq.h2":"Fizikā balstīts MI — izskaidrots.","faq.intro":"Biežāk uzdotie jautājumi par fizikā balstītiem neironu tīkliem, digitālajiem dvīņiem un rūpniecisko procesu prognozējošo vadību.",
+  "faq.q1":"Kas ir fizikā balstīts neironu tīkls (PINN)?",
+  "faq.a1":"Fizikā balstīts neironu tīkls ir mašīnmācīšanās modelis, kas fizikas likumus — diferenciālvienādojumus, bilances un robežnosacījumus — iekļauj tieši apmācībā. Tas pielāgojas eksperimentālajiem datiem, vienlaikus izpildot fiziku, radot modeli, kas ir gan datu virzīts, gan fizikāli konsekvents.",
+  "faq.q2":"Kā PINN izmanto modeļa prognozējošai vadībai?",
+  "faq.a2":"Apmācīts PINN darbojas kā ātrs surogātmodelis modeļa prognozējošās vadības cilpā. Katrai kandidāta vadības trajektorijai tas prognozē nākotnes stāvokli, un optimizators izvēlas darbību, kas vislabāk atbilst procesa mērķiem, pirms tā tiek pielietota iekārtai.",
+  "faq.q3":"Kas ir rūpnieciska procesa digitālais dvīnis?",
+  "faq.a3":"Digitālais dvīnis ir dinamisks digitāls modelis, kas caur sensoru datiem tiek nepārtraukti sinhronizēts ar fizisko sistēmu. Ar PINN kodolā tas novērtē pašreizējo stāvokli, prognozē procesa attīstību, atklāj anomālijas un atbalsta prognozējošo vadību visā aktīva dzīves ciklā.",
+  "faq.q4":"Vai PINN var modelēt pirolīzes reaktoru?",
+  "faq.a4":"Jā. PINN apvieno reaktora mērījumus ar enerģijas un masas bilancēm un reakciju kinētiku, lai prognozētu temperatūras sadalījumu, pārvēršanu un gāzes sastāvu — veidojot prognozējošu pirolīzes reaktora digitālo dvīni optimizācijai un vadībai.",
+  "faq.q5":"Ar ko fizikā balstīts MI atšķiras no parasta neironu tīkla?",
+  "faq.a5":"Parasts neironu tīkls mācās tikai no datiem. Fizikā balstīts neironu tīkls papildus izpilda fizikas vienādojumu atlikumu, tāpēc tam vajag mazāk datu, tas labāk vispārina un paliek fizikāli konsekvents ārpus apmācības diapazona.",
+  "faq.q6":"Kādus rūpnieciskos procesus Inguz Navitas var modelēt?",
+  "faq.a6":"Nelineāras, cieši saistītas termoķīmiskas un termiskas sistēmas: pirolīzes un gazifikācijas reaktorus, ķīmiskos reaktorus, rūpnieciskās krāsnis, siltuma pārneses un enerģijas sistēmas un citus procesus, kuru uzvedību nosaka mijiedarbīgas fizikālas un ķīmiskas parādības.",
+  "team.eyebrow":"Komanda","team.h2":"Aiz modeļa — gadu desmiti termofizikā.",
+  "team.intro":"Fizikā balstīts MI ir tik labs, cik laba ir fizika aiz tā. Mūsu darbs balstās enerģētikas pētniecības, skaitliskās šķidruma dinamikas un termoķīmisku sistēmu karjerā.",
+  "team.role":"D.Sc., Prof. · Dibinātājs un galvenais zinātnieks",
+  "team.bio":"Zinātnieks un pētniecības speciālists enerģētikā. 2010. gadā viņš radīja pirmo sērijveida mikroturbīnu iekārtu Krievijā — 20 kW mikroturbo-ekspandera ģeneratoru gāzes sadales stacijām — un kopš tā laika vadījis mikroturbīnu, ORC siltuma atgūšanas, kriogēno un superkritiskā CO₂ enerģijas sistēmu izstrādi.",
+  "team.st1":"Publikācijas","team.st2":"Patenti","team.st3":"Monogrāfijas","team.st4":"Gadi P&amp;A",
+  "team.cr1":"<b>Tehnisko zinātņu doktors (D.Sc.)</b>Sanktpēterburgas Politehniskā universitāte — mikroturbīnu iekārtu metodika.",
+  "team.cr2":"<b>Tehnisko zinātņu kandidāts (PhD)</b>100 kW mikroturbīnu ģenerators — aprēķinu un eksperimentālās metodes.",
+  "team.cr3":"<b>Elektronikas inženieris — LETI, Ļeņingrada</b>Diploms ar izcilību (vērtējums 5,0 / 5,0).",
+  "team.cr4":"<b>Jūras enerģētikas profesors</b>Sanktpēterburgas Valsts jūras tehniskā universitāte · CFD, šķidrumu un gāzu mehānika.",
+  "team.join.t":"Veidojam komandu","team.join.d":"Mēs paplašināmies ML inženierijā, procesu modelēšanā un rūpnieciskajā integrācijā. Komandas profili tiek pievienoti — nākamie dalībnieki drīzumā parādīsies šeit.",
+  "ct.eyebrow":"Kontakti","ct.h2":"Izveidosim jūsu procesa inteliģentu modeli.",
+  "ct.p":"Vai jums ir sarežģīts rūpniecisks process, ko grūti modelēt, prognozēt vai optimizēt? Mēs varam izstrādāt fizikā balstītu inteliģentu sistēmu no jūsu procesa datiem un inženierzināšanām.",
+  "ct.s1":"Procesa modelēšana","ct.s2":"Digitālā dvīņa izstrāde","ct.s3":"PINN izstrāde",
+  "pr.eyebrow":"Privātums","pr.h2":"Jūsu dati — apstrādāti ar tādu pašu rūpību kā mūsu modeļi.",
+  "pr.intro":"Inguz Navitas SIA (Rīga, Latvija) ir šīs vietnes datu pārzinis. Mēs apstrādājam personas datus likumīgi, pārredzami un tikai zemāk aprakstītajiem mērķiem, saskaņā ar ES Vispārīgo datu aizsardzības regulu (GDPR).",
+  "pr.t1":"Ko mēs vācam","pr.t1a":"Kontaktinformāciju, ko mums sūtāt — vārdu, e-pastu un ziņas saturu —, kad sazināties par projektu.","pr.t1b":"Tehniskos datus — IP adresi, pārlūka veidu un apskatītās lapas —, kas tiek vākti tikai caur sīkfailiem, kuriem piekrītat.","pr.t1c":"Mēs nevācam īpašo kategoriju datus un apzināti nevācam bērnu datus.",
+  "pr.t2":"Kāpēc mēs tos apstrādājam","pr.t2a":"Lai atbildētu uz jautājumiem un pārrunātu iespējamos inženierdarbus (leģitīmas intereses / pirmslīguma soļi).","pr.t2b":"Lai izprastu un uzlabotu vietnes lietošanu — analītika tikai ar jūsu piekrišanu.","pr.t2c":"Lai izpildītu juridiskās un grāmatvedības saistības, ja piemērojams.",
+  "pr.t3":"Sīkfaili un analītika","pr.t3p":"Obligāti nepieciešamie sīkfaili nodrošina vietnes darbību un iegaumē jūsu sīkfailu izvēli. Analītikas sīkfaili (piem., Google Analytics) darbojas tikai pēc jūsu piekrišanas un līdz tam neielādē izsekošanas skriptus. Izvēli varat mainīt jebkurā laikā.","pr.t3link":"Atvērt sīkfailu iestatījumus →",
+  "pr.t4":"Kopīgošana un glabāšana","pr.t4a":"Mēs nekad nepārdodam jūsu datus. Tie tiek kopīgoti tikai ar apstrādātājiem, kas uztur vietni un analītiku saskaņā ar datu apstrādes līgumiem.","pr.t4b":"Jautājumu dati tiek glabāti tikai tik ilgi, cik nepieciešams jūsu pieprasījumam vai mūsu darījumu attiecībām, pēc tam dzēsti.","pr.t4c":"Daži apstrādātāji var darboties ārpus ES ar atbilstošiem drošības pasākumiem.",
+  "pr.t5":"Jūsu tiesības","pr.t5p":"Saskaņā ar GDPR jūs varat pieprasīt piekļuvi saviem datiem, to labošanu vai dzēšanu, ierobežot vai iebilst pret apstrādi un pieprasīt datu pārnesamību. Jūs varat arī atsaukt piekrišanu un iesniegt sūdzību Datu valsts inspekcijā.",
+  "pr.t6":"Sazināties ar pārzini","pr.t6a":"Datu pieprasījumi","pr.t6b":"Vispārīgi",
+  "pr.m1":"Pēdējoreiz atjaunināts · 2026. gada 28. augusts","pr.m2":"Pārzinis · Inguz Navitas SIA","pr.m3":"Jurisdikcija · Latvija, ES (GDPR)",
+  "foot.about":"Fizikā balstīts MI sarežģītiem rūpnieciskiem procesiem. Mēs apvienojam fiziku, datus un mākslīgo intelektu, lai prognozētu, optimizētu un vadītu.",
+  "foot.company":"Uzņēmums","foot.legal":"Juridiski","foot.cookie":"Sīkfailu iestatījumi",
+  "ck.title":"Mēs cienām jūsu privātumu",
+  "ck.body":"Mēs izmantojam obligāti nepieciešamos sīkfailus vietnes darbībai un — tikai ar jūsu piekrišanu — analītikas sīkfailus, lai izprastu tās lietošanu. Skatiet mūsu <a href=\"#privacy\" data-cookie-privacy>privātuma politiku</a>.",
+  "ck.nec.t":"Obligāti nepieciešamie","ck.nec.d":"Nepieciešami vietnes darbībai un jūsu sīkfailu izvēles iegaumēšanai. Vienmēr aktīvi.",
+  "ck.an.t":"Analītika","ck.an.d":"Google Analytics — anonīma lietošanas statistika vietnes uzlabošanai. Ielādējas tikai, ja iespējots.",
+  "ck.prefs":"Iestatījumi","ck.nec.btn":"Tikai nepieciešamie","ck.save":"Saglabāt izvēli","ck.all":"Piekrist visam"
+});
+Object.assign(window.I18N.ru, {
+  "brand.tag":"Физически-информированный ИИ",
+  "nav.technology":"Технология","nav.twin":"Цифровой двойник","nav.applications":"Применения","nav.approach":"Подход","nav.faq":"Вопросы","nav.team":"Команда","nav.cta":"Обсудить процесс",
+  "hero.eyebrow":"PINN · Цифровые двойники · Предиктивное управление",
+  "hero.h1":"Физика там, где кончаются данные. <span class=\"a\">Прогноз</span> прежде <span class=\"b\">отклонения</span>.",
+  "hero.lede":"Мы создаём физически-информированные нейронные сети, объединяющие законы физики с данными процесса — быстрые предиктивные модели сложных промышленных систем.",
+  "seq.measure":"измерение","seq.state":"оценка состояния","seq.predict":"прогноз","seq.optim":"оптимизация","seq.control":"управление",
+  "hero.cta1":"Изучить технологию","hero.cta2":"Читать исследование",
+  "tag.twins":"Цифровые двойники","tag.state":"Оценка состояния","tag.anomaly":"Обнаружение аномалий",
+  "loop.core":"Ядро PINN","loop.twin":"цифровой двойник",
+  "loop.n1":"Физическая система","loop.n2":"Датчики и данные","loop.n3":"Двойник PINN","loop.n4":"Прогноз состояния","loop.n5":"Оптимизация","loop.n6":"Предиктивное управление",
+  "shift.eyebrow":"Переход",
+  "shift.h2":"От реакции на отклонение<br>к прогнозированию процесса.",
+  "shift.intro":"Традиционное управление реагирует на уже произошедшее отклонение. Предиктивное управление оценивает ожидаемое будущее поведение процесса и действует до того, как достигнуто нежелательное состояние.",
+  "shift.reactive":"Реактивное управление","shift.r1":"Измерение","shift.r2":"Оценка отклонения","shift.r3":"Управляющее воздействие",
+  "shift.predictive":"Предиктивное управление","shift.p1":"Измерение","shift.p2":"Оценка состояния","shift.p3":"Прогноз процесса","shift.p4":"Оптимизация","shift.p5":"Управляющее воздействие",
+  "tech.eyebrow":"Технология","tech.h2":"Нейронная сеть, подчиняющаяся физике.",
+  "tech.intro":"Физически-информированная нейронная сеть включает законы физики непосредственно в процесс обучения. Её обучают не только соответствовать данным, но и удовлетворять дифференциальным уравнениям, начальным и граничным условиям, описывающим процесс.",
+  "tech.loss.cap":"Физически-информированные потери",
+  "tech.loss.note":"Обучение одновременно минимизирует ошибку относительно известных <b>данных</b> и невязку физических <b>уравнений</b> — поэтому модель является и управляемой данными, и физически согласованной.",
+  "tech.leg.data":"<b>Данные.</b> Соответствие экспериментальным измерениям и истории датчиков.",
+  "tech.leg.phys":"<b>Физика.</b> Невязка уравнений баланса, кинетики и переноса.",
+  "tech.leg.cond":"<b>Условия.</b> Граничные и начальные условия области.",
+  "tech.heat.cap":"Физика · теплоперенос",
+  "tech.heat.note":"Автоматическое дифференцирование извлекает нужные производные прямо из сети — уравнения, такие как энергетический баланс, встраиваются в модель, а не обходятся.",
+  "tech.pred.cap":"Оператор прогноза",
+  "tech.pred.note":"После обучения PINN работает как быстрый суррогат <b>𝒟</b> — многократно вычисляя будущее состояние для любой траектории управления и позволяя проводить виртуальные эксперименты до вмешательства в установку.",
+  "twin.eyebrow":"Цифровой двойник","twin.h2":"Живая модель, синхронная с установкой.",
+  "twin.intro":"PINN становится вычислительным ядром цифрового двойника — динамического представления, непрерывно синхронизируемого с физической системой через обмен данными на протяжении всего жизненного цикла.",
+  "twin.c1.k":"Оценивать","twin.c1.t":"Оценка состояния","twin.c1.d":"Оценка текущего состояния процесса в реальном времени, включая величины, которые нельзя измерить напрямую.",
+  "twin.c2.k":"Прогнозировать","twin.c2.t":"Развитие процесса","twin.c2.d":"Прогноз того, как процесс будет развиваться при разных вариантах управляющих воздействий.",
+  "twin.c3.k":"Экспериментировать","twin.c3.t":"Виртуальные эксперименты","twin.c3.d":"Оценка нескольких сценариев и их последствий до применения любого воздействия к физической системе.",
+  "twin.c4.k":"Идентифицировать","twin.c4.t":"Оценка параметров","twin.c4.d":"Восстановление параметров процесса и оборудования, меняющихся с условиями и сырьём.",
+  "twin.c5.k":"Обнаруживать","twin.c5.t":"Обнаружение аномалий","twin.c5.d":"Сравнение прогнозируемого и измеренного поведения; невязки указывают на неисправности датчиков, деградацию или аномальные режимы.",
+  "twin.c6.k":"Оптимизировать","twin.c6.t":"Управление и оптимизация","twin.c6.d":"Прогноз подаётся в оптимизатор, выбирающий воздействие, наилучшим образом отвечающее целям процесса.",
+  "mpc.h2":"Оценить каждый вариант, прежде чем выбрать.",
+  "mpc.intro":"Обученная PINN достаточно быстра, чтобы служить суррогатной моделью в контуре модельного предиктивного управления. Для каждой траектории управления она прогнозирует будущее состояние — а оптимизатор выбирает лучшую.",
+  "mpc.current":"Текущее<br>состояние x(t)","mpc.optimize":"Оптимизировать J","mpc.optimal":"Оптимальное u*",
+  "opt.eyebrow":"Оптимизация процесса","opt.eyebrow2":"Оптимизация","opt.h2":"Одна цель, множество критериев.",
+  "opt.intro":"У промышленных процессов редко бывает единственный критерий оптимизации. Целевая функция одновременно балансирует конкурирующие цели — оптимизируя общую эффективность процесса, а не отдельный параметр.",
+  "opt.th1":"Критерий","opt.th2":"Цель",
+  "opt.o1":"Максимизировать качество продукта","opt.o2":"Минимизировать энергопотребление","opt.o3":"Максимизировать производительность","opt.o4":"Поддерживать стабильную работу","opt.o5":"Сохранять безопасные условия работы","opt.o6":"Минимизировать лишние управляющие усилия",
+  "opt.cap1":"Оптимальное воздействие","opt.cap2":"Взвешенная цель",
+  "opt.note":"Веса <b>w<sub>i</sub></b> кодируют приоритеты оператора — интеллектуальный слой оптимизирует процесс в целом.",
+  "app.eyebrow":"Применения","app.h2":"Создано для нелинейных, связанных, термохимических систем.",
+  "app.intro":"Подход не привязан к одному типу оборудования. Он нацелен на сильно связанные динамические промышленные процессы, поведение которых определяется множеством взаимодействующих физических и химических явлений.",
+  "app.c1.k":"Термохимия","app.c1.t":"Пиролиз","app.c1.l1":"Распределение температуры","app.c1.l2":"Теплоперенос","app.c1.l3":"Конверсия сырья","app.c1.l4":"Кинетика реакций","app.c1.l5":"Состав газа",
+  "app.c2.k":"Газопереработка","app.c2.t":"Газификация","app.c2.l1":"Моделирование реактора","app.c2.l3":"Оценка теплового состояния",
+  "app.c3.k":"Кинетика","app.c3.t":"Химические реакторы","app.c3.l2":"Уравнения переноса","app.c3.l3":"Измерения процесса","app.c3.l4":"Предиктивные модели реактора",
+  "app.c4.k":"Высокая температура","app.c4.t":"Тепловые системы","app.c4.l1":"Промышленные печи","app.c4.l2":"Системы теплопереноса","app.c4.l3":"Термообработка","app.c4.l4":"Энергетические системы",
+  "pyro.eyebrow":"Пример","pyro.h2":"Пиролизный реактор, ставший предсказуемым.",
+  "pyro.intro":"Пиролиз — сложный термохимический процесс: нагрев, удаление влаги, разложение, образование фаз и вторичные реакции. Многие состояния наблюдаемы лишь косвенно. PINN объединяет эти измерения с энергетическими балансами и кинетикой, создавая предиктивный цифровой двойник реактора.",
+  "pyro.c1.k":"Вектор состояния реактора","pyro.c1.d":"Температура, давление, массовый расход, состав продукта, конверсия и тепловая мощность — в сочетании с уравнениями энергетического и материального баланса, теплопереноса и кинетики реакций.",
+  "pyro.c2.k":"Перед изменением мощности нагрева","pyro.c2.d":"Каждый вариант оценивается по производительности, энергопотреблению, качеству продукта и соблюдению ограничений процесса — затем выбирается предпочтительное воздействие, до отклонения.",
+  "arch.eyebrow":"Архитектура","arch.h2":"Слой ИИ, дополняющий автоматизацию, а не заменяющий её.",
+  "arch.intro":"Модульная киберфизическая структура. ИИ формирует прогнозы и рекомендованные действия; штатные системы управления и защиты удерживают работу в безопасных пределах.",
+  "arch.l1":"Физический процесс","arch.l1d":"Датчики и приводы","arch.l2":"Сбор данных","arch.l2d":"Обработка и нормализация",
+  "arch.l3":"Физически-информированный ИИ · двойник PINN","arch.l3d":"Прогноз и оценка","arch.l5d":"Рекомендованные действия","arch.l6d":"Контуры безопасности и защиты",
+  "arch.return":"└── управление возвращается к физическому процессу · цикл повторяется при каждом измерении ──┘",
+  "arch.i1.k":"Интеграция","arch.i1.t":"Промышленные протоколы","arch.i2.k":"Развёртывание","arch.i2.d":"Обучение на мощных вычислителях; обученная PINN разворачивается на пограничном (edge) модуле рядом с процессом — для прогноза с малой задержкой в реальном времени.",
+  "arch.i3.k":"Адаптация","arch.i3.t":"Адаптивные двойники","arch.i3.d":"Новые измерения со временем уточняют параметры модели по мере старения оборудования и изменения сырья.",
+  "ben.eyebrow":"Почему физически-информированный ИИ","ben.h2":"Инженерные знания и ИИ — объединены, а не заменены.",
+  "ben.b1.t":"Физика + данные","ben.b1.d":"Физические знания снижают зависимость от чисто эмпирических связей и повышают согласованность.",
+  "ben.b2.t":"Работает с меньшим объёмом данных","ben.b2.d":"Законы физики позволяют модели работать при ограниченных экспериментальных данных.",
+  "ben.b3.t":"Быстрый суррогат","ben.b3.d":"Обученная PINN заменяет вычислительно затратные физические модели при повторном моделировании.",
+  "ben.b4.t":"Прогнозирует будущее","ben.b4.d":"Оценивает будущее поведение процесса, а не только реагирует на текущие отклонения.",
+  "ben.b5.t":"Видит неизмеримое","ben.b5.d":"Оценивает скрытые состояния — внутреннюю температуру, конверсию, состав — по доступным данным.",
+  "ben.b6.t":"Оптимизирует много целей","ben.b6.d":"Несколько технологических критериев оптимизируются одновременно в рамках одной цели.",
+  "apr.eyebrow":"Инженерный подход","apr.h2":"От понимания процесса к интеллектуальному управлению.",
+  "apr.intro":"Инженерно-ориентированная последовательность разработки — каждый этап опирается на реальные знания о процессе, а не только на данные.",
+  "apr.s1.t":"Анализ процесса","apr.s1.d":"Понимание физической, химической и технологической структуры процесса.",
+  "apr.s2.t":"Анализ данных","apr.s2.d":"Оценка доступных измерений, датчиков, исторических данных и режимов работы.",
+  "apr.s3.t":"Физическая модель","apr.s3.d":"Определение основных уравнений, ограничений и параметров процесса.",
+  "apr.s4.t":"Разработка PINN","apr.s4.d":"Построение и обучение физически-информированной нейронной сети.",
+  "apr.s5.t":"Цифровой двойник","apr.s5.d":"Интеграция обученной модели в динамическое цифровое представление.",
+  "apr.s6.t":"Прогноз","apr.s6.d":"Валидация прогноза будущего состояния в разных условиях работы.",
+  "apr.s7.d":"Разработка алгоритмов многокритериальной оптимизации.",
+  "apr.s8.t":"Управление","apr.s8.d":"Интеграция с предиктивным управлением и промышленной автоматизацией.",
+  "apr.s9.t":"Развёртывание","apr.s9.d":"Развёртывание на промышленных или пограничных вычислительных платформах.",
+  "res.eyebrow":"Исследования и публикации","res.eyebrow2":"Исследования","res.h2":"Основано на рецензируемой науке.",
+  "res.tag":"Избранное исследование","res.date":"Август 2026",
+  "res.abs":"В работе рассматриваются перспективы применения PINN для моделирования и предиктивного управления сложными технологическими процессами — сочетая машинное обучение с законами физики, экспериментальными данными и оптимизацией. На примере пиролизного реактора показано, как физически-информированная модель встраивается в замкнутый контур управления, и обсуждаются преимущества, области применения, ограничения и направления дальнейшего развития.",
+  "res.kw.ml":"Машинное обучение","res.kw.ic":"Интеллектуальное управление",
+  "res.r1":"Разделы","res.r2":"Ссылки","res.r3":"Уравнения",
+  "res.rd":"Область НИОКР","res.rd1":"Гибридные физико-ИИ модели","res.rd2":"Глубокое обучение для физических систем","res.rd3":"Термохимическое моделирование",
+  "tag.twins2":"Цифровой двойник",
+  "faq.eyebrow":"Вопросы","faq.h2":"Физически-информированный ИИ — понятно.","faq.intro":"Частые вопросы о физически-информированных нейронных сетях, цифровых двойниках и предиктивном управлении промышленными процессами.",
+  "faq.q1":"Что такое физически-информированная нейронная сеть (PINN)?",
+  "faq.a1":"Физически-информированная нейронная сеть — это модель машинного обучения, встраивающая законы физики — дифференциальные уравнения, балансы и граничные условия — непосредственно в обучение. Она соответствует экспериментальным данным, одновременно удовлетворяя физике, что даёт модель, управляемую данными и физически согласованную.",
+  "faq.q2":"Как PINN используется для модельного предиктивного управления?",
+  "faq.a2":"Обученная PINN выступает быстрой суррогатной моделью в контуре модельного предиктивного управления. Для каждой траектории управления она прогнозирует будущее состояние, а оптимизатор выбирает действие, наилучшим образом отвечающее целям процесса, до его применения к установке.",
+  "faq.q3":"Что такое цифровой двойник промышленного процесса?",
+  "faq.a3":"Цифровой двойник — это динамическая цифровая модель, непрерывно синхронизируемая с физической системой через данные датчиков. С PINN в ядре он оценивает текущее состояние, прогнозирует развитие процесса, обнаруживает аномалии и поддерживает предиктивное управление на протяжении жизненного цикла.",
+  "faq.q4":"Может ли PINN моделировать пиролизный реактор?",
+  "faq.a4":"Да. PINN объединяет измерения реактора с уравнениями энергетического и материального баланса и кинетикой реакций, чтобы прогнозировать распределение температуры, конверсию и состав газа — создавая предиктивный цифровой двойник пиролизного реактора для оптимизации и управления.",
+  "faq.q5":"Чем физически-информированный ИИ отличается от обычной нейронной сети?",
+  "faq.a5":"Обычная нейронная сеть учится только на данных. Физически-информированная нейронная сеть дополнительно обеспечивает выполнение невязки физических уравнений, поэтому ей нужно меньше данных, она лучше обобщает и остаётся физически согласованной за пределами обучающего диапазона.",
+  "faq.q6":"Какие промышленные процессы может моделировать Inguz Navitas?",
+  "faq.a6":"Нелинейные, сильно связанные термохимические и тепловые системы: пиролизные и газификационные реакторы, химические реакторы, промышленные печи, системы теплопереноса и энергетические системы, а также другие процессы, поведение которых определяется взаимодействующими физическими и химическими явлениями.",
+  "team.eyebrow":"Команда","team.h2":"За моделью — десятилетия теплофизики.",
+  "team.intro":"Физически-информированный ИИ хорош настолько, насколько хороша стоящая за ним физика. Наша работа основана на карьере в исследованиях энергетики, вычислительной гидрогазодинамике и термохимических системах.",
+  "team.role":"D.Sc., проф. · Основатель и научный руководитель",
+  "team.bio":"Учёный и научный специалист в энергетике. В 2010 году создал первую серийную микротурбинную установку в России — микротурбодетандер-генератор мощностью 20 кВт для газораспределительных станций — и с тех пор руководил разработкой микротурбин, ORC-утилизации тепла, криогенных и сверхкритических CO₂ энергоустановок.",
+  "team.st1":"Публикации","team.st2":"Патенты","team.st3":"Монографии","team.st4":"Лет НИОКР",
+  "team.cr1":"<b>Доктор технических наук (D.Sc.)</b>СПбПУ — методология создания микротурбинных установок.",
+  "team.cr2":"<b>Кандидат технических наук (PhD)</b>Микротурбинный генератор 100 кВт — расчётные и экспериментальные методы.",
+  "team.cr3":"<b>Инженер-электроник — ЛЭТИ, Ленинград</b>Диплом с отличием (средний балл 5,0 / 5,0).",
+  "team.cr4":"<b>Профессор морской энергетики</b>СПбГМТУ · CFD, механика жидкости и газа.",
+  "team.join.t":"Собираем команду","team.join.d":"Мы расширяемся в ML-инженерии, моделировании процессов и промышленной интеграции. Профили команды добавляются — следующие участники скоро появятся здесь.",
+  "ct.eyebrow":"Контакты","ct.h2":"Построим интеллектуальную модель вашего процесса.",
+  "ct.p":"У вас есть сложный промышленный процесс, который трудно моделировать, прогнозировать или оптимизировать? Мы поможем создать физически-информированную интеллектуальную систему из ваших данных процесса и инженерных знаний.",
+  "ct.s1":"Моделирование процесса","ct.s2":"Разработка цифрового двойника","ct.s3":"Разработка PINN",
+  "pr.eyebrow":"Конфиденциальность","pr.h2":"Ваши данные — с той же строгостью, что и наши модели.",
+  "pr.intro":"Inguz Navitas SIA (Рига, Латвия) является оператором данных этого сайта. Мы обрабатываем персональные данные законно, прозрачно и только для описанных ниже целей, в соответствии с Общим регламентом ЕС по защите данных (GDPR).",
+  "pr.t1":"Что мы собираем","pr.t1a":"Контактные данные, которые вы отправляете — имя, e-mail и содержание сообщения — при обращении по проекту.","pr.t1b":"Технические данные — IP-адрес, тип браузера и просмотренные страницы — собираются только через файлы cookie, на которые вы соглашаетесь.","pr.t1c":"Мы не собираем данные особых категорий и сознательно не собираем данные детей.",
+  "pr.t2":"Зачем мы их обрабатываем","pr.t2a":"Чтобы отвечать на запросы и обсуждать возможные инженерные работы (законный интерес / преддоговорные шаги).","pr.t2b":"Чтобы понимать и улучшать использование сайта — аналитика только с вашего согласия.","pr.t2c":"Чтобы выполнять юридические и бухгалтерские обязательства, где применимо.",
+  "pr.t3":"Cookie и аналитика","pr.t3p":"Строго необходимые файлы cookie обеспечивают работу сайта и запоминают ваш выбор. Аналитические cookie (например, Google Analytics) работают только после вашего согласия и до этого не загружают скрипты отслеживания. Вы можете изменить выбор в любое время.","pr.t3link":"Открыть настройки cookie →",
+  "pr.t4":"Передача и хранение","pr.t4a":"Мы никогда не продаём ваши данные. Они передаются только обработчикам, обслуживающим сайт и аналитику по договорам обработки данных.","pr.t4b":"Данные запросов хранятся только столько, сколько необходимо для вашего обращения или наших деловых отношений, затем удаляются.","pr.t4c":"Некоторые обработчики могут работать за пределами ЕС при надлежащих гарантиях.",
+  "pr.t5":"Ваши права","pr.t5p":"Согласно GDPR вы можете запросить доступ к своим данным, их исправление или удаление, ограничить обработку или возразить против неё и запросить переносимость данных. Вы также можете отозвать согласие и подать жалобу в Государственную инспекцию данных Латвии (Datu valsts inspekcija).",
+  "pr.t6":"Связаться с оператором","pr.t6a":"Запросы по данным","pr.t6b":"Общие",
+  "pr.m1":"Обновлено · 28 августа 2026","pr.m2":"Оператор · Inguz Navitas SIA","pr.m3":"Юрисдикция · Латвия, ЕС (GDPR)",
+  "foot.about":"Физически-информированный ИИ для сложных промышленных процессов. Мы объединяем физику, данные и искусственный интеллект, чтобы прогнозировать, оптимизировать и управлять.",
+  "foot.company":"Компания","foot.legal":"Правовое","foot.cookie":"Настройки cookie",
+  "ck.title":"Мы ценим вашу конфиденциальность",
+  "ck.body":"Мы используем строго необходимые файлы cookie для работы сайта и — только с вашего согласия — аналитические cookie, чтобы понимать использование. См. нашу <a href=\"#privacy\" data-cookie-privacy>политику конфиденциальности</a>.",
+  "ck.nec.t":"Строго необходимые","ck.nec.d":"Нужны для работы сайта и запоминания вашего выбора cookie. Всегда активны.",
+  "ck.an.t":"Аналитика","ck.an.d":"Google Analytics — анонимная статистика использования для улучшения сайта. Загружается только при включении.",
+  "ck.prefs":"Настройки","ck.nec.btn":"Только необходимые","ck.save":"Сохранить выбор","ck.all":"Принять все"
+});
+</script>
 <script>
   (function(){
     // theme toggle
@@ -1143,5 +1685,91 @@
     // "Privacy policy" link inside banner also scrolls there
     var pl=document.querySelector('[data-cookie-privacy]');
     if(pl){pl.addEventListener('click',function(){setTimeout(closeBanner,200);});}
+
+    /* ---------- FAQ ACCORDION ---------- */
+    document.querySelectorAll('.faq-item').forEach(function(item){
+      var q=item.querySelector('.faq-q');
+      var a=item.querySelector('.faq-a');
+      q.addEventListener('click',function(){
+        var open=item.classList.toggle('open');
+        a.style.maxHeight=open?(a.scrollHeight+'px'):null;
+      });
+    });
+
+    /* ---------- I18N ---------- */
+    var LANGS={en:1,de:1,lv:1,ru:1};
+    var META=(window.I18N&&window.I18N._meta)||{};
+    // cache English source
+    document.querySelectorAll('[data-i18n]').forEach(function(el){el.__en=el.textContent;});
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){el.__en=el.innerHTML;});
+
+    function t(lang,key){
+      var d=(window.I18N&&window.I18N[lang])||{};
+      return Object.prototype.hasOwnProperty.call(d,key)?d[key]:null;
+    }
+    function applyLang(lang){
+      if(!LANGS[lang]) lang='en';
+      var isEn=(lang==='en');
+      document.querySelectorAll('[data-i18n]').forEach(function(el){
+        var k=el.getAttribute('data-i18n');
+        var v=isEn?el.__en:(t(lang,k)!==null?t(lang,k):el.__en);
+        el.textContent=v;
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+        var k=el.getAttribute('data-i18n-html');
+        var v=isEn?el.__en:(t(lang,k)!==null?t(lang,k):el.__en);
+        el.innerHTML=v;
+      });
+      document.documentElement.lang=lang;
+      var cur=document.getElementById('langCur');
+      if(cur) cur.textContent=lang.toUpperCase();
+      document.querySelectorAll('[data-setlang]').forEach(function(b){
+        b.setAttribute('aria-current',b.getAttribute('data-setlang')===lang?'true':'false');
+      });
+      // localized <title> and meta description
+      var m=META[lang];
+      if(m){
+        if(m.title) document.title=m.title;
+        var md=document.querySelector('meta[name="description"]');
+        if(md&&m.desc) md.setAttribute('content',m.desc);
+      }
+      try{localStorage.setItem('in-lang',lang);}catch(e){}
+      // reflect in URL (?lang=) without reload; en clears the param
+      try{
+        var u=new URL(window.location.href);
+        if(isEn) u.searchParams.delete('lang'); else u.searchParams.set('lang',lang);
+        window.history.replaceState({},'',u.toString().replace(/\?$/,''));
+      }catch(e){}
+    }
+    // initial language: ?lang= > stored > browser > en
+    function initialLang(){
+      try{
+        var p=new URLSearchParams(window.location.search).get('lang');
+        if(p&&LANGS[p]) return p;
+      }catch(e){}
+      try{var s=localStorage.getItem('in-lang');if(s&&LANGS[s]) return s;}catch(e){}
+      var b=(navigator.language||'en').slice(0,2).toLowerCase();
+      return LANGS[b]?b:'en';
+    }
+    applyLang(initialLang());
+
+    // language menu
+    var langBtn=document.getElementById('langBtn');
+    var langMenu=document.getElementById('langMenu');
+    if(langBtn&&langMenu){
+      langBtn.addEventListener('click',function(e){
+        e.stopPropagation();
+        var open=langMenu.classList.toggle('open');
+        langBtn.setAttribute('aria-expanded',open?'true':'false');
+      });
+      langMenu.querySelectorAll('[data-setlang]').forEach(function(b){
+        b.addEventListener('click',function(){
+          applyLang(b.getAttribute('data-setlang'));
+          langMenu.classList.remove('open');
+          langBtn.setAttribute('aria-expanded','false');
+        });
+      });
+      document.addEventListener('click',function(){langMenu.classList.remove('open');langBtn.setAttribute('aria-expanded','false');});
+    }
   })();
 </script>
