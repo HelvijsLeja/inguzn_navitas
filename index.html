@@ -517,6 +517,14 @@
     .hw-panel{min-height:0}
   }
 
+  /* ---------- PLATFORM ---------- */
+  .concept{text-align:center;font-family:"IBM Plex Mono",monospace;font-size:clamp(.86rem,2.1vw,1.12rem);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 22px;box-shadow:var(--shadow);letter-spacing:.01em;margin-top:8px}
+  .concept b{color:var(--teal);font-weight:500}
+  .concept .e{color:var(--ember);font-weight:500}
+  .scale-note{margin-top:26px;text-align:center;font-family:"IBM Plex Mono",monospace;font-size:.82rem;color:var(--ink-soft);border-top:1px dashed var(--line);padding-top:20px}
+  .scale-note b{color:var(--ink);font-weight:600}
+  .plat-sub{margin:34px 0 4px;font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint)}
+
   /* ---------- TEAM ---------- */
   .team-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:18px;align-items:stretch}
   @media(max-width:820px){.team-grid{grid-template-columns:1fr}}
@@ -609,6 +617,7 @@
     </a>
     <nav class="nav-links" id="navLinks">
       <a href="#how" data-i18n="nav.how">How it works</a>
+      <a href="#platform" data-i18n="nav.platform">Platform</a>
       <a href="#technology" data-i18n="nav.technology">Technology</a>
       <a href="#twin" data-i18n="nav.twin">Digital Twin</a>
       <a href="#applications" data-i18n="nav.applications">Applications</a>
@@ -746,6 +755,68 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- PLATFORM -->
+  <section id="platform">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow" data-i18n="plat.eyebrow">The platform</span>
+        <h2 data-i18n="plat.h2">PINN Predictive Control Platform</h2>
+        <p class="intro" data-i18n="plat.intro">A modular industrial software platform that turns the predictive-control loop into a deployable product — combining physical models, real-time data, Physics-Informed Neural Networks, digital twins and Model Predictive Control into one intelligent control layer.</p>
+      </div>
+
+      <div class="concept reveal" data-i18n-html="plat.concept">Physical model <b>+</b> PINN <b>+</b> Digital Twin <b>+</b> Predictive Control</div>
+
+      <div class="plat-sub reveal" data-i18n="plat.modules.k">Nine modules · from sensor to control action</div>
+      <div class="grid g3 reveal">
+        <div class="card"><span class="ci">01</span><h3 data-i18n="plat.m1.t">Industrial connection</h3><p data-i18n="plat.m1.d">Ingests data from sensors, PLC, SCADA, DCS, historians and dispatch systems.</p></div>
+        <div class="card"><span class="ci">02</span><h3 data-i18n="plat.m2.t">Data &amp; state estimation</h3><p data-i18n="plat.m2.d">Filtering, synchronization, validation, anomaly detection and state reconstruction.</p></div>
+        <div class="card"><span class="ci">03</span><h3 data-i18n="plat.m3.t">PINN Engine</h3><p data-i18n="plat.m3.d">Builds and runs physics-informed models that fuse physical laws with experimental data.</p></div>
+        <div class="card"><span class="ci">04</span><h3 data-i18n="plat.m4.t">Digital Twin Engine</h3><p data-i18n="plat.m4.d">Constructs a real-time digital twin of the technological asset.</p></div>
+        <div class="card"><span class="ci">05</span><h3 data-i18n="plat.m5.t">Prediction</h3><p data-i18n="plat.m5.d">Computes the future trajectory of the process parameters.</p></div>
+        <div class="card"><span class="ci">06</span><h3 data-i18n="plat.m6.t">Optimization</h3><p data-i18n="plat.m6.d">Finds the optimal operating mode within technological, operational and safety limits.</p></div>
+        <div class="card"><span class="ci">07</span><h3 data-i18n="plat.m7.t">MPC Engine</h3><p data-i18n="plat.m7.d">Computes optimal control actions via model predictive control.</p></div>
+        <div class="card"><span class="ci">08</span><h3 data-i18n="plat.m8.t">Industrial control</h3><p data-i18n="plat.m8.d">Sends the computed control actions back to the PLC, DCS or automation system.</p></div>
+        <div class="card"><span class="ci">09</span><h3 data-i18n="plat.m9.t">Operator interface</h3><p data-i18n="plat.m9.d">Visualizes state, forecasts, optimal modes, warnings and control actions.</p></div>
+      </div>
+
+      <div class="plat-sub reveal" data-i18n="plat.deploy.k">Deployment</div>
+      <div class="tags reveal" style="margin-top:4px">
+        <span class="tag" data-i18n="plat.dep1">Edge device at the process</span>
+        <span class="tag" data-i18n="plat.dep2">On-premise server</span>
+        <span class="tag" data-i18n="plat.dep3">Hybrid Edge–Cloud</span>
+      </div>
+
+      <div class="grid g2 reveal" style="margin-top:34px;align-items:stretch">
+        <div class="card">
+          <span class="ci" data-i18n="plat.val.k">What the client gains</span>
+          <h3 data-i18n="plat.val.t">Measurable process efficiency</h3>
+          <ul>
+            <li data-i18n="plat.v1">Lower energy consumption</li>
+            <li data-i18n="plat.v2">Higher productivity</li>
+            <li data-i18n="plat.v3">More stable product quality</li>
+            <li data-i18n="plat.v4">Fewer stoppages and less downtime</li>
+            <li data-i18n="plat.v5">Early detection of deviations</li>
+            <li data-i18n="plat.v6">Better use of existing equipment</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="ci" data-i18n="plat.app.k">Where it applies</span>
+          <h3 data-i18n="plat.app.t">Across process industries</h3>
+          <ul>
+            <li data-i18n="plat.a1">Pyrolysis &amp; thermochemical conversion</li>
+            <li data-i18n="plat.a2">Gasification &amp; biomass processing</li>
+            <li data-i18n="plat.a3">Chemical reactors</li>
+            <li data-i18n="plat.a4">Thermal systems &amp; industrial furnaces</li>
+            <li data-i18n="plat.a5">Turbomachinery &amp; energy systems</li>
+            <li data-i18n="plat.a6">Heat-transfer &amp; high-temperature processes</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="scale-note reveal" data-i18n-html="plat.scale"><b>Base platform</b> + Process model + Application module = an industrial solution — the same platform carries to new processes without rebuilding it from scratch.</p>
     </div>
   </section>
 
@@ -938,22 +1009,30 @@
         <h2 data-i18n="app.h2">Built for nonlinear, coupled, thermochemical systems.</h2>
         <p class="intro" data-i18n="app.intro">The approach is not tied to one type of equipment. It targets strongly coupled, dynamic industrial processes where behaviour is set by many interacting physical and chemical phenomena.</p>
       </div>
-      <div class="grid g4 reveal">
-        <div class="card hot">
+      <div class="grid g3 reveal">
+        <div class="card">
           <span class="ci" data-i18n="app.c1.k">Thermochemical</span><h3 data-i18n="app.c1.t">Pyrolysis</h3>
-          <ul><li data-i18n="app.c1.l1">Temperature distribution</li><li data-i18n="app.c1.l2">Heat transfer</li><li data-i18n="app.c1.l3">Feedstock conversion</li><li data-i18n="app.c1.l4">Reaction kinetics</li><li data-i18n="app.c1.l5">Gas composition</li></ul>
+          <ul><li data-i18n="app.c1.l1">Temperature distribution</li><li data-i18n="app.c1.l3">Feedstock conversion</li><li data-i18n="app.c1.l4">Reaction kinetics</li><li data-i18n="app.c1.l5">Gas composition</li></ul>
         </div>
         <div class="card">
           <span class="ci" data-i18n="app.c2.k">Gas processing</span><h3 data-i18n="app.c2.t">Gasification</h3>
-          <ul><li data-i18n="app.c2.l1">Reactor modelling</li><li data-i18n="app.c1.l5">Gas composition</li><li data-i18n="app.c2.l3">Thermal-state estimation</li><li data-i18n="opt.eyebrow">Process optimization</li><li data-i18n="loop.n6">Predictive control</li></ul>
+          <ul><li data-i18n="app.c2.l1">Reactor modelling</li><li data-i18n="app.c1.l5">Gas composition</li><li data-i18n="app.c2.l3">Thermal-state estimation</li><li data-i18n="loop.n6">Predictive control</li></ul>
         </div>
         <div class="card">
           <span class="ci" data-i18n="app.c3.k">Kinetics</span><h3 data-i18n="app.c3.t">Chemical reactors</h3>
           <ul><li data-i18n="app.c1.l4">Reaction kinetics</li><li data-i18n="app.c3.l2">Transport equations</li><li data-i18n="app.c3.l3">Process measurements</li><li data-i18n="app.c3.l4">Predictive reactor models</li></ul>
         </div>
-        <div class="card hot">
+        <div class="card">
           <span class="ci" data-i18n="app.c4.k">High temperature</span><h3 data-i18n="app.c4.t">Thermal systems</h3>
-          <ul><li data-i18n="app.c4.l1">Industrial furnaces</li><li data-i18n="app.c4.l2">Heat-transfer systems</li><li data-i18n="app.c4.l3">Thermal treatment</li><li data-i18n="app.c4.l4">Energy systems</li></ul>
+          <ul><li data-i18n="app.c4.l2">Heat-transfer systems</li><li data-i18n="app.c4.l3">Thermal treatment</li><li data-i18n="app.c4.l4">Energy systems</li><li data-i18n="app.c4.l5">Drying &amp; evaporation</li></ul>
+        </div>
+        <div class="card">
+          <span class="ci" data-i18n="app.c5.k">Combustion</span><h3 data-i18n="app.c5.t">Industrial furnaces</h3>
+          <ul><li data-i18n="app.c1.l1">Temperature distribution</li><li data-i18n="app.c1.l2">Heat transfer</li><li data-i18n="app.c5.l3">Combustion &amp; heating</li><li data-i18n="app.c5.l4">Thermal efficiency</li></ul>
+        </div>
+        <div class="card">
+          <span class="ci" data-i18n="app.c6.k">Rotating equipment</span><h3 data-i18n="app.c6.t">Turbomachinery</h3>
+          <ul><li data-i18n="app.c6.l1">Gas &amp; steam turbines</li><li data-i18n="app.c6.l2">Microturbines</li><li data-i18n="app.c2.l3">Thermal-state estimation</li><li data-i18n="app.c6.l4">Performance optimization</li></ul>
         </div>
       </div>
     </div>
@@ -1397,6 +1476,27 @@ Object.assign(window.I18N.de, {
   "how.d4":"Der Zwilling projiziert den Prozess zeitlich voraus — für jede Kandidaten-Stellaktion.",
   "how.d5":"Jedes Szenario wird gegen das Ziel bewertet; die beste Aktion wird ausgewählt.",
   "how.d6":"Die gewählte Aktion wird angewendet — bevor eine Abweichung eintritt. Dann wiederholt sich der Kreis.",
+  "nav.platform":"Plattform",
+  "plat.eyebrow":"Die Plattform","plat.h2":"PINN Predictive Control Platform",
+  "plat.intro":"Eine modulare industrielle Softwareplattform, die den prädiktiven Regelkreis in ein einsatzfähiges Produkt verwandelt — sie vereint physikalische Modelle, Echtzeitdaten, physik-informierte neuronale Netze, digitale Zwillinge und Model Predictive Control zu einer intelligenten Regelungsschicht.",
+  "plat.concept":"Physikalisches Modell <b>+</b> PINN <b>+</b> Digitaler Zwilling <b>+</b> Prädiktive Regelung",
+  "plat.modules.k":"Neun Module · vom Sensor bis zur Stellaktion",
+  "plat.m1.t":"Industrielle Anbindung","plat.m1.d":"Erfasst Daten von Sensoren, PLC, SCADA, DCS, Historians und Leitsystemen.",
+  "plat.m2.t":"Daten &amp; Zustandsschätzung","plat.m2.d":"Filterung, Synchronisation, Validierung, Anomalieerkennung und Zustandsrekonstruktion.",
+  "plat.m3.t":"PINN-Engine","plat.m3.d":"Erstellt und betreibt physik-informierte Modelle, die physikalische Gesetze mit Messdaten verbinden.",
+  "plat.m4.t":"Digital-Twin-Engine","plat.m4.d":"Erzeugt einen digitalen Zwilling der Anlage in Echtzeit.",
+  "plat.m5.t":"Vorhersage","plat.m5.d":"Berechnet die künftige Trajektorie der Prozessparameter.",
+  "plat.m6.t":"Optimierung","plat.m6.d":"Findet den optimalen Betriebsmodus innerhalb technologischer, betrieblicher und Sicherheitsgrenzen.",
+  "plat.m7.t":"MPC-Engine","plat.m7.d":"Berechnet optimale Stellaktionen mittels modellprädiktiver Regelung.",
+  "plat.m8.t":"Industrielle Regelung","plat.m8.d":"Sendet die berechneten Stellaktionen zurück an PLC, DCS oder Automatisierungssystem.",
+  "plat.m9.t":"Bedienoberfläche","plat.m9.d":"Visualisiert Zustand, Prognosen, optimale Modi, Warnungen und Stellaktionen.",
+  "plat.deploy.k":"Bereitstellung",
+  "plat.dep1":"Edge-Gerät am Prozess","plat.dep2":"Server vor Ort","plat.dep3":"Hybrid Edge–Cloud",
+  "plat.val.k":"Was der Kunde gewinnt","plat.val.t":"Messbare Prozesseffizienz",
+  "plat.v1":"Geringerer Energieverbrauch","plat.v2":"Höhere Produktivität","plat.v3":"Stabilere Produktqualität","plat.v4":"Weniger Stillstände und Ausfallzeiten","plat.v5":"Frühe Erkennung von Abweichungen","plat.v6":"Bessere Nutzung vorhandener Anlagen",
+  "plat.app.k":"Wo es zum Einsatz kommt","plat.app.t":"Über Prozessindustrien hinweg",
+  "plat.a1":"Pyrolyse &amp; thermochemische Umwandlung","plat.a2":"Vergasung &amp; Biomasseverarbeitung","plat.a3":"Chemische Reaktoren","plat.a4":"Thermische Systeme &amp; Industrieöfen","plat.a5":"Turbomaschinen &amp; Energiesysteme","plat.a6":"Wärmeübertragung &amp; Hochtemperaturprozesse",
+  "plat.scale":"<b>Basisplattform</b> + Prozessmodell + Anwendungsmodul = industrielle Lösung — dieselbe Plattform lässt sich auf neue Prozesse übertragen, ohne sie neu aufzubauen.",
   "hero.eyebrow":"PINN · Digitale Zwillinge · Prädiktive Regelung",
   "hero.h1":"Physik, wo Daten enden. <span class=\"a\">Vorhersage</span> vor der <span class=\"b\">Abweichung</span>.",
   "hero.lede":"Wir entwickeln physik-informierte neuronale Netze, die physikalische Gesetze mit Prozessdaten verbinden — schnelle, prädiktive Modelle komplexer industrieller Systeme.",
@@ -1442,7 +1542,9 @@ Object.assign(window.I18N.de, {
   "app.c1.k":"Thermochemisch","app.c1.t":"Pyrolyse","app.c1.l1":"Temperaturverteilung","app.c1.l2":"Wärmeübertragung","app.c1.l3":"Einsatzstoffumsatz","app.c1.l4":"Reaktionskinetik","app.c1.l5":"Gaszusammensetzung",
   "app.c2.k":"Gasaufbereitung","app.c2.t":"Vergasung","app.c2.l1":"Reaktormodellierung","app.c2.l3":"Thermische Zustandsschätzung",
   "app.c3.k":"Kinetik","app.c3.t":"Chemische Reaktoren","app.c3.l2":"Transportgleichungen","app.c3.l3":"Prozessmessungen","app.c3.l4":"Prädiktive Reaktormodelle",
-  "app.c4.k":"Hochtemperatur","app.c4.t":"Thermische Systeme","app.c4.l1":"Industrieöfen","app.c4.l2":"Wärmeübertragungssysteme","app.c4.l3":"Wärmebehandlung","app.c4.l4":"Energiesysteme",
+  "app.c4.k":"Hochtemperatur","app.c4.t":"Thermische Systeme","app.c4.l2":"Wärmeübertragungssysteme","app.c4.l3":"Wärmebehandlung","app.c4.l4":"Energiesysteme","app.c4.l5":"Trocknung &amp; Verdampfung",
+  "app.c5.k":"Verbrennung","app.c5.t":"Industrieöfen","app.c5.l3":"Verbrennung &amp; Beheizung","app.c5.l4":"Thermische Effizienz",
+  "app.c6.k":"Rotierende Maschinen","app.c6.t":"Turbomaschinen","app.c6.l1":"Gas- &amp; Dampfturbinen","app.c6.l2":"Mikroturbinen","app.c6.l4":"Leistungsoptimierung",
   "pyro.eyebrow":"Praxisbeispiel","pyro.h2":"Ein Pyrolysereaktor, vorhersagbar gemacht.",
   "pyro.intro":"Pyrolyse ist ein komplexer thermochemischer Prozess — Aufheizen, Trocknung, Zersetzung, Phasenbildung und Sekundärreaktionen. Viele Zustände sind nur indirekt beobachtbar. Ein PINN verbindet diese Messungen mit Energiebilanzen und Kinetik zu einem prädiktiven digitalen Zwilling des Reaktors.",
   "pyro.c1.k":"Reaktor-Zustandsvektor","pyro.c1.d":"Temperatur, Druck, Massenstrom, Produktzusammensetzung, Umsatz und thermische Leistung — verbunden mit Energie- und Massenbilanzen sowie Wärmeübertragungs- und Reaktionskinetikgleichungen.",
@@ -1532,6 +1634,27 @@ Object.assign(window.I18N.lv, {
   "how.d4":"Dvīnis prognozē procesu laikā uz priekšu — katrai kandidāta vadības darbībai.",
   "how.d5":"Katrs scenārijs tiek vērtēts pret mērķi; tiek izvēlēta labākā darbība.",
   "how.d6":"Izvēlētā darbība tiek pielietota — pirms rodas novirze. Tad cilpa atkārtojas.",
+  "nav.platform":"Platforma",
+  "plat.eyebrow":"Platforma","plat.h2":"PINN Predictive Control Platform",
+  "plat.intro":"Modulāra rūpnieciska programmatūras platforma, kas prognozējošās vadības cilpu pārvērš par ieviešamu produktu — apvienojot fizikālos modeļus, reāllaika datus, fizikā balstītus neironu tīklus, digitālos dvīņus un Model Predictive Control vienā inteliģentā vadības slānī.",
+  "plat.concept":"Fizikālais modelis <b>+</b> PINN <b>+</b> Digitālais dvīnis <b>+</b> Prognozējošā vadība",
+  "plat.modules.k":"Deviņi moduļi · no sensora līdz vadības darbībai",
+  "plat.m1.t":"Rūpnieciskais pieslēgums","plat.m1.d":"Uzņem datus no sensoriem, PLC, SCADA, DCS, arhīviem un dispečervadības sistēmām.",
+  "plat.m2.t":"Dati un stāvokļa novērtējums","plat.m2.d":"Filtrēšana, sinhronizācija, validācija, anomāliju atklāšana un stāvokļa atjaunošana.",
+  "plat.m3.t":"PINN dzinis","plat.m3.d":"Veido un darbina fizikā balstītus modeļus, kas apvieno fizikas likumus ar eksperimentālajiem datiem.",
+  "plat.m4.t":"Digitālā dvīņa dzinis","plat.m4.d":"Reāllaikā izveido tehnoloģiskā objekta digitālo dvīni.",
+  "plat.m5.t":"Prognozēšana","plat.m5.d":"Aprēķina procesa parametru nākotnes trajektoriju.",
+  "plat.m6.t":"Optimizācija","plat.m6.d":"Atrod optimālo darba režīmu tehnoloģisko, ekspluatācijas un drošības ierobežojumu robežās.",
+  "plat.m7.t":"MPC dzinis","plat.m7.d":"Aprēķina optimālās vadības darbības ar modeļa prognozējošo vadību.",
+  "plat.m8.t":"Rūpnieciskā vadība","plat.m8.d":"Nosūta aprēķinātās vadības darbības atpakaļ uz PLC, DCS vai automatizācijas sistēmu.",
+  "plat.m9.t":"Operatora interfeiss","plat.m9.d":"Vizualizē stāvokli, prognozes, optimālos režīmus, brīdinājumus un vadības darbības.",
+  "plat.deploy.k":"Izvietošana",
+  "plat.dep1":"Edge ierīce pie procesa","plat.dep2":"Uz vietas (serveris)","plat.dep3":"Hibrīds Edge–Cloud",
+  "plat.val.k":"Ko iegūst klients","plat.val.t":"Izmērāma procesa efektivitāte",
+  "plat.v1":"Zemāks enerģijas patēriņš","plat.v2":"Augstāka produktivitāte","plat.v3":"Stabilāka produkta kvalitāte","plat.v4":"Mazāk dīkstāvju","plat.v5":"Agrīna noviržu atklāšana","plat.v6":"Labāka esošo iekārtu izmantošana",
+  "plat.app.k":"Kur to pielieto","plat.app.t":"Dažādās procesu nozarēs",
+  "plat.a1":"Piroliize un termoķīmiskā pārstrāde","plat.a2":"Gazifikācija un biomasas pārstrāde","plat.a3":"Ķīmiskie reaktori","plat.a4":"Termiskās sistēmas un rūpnieciskās krāsnis","plat.a5":"Turbomašīnas un enerģijas sistēmas","plat.a6":"Siltuma pārnese un augsttemperatūras procesi",
+  "plat.scale":"<b>Bāzes platforma</b> + Procesa modelis + Pielietojuma modulis = rūpniecisks risinājums — tā pati platforma pārnesama uz jauniem procesiem, neveidojot to no jauna.",
   "hero.eyebrow":"PINN · Digitālie dvīņi · Prognozējošā vadība",
   "hero.h1":"Fizika, kur beidzas dati. <span class=\"a\">Prognoze</span> pirms <span class=\"b\">novirzes</span>.",
   "hero.lede":"Mēs veidojam fizikā balstītus neironu tīklus, kas apvieno fizikas likumus ar procesa datiem — ātrus, prognozējošus sarežģītu rūpniecisku sistēmu modeļus.",
@@ -1577,7 +1700,9 @@ Object.assign(window.I18N.lv, {
   "app.c1.k":"Termoķīmija","app.c1.t":"Piroliize","app.c1.l1":"Temperatūras sadalījums","app.c1.l2":"Siltuma pārnese","app.c1.l3":"Izejvielas pārvēršana","app.c1.l4":"Reakciju kinētika","app.c1.l5":"Gāzes sastāvs",
   "app.c2.k":"Gāzu apstrāde","app.c2.t":"Gazifikācija","app.c2.l1":"Reaktora modelēšana","app.c2.l3":"Termiskā stāvokļa novērtējums",
   "app.c3.k":"Kinētika","app.c3.t":"Ķīmiskie reaktori","app.c3.l2":"Pārneses vienādojumi","app.c3.l3":"Procesa mērījumi","app.c3.l4":"Prognozējoši reaktoru modeļi",
-  "app.c4.k":"Augsta temperatūra","app.c4.t":"Termiskās sistēmas","app.c4.l1":"Rūpnieciskās krāsnis","app.c4.l2":"Siltuma pārneses sistēmas","app.c4.l3":"Termiskā apstrāde","app.c4.l4":"Enerģijas sistēmas",
+  "app.c4.k":"Augsta temperatūra","app.c4.t":"Termiskās sistēmas","app.c4.l2":"Siltuma pārneses sistēmas","app.c4.l3":"Termiskā apstrāde","app.c4.l4":"Enerģijas sistēmas","app.c4.l5":"Žāvēšana un iztvaicēšana",
+  "app.c5.k":"Sadedzināšana","app.c5.t":"Rūpnieciskās krāsnis","app.c5.l3":"Sadedzināšana un sildīšana","app.c5.l4":"Termiskā efektivitāte",
+  "app.c6.k":"Rotējošās iekārtas","app.c6.t":"Turbomašīnas","app.c6.l1":"Gāzes un tvaika turbīnas","app.c6.l2":"Mikroturbīnas","app.c6.l4":"Veiktspējas optimizācija",
   "pyro.eyebrow":"Praktisks piemērs","pyro.h2":"Pirolīzes reaktors, padarīts prognozējams.",
   "pyro.intro":"Piroliize ir sarežģīts termoķīmisks process — sildīšana, mitruma izvade, sadalīšanās, fāžu veidošanās un sekundārās reakcijas. Daudzi stāvokļi novērojami tikai netieši. PINN apvieno šos mērījumus ar enerģijas bilancēm un kinētiku, veidojot prognozējošu reaktora digitālo dvīni.",
   "pyro.c1.k":"Reaktora stāvokļa vektors","pyro.c1.d":"Temperatūra, spiediens, masas plūsma, produkta sastāvs, pārvēršana un termiskā jauda — apvienojumā ar enerģijas un masas bilancēm, siltuma pārneses un reakciju kinētikas vienādojumiem.",
@@ -1667,6 +1792,27 @@ Object.assign(window.I18N.ru, {
   "how.d4":"Двойник прогнозирует процесс во времени — для каждого варианта управляющего действия.",
   "how.d5":"Каждый сценарий оценивается по цели; выбирается лучшее действие.",
   "how.d6":"Выбранное действие применяется — до возникновения отклонения. Затем контур повторяется.",
+  "nav.platform":"Платформа",
+  "plat.eyebrow":"Платформа","plat.h2":"PINN Predictive Control Platform",
+  "plat.intro":"Модульная промышленная программная платформа, превращающая контур предиктивного управления в готовый к внедрению продукт — объединяя физические модели, данные реального времени, физически-информированные нейронные сети, цифровые двойники и Model Predictive Control в единый интеллектуальный слой управления.",
+  "plat.concept":"Физическая модель <b>+</b> PINN <b>+</b> Цифровой двойник <b>+</b> Предиктивное управление",
+  "plat.modules.k":"Девять модулей · от датчика до управляющего воздействия",
+  "plat.m1.t":"Промышленное подключение","plat.m1.d":"Получает данные от датчиков, PLC, SCADA, DCS, архивов и диспетчерских систем.",
+  "plat.m2.t":"Данные и оценка состояния","plat.m2.d":"Фильтрация, синхронизация, проверка достоверности, обнаружение аномалий и восстановление состояния.",
+  "plat.m3.t":"PINN-движок","plat.m3.d":"Строит и выполняет физически-информированные модели, объединяющие физические законы с данными.",
+  "plat.m4.t":"Движок цифрового двойника","plat.m4.d":"Создаёт цифровой двойник технологического объекта в реальном времени.",
+  "plat.m5.t":"Прогнозирование","plat.m5.d":"Рассчитывает будущую траекторию технологических параметров.",
+  "plat.m6.t":"Оптимизация","plat.m6.d":"Находит оптимальный режим работы с учётом технологических, эксплуатационных и безопасностных ограничений.",
+  "plat.m7.t":"MPC-движок","plat.m7.d":"Рассчитывает оптимальные управляющие воздействия методом предиктивного управления.",
+  "plat.m8.t":"Промышленное управление","plat.m8.d":"Передаёт рассчитанные воздействия обратно в PLC, DCS или систему автоматизации.",
+  "plat.m9.t":"Интерфейс оператора","plat.m9.d":"Визуализирует состояние, прогнозы, оптимальные режимы, предупреждения и воздействия.",
+  "plat.deploy.k":"Развёртывание",
+  "plat.dep1":"Edge-устройство у процесса","plat.dep2":"Локальный сервер","plat.dep3":"Гибрид Edge–Cloud",
+  "plat.val.k":"Что получает клиент","plat.val.t":"Измеримая эффективность процесса",
+  "plat.v1":"Ниже энергопотребление","plat.v2":"Выше производительность","plat.v3":"Стабильнее качество продукта","plat.v4":"Меньше простоев","plat.v5":"Раннее обнаружение отклонений","plat.v6":"Лучшее использование оборудования",
+  "plat.app.k":"Где применяется","plat.app.t":"В разных отраслях процессов",
+  "plat.a1":"Пиролиз и термохимическая переработка","plat.a2":"Газификация и переработка биомассы","plat.a3":"Химические реакторы","plat.a4":"Тепловые системы и промышленные печи","plat.a5":"Турбомашины и энергетические системы","plat.a6":"Теплообмен и высокотемпературные процессы",
+  "plat.scale":"<b>Базовая платформа</b> + Модель процесса + Прикладной модуль = промышленное решение — та же платформа переносится на новые процессы без разработки с нуля.",
   "hero.eyebrow":"PINN · Цифровые двойники · Предиктивное управление",
   "hero.h1":"Физика там, где кончаются данные. <span class=\"a\">Прогноз</span> прежде <span class=\"b\">отклонения</span>.",
   "hero.lede":"Мы создаём физически-информированные нейронные сети, объединяющие законы физики с данными процесса — быстрые предиктивные модели сложных промышленных систем.",
@@ -1712,7 +1858,9 @@ Object.assign(window.I18N.ru, {
   "app.c1.k":"Термохимия","app.c1.t":"Пиролиз","app.c1.l1":"Распределение температуры","app.c1.l2":"Теплоперенос","app.c1.l3":"Конверсия сырья","app.c1.l4":"Кинетика реакций","app.c1.l5":"Состав газа",
   "app.c2.k":"Газопереработка","app.c2.t":"Газификация","app.c2.l1":"Моделирование реактора","app.c2.l3":"Оценка теплового состояния",
   "app.c3.k":"Кинетика","app.c3.t":"Химические реакторы","app.c3.l2":"Уравнения переноса","app.c3.l3":"Измерения процесса","app.c3.l4":"Предиктивные модели реактора",
-  "app.c4.k":"Высокая температура","app.c4.t":"Тепловые системы","app.c4.l1":"Промышленные печи","app.c4.l2":"Системы теплопереноса","app.c4.l3":"Термообработка","app.c4.l4":"Энергетические системы",
+  "app.c4.k":"Высокая температура","app.c4.t":"Тепловые системы","app.c4.l2":"Системы теплопереноса","app.c4.l3":"Термообработка","app.c4.l4":"Энергетические системы","app.c4.l5":"Сушка и выпаривание",
+  "app.c5.k":"Сжигание","app.c5.t":"Промышленные печи","app.c5.l3":"Сжигание и нагрев","app.c5.l4":"Тепловая эффективность",
+  "app.c6.k":"Роторное оборудование","app.c6.t":"Турбомашины","app.c6.l1":"Газовые и паровые турбины","app.c6.l2":"Микротурбины","app.c6.l4":"Оптимизация характеристик",
   "pyro.eyebrow":"Пример","pyro.h2":"Пиролизный реактор, ставший предсказуемым.",
   "pyro.intro":"Пиролиз — сложный термохимический процесс: нагрев, удаление влаги, разложение, образование фаз и вторичные реакции. Многие состояния наблюдаемы лишь косвенно. PINN объединяет эти измерения с энергетическими балансами и кинетикой, создавая предиктивный цифровой двойник реактора.",
   "pyro.c1.k":"Вектор состояния реактора","pyro.c1.d":"Температура, давление, массовый расход, состав продукта, конверсия и тепловая мощность — в сочетании с уравнениями энергетического и материального баланса, теплопереноса и кинетики реакций.",
