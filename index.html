@@ -222,6 +222,7 @@
   header.nav.fit-tight .nav-in{gap:12px}
   header.nav.fit-tight .nav-links{gap:14px}
   header.nav.fit-tight .nav-links a{font-size:.8rem}
+  .nav-links a.nw{white-space:nowrap}
   header.nav.fit-tight .brand small{letter-spacing:.12em}
   header.nav.fit-tight .nav-cta{padding:8px 11px}
   header.nav.fit-tight .lang-btn svg{display:none}
@@ -241,6 +242,8 @@
     .lang-btn{padding:0 9px}
     .lang-btn svg{display:none}
   }
+  /* very narrow phones (<360px): the brand title must not run under the menu button */
+  @media(max-width:359px){.nav-in{gap:6px}.brand{font-size:1rem}}
 
   /* ---------- HERO ---------- */
   .hero{position:relative;padding:74px 0 30px;overflow:hidden}
@@ -374,6 +377,7 @@
   .otable td:first-child{font-weight:600;font-family:"IBM Plex Mono",monospace;font-size:.86rem;color:var(--teal)}
   .otable tbody tr:hover{background:var(--surface-2)}
   .table-scroll{overflow-x:auto;border-radius:var(--r)}
+  @media(max-width:480px){.otable{font-size:.88rem}.otable th,.otable td{padding:11px 12px}.otable td:first-child{font-size:.8rem}}
 
   /* approach steps */
   .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--surface)}
@@ -2011,12 +2015,21 @@ Object.assign(window.I18N.ru, {
       var fitNav=function(){
         if(!navIn) return;
         var wasCollapsed=navBar.classList.contains('fit-collapse');
+        var links=navLinks.querySelectorAll('a');
+        for(var i=0;i<links.length;i++){links[i].classList.remove('nw');links[i].style.width='';}
         navBar.classList.remove('fit-tight','fit-collapse');
         if(wide.matches&&overflows()){
           navBar.classList.add('fit-tight');
           if(overflows()) navBar.classList.add('fit-collapse');
         }
         if(wasCollapsed&&!navBar.classList.contains('fit-collapse')&&wide.matches) closeNav();
+        // a wrapped link keeps its one-line box width: keep it on one line where the row still fits, else shrink the box to its longest line
+        if(!wide.matches||navBar.classList.contains('fit-collapse')) return;
+        for(var j=0;j<links.length;j++){
+          var a=links[j],rg=document.createRange();rg.selectNodeContents(a);
+          var rs=rg.getClientRects(),line=0;for(var k=0;k<rs.length;k++) line=Math.max(line,rs[k].width);
+          if(rs.length>1&&a.getBoundingClientRect().width-line>2){a.classList.add('nw');if(overflows()){a.classList.remove('nw');a.style.width=Math.ceil(line+1)+'px';}}
+        }
       };
       if(navBar&&'ResizeObserver' in window){
         var navW=0;
