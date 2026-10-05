@@ -190,12 +190,12 @@
     background:color-mix(in srgb,var(--bg) 82%,transparent);
     border-bottom:1px solid var(--line);
   }
-  .nav-in{max-width:var(--maxw);margin:0 auto;padding:14px 28px;display:flex;align-items:center;gap:24px;position:relative}
+  .nav-in{max-width:var(--maxw);margin:0 auto;padding:14px 28px;display:flex;align-items:center;gap:18px;position:relative}
   @media(max-width:640px){.nav-in{padding:12px 20px}}
   .brand{display:flex;align-items:center;gap:11px;font-family:"Saira SemiCondensed",sans-serif;font-weight:700;font-size:1.16rem;letter-spacing:.01em;white-space:nowrap}
   .brand .glyph{width:26px;height:26px;flex:none}
   .brand small{display:block;font-family:"IBM Plex Mono",monospace;font-size:.56rem;letter-spacing:.24em;color:var(--ink-faint);font-weight:400;text-transform:uppercase;margin-top:1px}
-  .nav-links{margin-left:auto;display:flex;gap:26px;align-items:center}
+  .nav-links{margin-left:auto;display:flex;gap:18px;align-items:center}
   .nav-links a{font-size:.85rem;text-decoration:none;color:var(--ink-soft);font-weight:500;transition:color .18s}
   .nav-links a:hover{color:var(--teal)}
   .nav-cta{font-family:"IBM Plex Mono",monospace;font-size:.76rem;letter-spacing:.04em;padding:8px 15px;border:1px solid var(--line-strong);border-radius:8px;text-decoration:none;color:var(--ink);transition:.18s;white-space:nowrap}
@@ -209,14 +209,35 @@
   .nav-burger.open .bl{background:transparent}
   .nav-burger.open .bl::before{top:0;transform:rotate(45deg)}
   .nav-burger.open .bl::after{top:0;transform:rotate(-45deg)}
-  @media(max-width:860px){
-    .nav-burger{display:inline-flex;margin-left:auto}
+  /* collapsed nav: below 1200px for all languages; always for DE/RU (their full nav does not fit --maxw) */
+  @media(max-width:1200px){
+    .nav-burger{display:inline-flex}
+    .nav-cta{margin-left:auto}
     .nav-links{display:flex;position:absolute;top:calc(100% + 1px);left:0;right:0;margin:0;flex-direction:column;gap:0;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:var(--shadow-lift);padding:8px 14px 14px;opacity:0;transform:translateY(-10px);pointer-events:none;transition:opacity .2s,transform .2s}
     .nav-links.open{opacity:1;transform:none;pointer-events:auto}
     .nav-links a{padding:13px 10px;border-radius:8px;font-size:1rem;border-bottom:1px solid var(--line)}
     .nav-links a:last-child{border-bottom:none}
     .nav-links a:hover{background:var(--surface-2)}
+  }
+  :is(html:lang(de),html:lang(ru)) .nav-burger{display:inline-flex}
+  :is(html:lang(de),html:lang(ru)) .nav-cta{margin-left:auto}
+  :is(html:lang(de),html:lang(ru)) .nav-links{display:flex;position:absolute;top:calc(100% + 1px);left:0;right:0;margin:0;flex-direction:column;gap:0;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:var(--shadow-lift);padding:8px 14px 14px;opacity:0;transform:translateY(-10px);pointer-events:none;transition:opacity .2s,transform .2s}
+  :is(html:lang(de),html:lang(ru)) .nav-links.open{opacity:1;transform:none;pointer-events:auto}
+  :is(html:lang(de),html:lang(ru)) .nav-links a{padding:13px 10px;border-radius:8px;font-size:1rem;border-bottom:1px solid var(--line)}
+  :is(html:lang(de),html:lang(ru)) .nav-links a:last-child{border-bottom:none}
+  :is(html:lang(de),html:lang(ru)) .nav-links a:hover{background:var(--surface-2)}
+  @media(max-width:860px){
     .nav-cta{display:none}
+    .nav-burger{margin-left:auto}
+  }
+  /* narrow phones: tighter header so brand, menu, language and theme controls fit */
+  @media(max-width:640px){
+    .nav-in{gap:8px}
+    .brand{min-width:0;gap:8px}
+    .brand>span{min-width:0}
+    .brand small{white-space:normal;line-height:1.3}
+    .lang-btn{padding:0 9px}
+    .lang-btn svg{display:none}
   }
 
   /* ---------- HERO ---------- */
@@ -1483,7 +1504,7 @@ Object.assign(window.I18N.de, {
   "plat.concept":"Physikalisches Modell <b>+</b> PINN <b>+</b> Digitaler Zwilling <b>+</b> Prädiktive Regelung",
   "plat.modules.k":"Neun Module · vom Sensor bis zur Stellaktion",
   "plat.m1.t":"Industrielle Anbindung","plat.m1.d":"Erfasst Daten von Sensoren, PLC, SCADA, DCS, Historians und Leitsystemen.",
-  "plat.m2.t":"Daten &amp; Zustandsschätzung","plat.m2.d":"Filterung, Synchronisation, Validierung, Anomalieerkennung und Zustandsrekonstruktion.",
+  "plat.m2.t":"Daten & Zustandsschätzung","plat.m2.d":"Filterung, Synchronisation, Validierung, Anomalieerkennung und Zustandsrekonstruktion.",
   "plat.m3.t":"PINN-Engine","plat.m3.d":"Erstellt und betreibt physik-informierte Modelle, die physikalische Gesetze mit Messdaten verbinden.",
   "plat.m4.t":"Digital-Twin-Engine","plat.m4.d":"Erzeugt einen digitalen Zwilling der Anlage in Echtzeit.",
   "plat.m5.t":"Vorhersage","plat.m5.d":"Berechnet die künftige Trajektorie der Prozessparameter.",
@@ -1496,7 +1517,7 @@ Object.assign(window.I18N.de, {
   "plat.val.k":"Was der Kunde gewinnt","plat.val.t":"Messbare Prozesseffizienz",
   "plat.v1":"Geringerer Energieverbrauch","plat.v2":"Höhere Produktivität","plat.v3":"Stabilere Produktqualität","plat.v4":"Weniger Stillstände und Ausfallzeiten","plat.v5":"Frühe Erkennung von Abweichungen","plat.v6":"Bessere Nutzung vorhandener Anlagen",
   "plat.app.k":"Wo es zum Einsatz kommt","plat.app.t":"Über Prozessindustrien hinweg",
-  "plat.a1":"Pyrolyse &amp; thermochemische Umwandlung","plat.a2":"Vergasung &amp; Biomasseverarbeitung","plat.a3":"Chemische Reaktoren","plat.a4":"Thermische Systeme &amp; Industrieöfen","plat.a5":"Turbomaschinen &amp; Energiesysteme","plat.a6":"Wärmeübertragung &amp; Hochtemperaturprozesse",
+  "plat.a1":"Pyrolyse & thermochemische Umwandlung","plat.a2":"Vergasung & Biomasseverarbeitung","plat.a3":"Chemische Reaktoren","plat.a4":"Thermische Systeme & Industrieöfen","plat.a5":"Turbomaschinen & Energiesysteme","plat.a6":"Wärmeübertragung & Hochtemperaturprozesse",
   "plat.scale":"<b>Basisplattform</b> + Prozessmodell + Anwendungsmodul = industrielle Lösung — dieselbe Plattform lässt sich auf neue Prozesse übertragen, ohne sie neu aufzubauen.",
   "hero.eyebrow":"PINN · Digitale Zwillinge · Prädiktive Regelung",
   "hero.h1":"Physik, wo Daten enden. <span class=\"a\">Vorhersage</span> vor der <span class=\"b\">Abweichung</span>.",
@@ -1504,7 +1525,7 @@ Object.assign(window.I18N.de, {
   "seq.measure":"Messung","seq.state":"Zustandsschätzung","seq.predict":"Vorhersage","seq.optim":"Optimierung","seq.control":"Regelung",
   "hero.cta1":"Technologie entdecken","hero.cta2":"Forschung lesen",
   "tag.twins":"Digitale Zwillinge","tag.state":"Zustandsschätzung","tag.anomaly":"Anomalieerkennung",
-  "loop.n1":"Physisches System","loop.n2":"Sensoren &amp; Daten","loop.n3":"PINN-Zwilling","loop.n4":"Zustandsvorhersage","loop.n5":"Optimierung","loop.n6":"Prädiktive Regelung",
+  "loop.n1":"Physisches System","loop.n2":"Sensoren & Daten","loop.n3":"PINN-Zwilling","loop.n4":"Zustandsvorhersage","loop.n5":"Optimierung","loop.n6":"Prädiktive Regelung",
   "shift.eyebrow":"Der Wandel",
   "shift.h2":"Von der Reaktion auf eine Abweichung<br>zur Vorhersage des Prozesses.",
   "shift.intro":"Herkömmliche Regelung reagiert auf eine bereits eingetretene Abweichung. Prädiktive Regelung bewertet das erwartete künftige Verhalten des Prozesses und handelt, bevor ein unerwünschter Zustand erreicht wird.",
@@ -1528,7 +1549,7 @@ Object.assign(window.I18N.de, {
   "twin.c3.k":"Experimentieren","twin.c3.t":"Virtuelles Experimentieren","twin.c3.d":"Bewerten mehrerer Szenarien und ihrer Folgen, bevor ein Eingriff am physischen System erfolgt.",
   "twin.c4.k":"Identifizieren","twin.c4.t":"Parameterschätzung","twin.c4.d":"Ermittlung von Prozess- und Anlagenparametern, die sich mit Bedingungen und Einsatzstoff verändern.",
   "twin.c5.k":"Erkennen","twin.c5.t":"Anomalieerkennung","twin.c5.d":"Vergleich von vorhergesagtem und gemessenem Verhalten; Residuen zeigen Sensorfehler, Verschleiß oder anormale Regime.",
-  "twin.c6.k":"Optimieren","twin.c6.t":"Regelung &amp; Optimierung","twin.c6.d":"Die Vorhersage speist einen Optimierer, der die Aktion mit der besten Zielerfüllung wählt.",
+  "twin.c6.k":"Optimieren","twin.c6.t":"Regelung & Optimierung","twin.c6.d":"Die Vorhersage speist einen Optimierer, der die Aktion mit der besten Zielerfüllung wählt.",
   "mpc.h2":"Jede Option prüfen, bevor eine gewählt wird.",
   "mpc.intro":"Ein trainiertes PINN ist schnell genug, um als Surrogatmodell in einer modellprädiktiven Regelung zu dienen. Für jede Kandidaten-Stelltrajektorie sagt es den künftigen Zustand voraus — und der Optimierer wählt die beste.",
   "mpc.current":"Aktueller<br>Zustand x(t)","mpc.optimize":"J optimieren","mpc.optimal":"Optimales u*",
@@ -1543,17 +1564,17 @@ Object.assign(window.I18N.de, {
   "app.c1.k":"Thermochemisch","app.c1.t":"Pyrolyse","app.c1.l1":"Temperaturverteilung","app.c1.l2":"Wärmeübertragung","app.c1.l3":"Einsatzstoffumsatz","app.c1.l4":"Reaktionskinetik","app.c1.l5":"Gaszusammensetzung",
   "app.c2.k":"Gasaufbereitung","app.c2.t":"Vergasung","app.c2.l1":"Reaktormodellierung","app.c2.l3":"Thermische Zustandsschätzung",
   "app.c3.k":"Kinetik","app.c3.t":"Chemische Reaktoren","app.c3.l2":"Transportgleichungen","app.c3.l3":"Prozessmessungen","app.c3.l4":"Prädiktive Reaktormodelle",
-  "app.c4.k":"Hochtemperatur","app.c4.t":"Thermische Systeme","app.c4.l2":"Wärmeübertragungssysteme","app.c4.l3":"Wärmebehandlung","app.c4.l4":"Energiesysteme","app.c4.l5":"Trocknung &amp; Verdampfung",
-  "app.c5.k":"Verbrennung","app.c5.t":"Industrieöfen","app.c5.l3":"Verbrennung &amp; Beheizung","app.c5.l4":"Thermische Effizienz",
-  "app.c6.k":"Rotierende Maschinen","app.c6.t":"Turbomaschinen","app.c6.l1":"Gas- &amp; Dampfturbinen","app.c6.l2":"Mikroturbinen","app.c6.l4":"Leistungsoptimierung",
+  "app.c4.k":"Hochtemperatur","app.c4.t":"Thermische Systeme","app.c4.l2":"Wärmeübertragungssysteme","app.c4.l3":"Wärmebehandlung","app.c4.l4":"Energiesysteme","app.c4.l5":"Trocknung & Verdampfung",
+  "app.c5.k":"Verbrennung","app.c5.t":"Industrieöfen","app.c5.l3":"Verbrennung & Beheizung","app.c5.l4":"Thermische Effizienz",
+  "app.c6.k":"Rotierende Maschinen","app.c6.t":"Turbomaschinen","app.c6.l1":"Gas- & Dampfturbinen","app.c6.l2":"Mikroturbinen","app.c6.l4":"Leistungsoptimierung",
   "pyro.eyebrow":"Praxisbeispiel","pyro.h2":"Ein Pyrolysereaktor, vorhersagbar gemacht.",
   "pyro.intro":"Pyrolyse ist ein komplexer thermochemischer Prozess — Aufheizen, Trocknung, Zersetzung, Phasenbildung und Sekundärreaktionen. Viele Zustände sind nur indirekt beobachtbar. Ein PINN verbindet diese Messungen mit Energiebilanzen und Kinetik zu einem prädiktiven digitalen Zwilling des Reaktors.",
   "pyro.c1.k":"Reaktor-Zustandsvektor","pyro.c1.d":"Temperatur, Druck, Massenstrom, Produktzusammensetzung, Umsatz und thermische Leistung — verbunden mit Energie- und Massenbilanzen sowie Wärmeübertragungs- und Reaktionskinetikgleichungen.",
   "pyro.c2.k":"Vor Änderung der Heizleistung","pyro.c2.d":"Jede Alternative wird nach Produktionsrate, Energieverbrauch, Produktqualität und Einhaltung der Prozessgrenzen bewertet — dann wird der bevorzugte Stelleingriff gewählt, noch vor der Abweichung.",
   "arch.eyebrow":"Architektur","arch.h2":"Eine KI-Schicht, die Automatisierung ergänzt — nicht ersetzt.",
   "arch.intro":"Ein modularer cyber-physischer Aufbau. Die KI erzeugt Vorhersagen und empfohlene Aktionen; konventionelle Regelungs- und Schutzsysteme halten den Betrieb in sicheren Grenzen.",
-  "arch.l1":"Physischer Prozess","arch.l1d":"Sensoren &amp; Aktoren","arch.l2":"Datenerfassung","arch.l2d":"Verarbeitung &amp; Normalisierung",
-  "arch.l3":"Physik-informierte KI · PINN-Zwilling","arch.l3d":"Vorhersage &amp; Schätzung","arch.l5d":"Empfohlene Aktionen","arch.l6d":"Sicherheits- &amp; Schutzkreise",
+  "arch.l1":"Physischer Prozess","arch.l1d":"Sensoren & Aktoren","arch.l2":"Datenerfassung","arch.l2d":"Verarbeitung & Normalisierung",
+  "arch.l3":"Physik-informierte KI · PINN-Zwilling","arch.l3d":"Vorhersage & Schätzung","arch.l5d":"Empfohlene Aktionen","arch.l6d":"Sicherheits- & Schutzkreise",
   "arch.return":"└── die Regelung kehrt zum physischen Prozess zurück · Schleife bei jeder Messung ──┘",
   "arch.i1.k":"Integration","arch.i1.t":"Industrieprotokolle","arch.i2.k":"Bereitstellung","arch.i2.d":"Training auf leistungsstarker Hardware; das trainierte PINN wird auf einem Edge-Modul nahe am Prozess bereitgestellt — für latenzarme Echtzeit-Vorhersage.",
   "arch.i3.k":"Anpassung","arch.i3.t":"Adaptive Zwillinge","arch.i3.d":"Neue Messungen verfeinern die Modellparameter im Lauf der Zeit, wenn Anlagen altern und Einsatzstoffe variieren.",
@@ -1575,12 +1596,12 @@ Object.assign(window.I18N.de, {
   "apr.s7.d":"Entwicklung mehrkriterieller Optimierungsalgorithmen.",
   "apr.s8.t":"Regelung","apr.s8.d":"Integration mit prädiktiver Regelung und industrieller Automatisierung.",
   "apr.s9.t":"Bereitstellung","apr.s9.d":"Einsatz auf industrieller Rechen- oder Edge-Hardware.",
-  "res.eyebrow":"Forschung &amp; Publikationen","res.eyebrow2":"Forschung","res.h2":"Auf begutachteter Wissenschaft gegründet.",
+  "res.eyebrow":"Forschung & Publikationen","res.eyebrow2":"Forschung","res.h2":"Auf begutachteter Wissenschaft gegründet.",
   "res.tag":"Ausgewählte Forschung","res.date":"August 2026",
   "res.abs":"Der Beitrag untersucht die Perspektiven der Anwendung von PINNs auf die Modellierung und prädiktive Regelung komplexer technologischer Prozesse — durch Verbindung von maschinellem Lernen mit physikalischen Gesetzen, experimentellen Daten und Optimierung. Am Beispiel eines Pyrolysereaktors wird gezeigt, wie ein physik-informiertes Modell in einen geschlossenen Regelkreis integriert wird; Vorteile, Anwendungsfelder, Grenzen und Weiterentwicklungen werden diskutiert.",
   "res.kw.ml":"Maschinelles Lernen","res.kw.ic":"Intelligente Regelung",
   "res.r1":"Abschnitte","res.r2":"Referenzen","res.r3":"Gleichungen",
-  "res.rd":"F&amp;E-Bereich","res.rd1":"Hybride Physik-KI-Modelle","res.rd2":"Deep Learning für physikalische Systeme","res.rd3":"Thermochemische Modellierung",
+  "res.rd":"F&E-Bereich","res.rd1":"Hybride Physik-KI-Modelle","res.rd2":"Deep Learning für physikalische Systeme","res.rd3":"Thermochemische Modellierung",
   "tag.twins2":"Digitaler Zwilling",
   "faq.eyebrow":"FAQ","faq.h2":"Physik-informierte KI, erklärt.","faq.intro":"Häufige Fragen zu physik-informierten neuronalen Netzen, digitalen Zwillingen und prädiktiver Regelung industrieller Prozesse.",
   "faq.q1":"Was ist ein physik-informiertes neuronales Netz (PINN)?",
@@ -1597,14 +1618,14 @@ Object.assign(window.I18N.de, {
   "faq.a6":"Nichtlineare, stark gekoppelte thermochemische und thermische Systeme: Pyrolyse- und Vergasungsreaktoren, chemische Reaktoren, Industrieöfen, Wärmeübertragungs- und Energiesysteme sowie weitere Prozesse, deren Verhalten von wechselwirkenden physikalischen und chemischen Phänomenen bestimmt wird.",
   "team.eyebrow":"Team","team.h2":"Jahrzehnte Thermophysik hinter dem Modell.",
   "team.intro":"Physik-informierte KI ist nur so gut wie die Physik dahinter. Unsere Arbeit gründet auf einer Laufbahn in der Energietechnik-Forschung, der numerischen Strömungsmechanik und thermochemischen Systemen.",
-  "team.role":"D.Sc., Prof. · Gründer &amp; Chefwissenschaftler",
+  "team.role":"D.Sc., Prof. · Gründer & Chefwissenschaftler",
   "team.bio":"Wissenschaftler und Forschungsspezialist in der Energietechnik. 2010 schuf er die erste serielle Mikroturbineneinheit Russlands — einen 20-kW-Mikroturbo-Expander-Generator für Gasverteilstationen — und leitete seither die Entwicklung von Mikroturbinen, ORC-Abwärmenutzung sowie kryogenen und überkritischen CO₂-Kraftsystemen.",
-  "team.st1":"Publikationen","team.st2":"Patente","team.st3":"Monografien","team.st4":"Jahre F&amp;E",
+  "team.st1":"Publikationen","team.st2":"Patente","team.st3":"Monografien","team.st4":"Jahre F&E",
   "team.cr1":"<b>Doktor der technischen Wissenschaften (D.Sc.)</b>Polytechnische Universität St. Petersburg — Methodik von Mikroturbinenanlagen.",
   "team.cr2":"<b>Kandidat der technischen Wissenschaften (PhD)</b>100-kW-Mikroturbinengenerator — Berechnungs- und Versuchsmethoden.",
   "team.cr3":"<b>Elektronikingenieur — LETI, Leningrad</b>Diplom mit Auszeichnung (Note 5,0 / 5,0).",
   "team.cr4":"<b>Professor für maritime Energietechnik</b>Staatl. Marinetechnische Universität St. Petersburg · CFD, Fluid- &amp; Gasmechanik.",
-  "team.h.role":"Gründer &amp; CEO","team.h.bio":"Ein erfahrener CEO und Gründer, der investierbare Projekte in Immobilien, Energie und Produktentwicklung aufbaut und umsetzt. Bei Inguz Navitas verantwortet er Strategie, Partnerschaften und Kommerzialisierung. Mehr in seinem LinkedIn-Profil.","team.h.li":"LinkedIn-Profil","team.h.ch1":"Immobilien","team.h.ch2":"Energie","team.h.ch3":"Produktentwicklung","team.h.ch4":"Investierbare Projekte",
+  "team.h.role":"Gründer & CEO","team.h.bio":"Ein erfahrener CEO und Gründer, der investierbare Projekte in Immobilien, Energie und Produktentwicklung aufbaut und umsetzt. Bei Inguz Navitas verantwortet er Strategie, Partnerschaften und Kommerzialisierung. Mehr in seinem LinkedIn-Profil.","team.h.li":"LinkedIn-Profil","team.h.ch1":"Immobilien","team.h.ch2":"Energie","team.h.ch3":"Produktentwicklung","team.h.ch4":"Investierbare Projekte",
   "ct.eyebrow":"Kontakt","ct.h2":"Bauen wir ein intelligentes Modell Ihres Prozesses.",
   "ct.p":"Haben Sie einen komplexen industriellen Prozess, der schwer zu modellieren, vorherzusagen oder zu optimieren ist? Wir entwickeln daraus ein physik-informiertes intelligentes System aus Ihren Prozessdaten und Ihrem Ingenieurwissen.",
   "ct.s1":"Prozessmodellierung","ct.s2":"Digitaler-Zwilling-Entwicklung","ct.s3":"PINN-Entwicklung",
@@ -1612,8 +1633,8 @@ Object.assign(window.I18N.de, {
   "pr.intro":"Inguz Navitas SIA (Riga, Lettland) ist der Verantwortliche für diese Website. Wir verarbeiten personenbezogene Daten rechtmäßig, transparent und nur zu den unten genannten Zwecken, im Einklang mit der EU-Datenschutz-Grundverordnung (DSGVO).",
   "pr.t1":"Was wir erheben","pr.t1a":"Kontaktdaten, die Sie uns senden — Name, E-Mail und Nachrichteninhalt —, wenn Sie uns zu einem Projekt kontaktieren.","pr.t1b":"Technische Daten — IP-Adresse, Browsertyp und aufgerufene Seiten — nur über Cookies erhoben, denen Sie zustimmen.","pr.t1c":"Wir erheben keine besonderen Datenkategorien und wissentlich keine Daten von Kindern.",
   "pr.t2":"Warum wir sie verarbeiten","pr.t2a":"Um Anfragen zu beantworten und mögliche Ingenieurarbeiten zu besprechen (berechtigtes Interesse / vorvertragliche Schritte).","pr.t2b":"Um die Nutzung der Website zu verstehen und zu verbessern — Analyse nur mit Ihrer Einwilligung.","pr.t2c":"Um rechtliche und buchhalterische Pflichten zu erfüllen, soweit zutreffend.",
-  "pr.t3":"Cookies &amp; Analyse","pr.t3p":"Unbedingt erforderliche Cookies halten die Website funktionsfähig und speichern Ihre Cookie-Wahl. Analyse-Cookies (z. B. Google Analytics) laufen erst nach Ihrer Zustimmung und laden bis dahin keine Tracking-Skripte. Sie können Ihre Wahl jederzeit ändern.","pr.t3link":"Cookie-Einstellungen öffnen →",
-  "pr.t4":"Weitergabe &amp; Speicherung","pr.t4a":"Wir verkaufen Ihre Daten nie. Sie werden nur an Auftragsverarbeiter weitergegeben, die die Website und Analyse unter Auftragsverarbeitungsverträgen betreiben.","pr.t4b":"Anfragedaten werden nur so lange gespeichert, wie es für Ihre Anfrage oder unsere Geschäftsbeziehung nötig ist, und dann gelöscht.","pr.t4c":"Einige Auftragsverarbeiter können unter geeigneten Garantien außerhalb der EU tätig sein.",
+  "pr.t3":"Cookies & Analyse","pr.t3p":"Unbedingt erforderliche Cookies halten die Website funktionsfähig und speichern Ihre Cookie-Wahl. Analyse-Cookies (z. B. Google Analytics) laufen erst nach Ihrer Zustimmung und laden bis dahin keine Tracking-Skripte. Sie können Ihre Wahl jederzeit ändern.","pr.t3link":"Cookie-Einstellungen öffnen →",
+  "pr.t4":"Weitergabe & Speicherung","pr.t4a":"Wir verkaufen Ihre Daten nie. Sie werden nur an Auftragsverarbeiter weitergegeben, die die Website und Analyse unter Auftragsverarbeitungsverträgen betreiben.","pr.t4b":"Anfragedaten werden nur so lange gespeichert, wie es für Ihre Anfrage oder unsere Geschäftsbeziehung nötig ist, und dann gelöscht.","pr.t4c":"Einige Auftragsverarbeiter können unter geeigneten Garantien außerhalb der EU tätig sein.",
   "pr.t5":"Ihre Rechte","pr.t5p":"Nach der DSGVO können Sie Auskunft, Berichtigung oder Löschung Ihrer Daten verlangen, die Verarbeitung einschränken oder ihr widersprechen und Datenübertragbarkeit verlangen. Sie können Ihre Einwilligung widerrufen und Beschwerde bei der lettischen Datenschutzbehörde (Datu valsts inspekcija) einlegen.",
   "pr.t6":"Verantwortlichen kontaktieren","pr.t6a":"Kontakt",
   "pr.m1":"Zuletzt aktualisiert · 28. August 2026","pr.m2":"Verantwortlicher · Inguz Navitas SIA","pr.m3":"Zuständigkeit · Lettland, EU (DSGVO)",
@@ -1738,7 +1759,7 @@ Object.assign(window.I18N.lv, {
   "res.abs":"Raksts pēta PINN pielietojuma perspektīvas sarežģītu tehnoloģisku procesu modelēšanā un prognozējošā vadībā — apvienojot mašīnmācīšanos ar fizikas likumiem, eksperimentālajiem datiem un optimizāciju. Izmantojot pirolīzes reaktoru kā piemēru, tas parāda, kā fizikas informēts modelis integrējas slēgtā vadības cilpā, un apspriež priekšrocības, pielietojuma jomas, ierobežojumus un turpmākās attīstības virzienus.",
   "res.kw.ml":"Mašīnmācīšanās","res.kw.ic":"Inteliģenta vadība",
   "res.r1":"Sadaļas","res.r2":"Atsauces","res.r3":"Vienādojumi",
-  "res.rd":"P&amp;A joma","res.rd1":"Hibrīdie fizikas-MI modeļi","res.rd2":"Dziļā mācīšanās fizikālām sistēmām","res.rd3":"Termoķīmiskā modelēšana",
+  "res.rd":"P&A joma","res.rd1":"Hibrīdie fizikas-MI modeļi","res.rd2":"Dziļā mācīšanās fizikālām sistēmām","res.rd3":"Termoķīmiskā modelēšana",
   "tag.twins2":"Digitālais dvīnis",
   "faq.eyebrow":"BUJ","faq.h2":"Fizikas informēts MI — izskaidrots.","faq.intro":"Biežāk uzdotie jautājumi par fizikas informētiem neironu tīkliem, digitālajiem dvīņiem un rūpniecisko procesu prognozējošo vadību.",
   "faq.q1":"Kas ir fizikas informēts neironu tīkls (PINN)?",
@@ -1757,7 +1778,7 @@ Object.assign(window.I18N.lv, {
   "team.intro":"Fizikas informēts MI ir tik labs, cik laba ir fizika aiz tā. Mūsu darbs balstās uz ilggadēju pieredzi enerģētikas pētniecībā, skaitliskajā šķidrumu dinamikā un termoķīmiskajās sistēmās.",
   "team.role":"D.Sc., Prof. · Dibinātājs un galvenais zinātnieks",
   "team.bio":"Zinātnieks un pētniecības speciālists enerģētikā. 2010. gadā viņš radīja pirmo sērijveida mikroturbīnu iekārtu Krievijā — 20 kW mikroturbo-ekspandera ģeneratoru gāzes sadales stacijām — un kopš tā laika vadījis mikroturbīnu, ORC siltuma atgūšanas, kriogēno un superkritiskā CO₂ enerģijas sistēmu izstrādi.",
-  "team.st1":"Publikācijas","team.st2":"Patenti","team.st3":"Monogrāfijas","team.st4":"Gadi P&amp;A",
+  "team.st1":"Publikācijas","team.st2":"Patenti","team.st3":"Monogrāfijas","team.st4":"Gadi P&A",
   "team.cr1":"<b>Tehnisko zinātņu doktors (D.Sc.)</b>Sanktpēterburgas Politehniskā universitāte — mikroturbīnu iekārtu metodika.",
   "team.cr2":"<b>Tehnisko zinātņu kandidāts (PhD)</b>100 kW mikroturbīnu ģenerators — aprēķinu un eksperimentālās metodes.",
   "team.cr3":"<b>Elektronikas inženieris — LETI, Ļeņingrada</b>Diploms ar izcilību (vērtējums 5,0 / 5,0).",
