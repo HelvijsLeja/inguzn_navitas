@@ -1,3 +1,6 @@
+<!doctype html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Inguz Navitas — Physics-Informed AI</title>
@@ -180,6 +183,10 @@
     color:var(--teal);display:inline-flex;align-items:center;gap:.6em;
   }
   .eyebrow::before{content:"";width:26px;height:1px;background:var(--teal);opacity:.7}
+  /* standards mode: block-level flex keeps the label from adding an inline line box */
+  .eyebrow{display:flex;width:fit-content}
+  .eyebrow[style*="justify-content:center"]{width:auto}
+  .otable{line-height:normal}
   .eyebrow.ember{color:var(--ember)}
   .eyebrow.ember::before{background:var(--ember)}
 
@@ -412,14 +419,14 @@
   /* publication */
   .pub{display:grid;grid-template-columns:1fr;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-lift)}
   .pub-body{padding:32px}
-  .pub .ptag{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+  .pub .ptag{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);display:block}
   .pub h3{font-size:1.5rem;margin:14px 0 12px;line-height:1.2;max-width:46ch}
   .pub .meta{font-family:"IBM Plex Mono",monospace;font-size:.82rem;color:var(--ink-soft);margin-bottom:18px}
   .pub .meta b{color:var(--ink)}
   .pub .abs{color:var(--ink-soft);font-size:.96rem;max-width:70ch}
   .pub .kw{margin-top:20px;display:flex;flex-wrap:wrap;gap:7px}
   .pub .refbar{display:flex;gap:26px;flex-wrap:wrap;margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
-  .pub .refbar div{font-family:"IBM Plex Mono",monospace}
+  .pub .refbar div{font-family:"IBM Plex Mono",monospace;line-height:1.38}
   .pub .refbar .rn{font-size:1.5rem;color:var(--teal);font-weight:500;font-family:"Saira SemiCondensed"}
   .pub .refbar .rl{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
 
@@ -632,6 +639,8 @@
   .switch input:checked+.slider::before{transform:translateX(19px)}
   .switch input:disabled+.slider{opacity:.55;cursor:not-allowed}
 </style>
+</head>
+<body>
 
 <header class="nav">
   <div class="nav-in">
@@ -2276,3 +2285,5 @@ Object.assign(window.I18N.ru, {
     }
   })();
 </script>
+</body>
+</html>
